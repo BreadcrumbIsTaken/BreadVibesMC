@@ -1,3 +1,7 @@
+# Faction Command
+# Written by Breadcrumb
+# Description:
+#   Opens the Faction Action inventory.
 faction_command:
     type: command
     name: faction

@@ -1,3 +1,4 @@
+# Main faction task.
 faction:
     type: task
     script:
