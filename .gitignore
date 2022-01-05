@@ -1,0 +1,51 @@
+BungeeCord - 35565/modules
+BungeeCord - 35565/BungeeCord.jar
+BungeeCord - 35565/locations.yml
+BungeeCord - 35565/modules.yml
+BungeeCord - 35565/plugins
+BungeeCord - 35565/proxy.log.0
+BungeeCord - 35565/proxy.log.0.1
+BungeeCord - 35565/server-icon.png
+
+*/cache
+*/crash-reports
+*/logs
+*/world*
+*/.console_history
+*/eula.txt
+*/help.yml
+*/paper-1.16.5-780.jar
+*/plugins/bStats
+*/plugins/Denizen-1.2.1-b1743-REL.jar
+*/plugins/Denizen/midi/Denizen.mid
+*/plugins/WorldEdit
+*/banned-ips.json
+*/banned-players.json
+*/eula.txt
+*/commands.yml
+*/ops.json
+*/help.yml
+*/permissions.yml
+*/usercache.json
+*/version_history.json
+*/wepif.yml
+*/plugins/Denizen/scripts/Global Scripts/Just our Utilites LMAO/
+SENSITIVE DATA/
+*/plugins/LuckPerms/translations/*
+*/whitelist.json
+
+*.lck
+*.gz
+*.schematic
+*.schem
+*.jar
+*/Denizen/config.yml
+*/Denizen/maps.yml
+*/Denizen/notables.yml
+*/Denizen/player_flags/
+*/Denizen/server_flags.dat
+*/Denizen/scoreboards.yml
+*/Denizen/scripts/Global Scripts/Third Party/
+
+*/Depenizen/
+*/LuckPerms/
