@@ -44,7 +44,7 @@ faction_action_danger_zone_delete_confirmation_inventory:
     type: inventory
     inventory: chest
     gui: true
-    title: <red>Deletion Confirmation
+    title: <red>Are you sure?
     debug: false
     slots:
         - [] [] [] [] [] [] [] [] []
