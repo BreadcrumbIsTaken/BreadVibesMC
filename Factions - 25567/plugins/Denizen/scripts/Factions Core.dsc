@@ -9,6 +9,11 @@ faction:
         - narrate Invite!
     settings:
         - narrate Settings!
+    transfer_ownership:
+        - if !<player.has_flag[waiting_for_owner_transfer_request_acceptance]>:
+            - inventory open d:faction_action_danger_zone_transfer_ownership_player_list_inventory
+        - else:
+            - narrate "You are still waiting for <player.flag[waiting_for_owner_transfer_request_acceptance].name> to accept the ownership!"
     create:
         - if !<server.has_flag[factions]>:
             - flag server factions:<map[]>
@@ -42,8 +47,6 @@ faction:
         - flag server factions.<[FACTION_UUID]>:<[default_faction_data]>
 
         - narrate "<green>Faction created! Check it out by using '/faction'!"
-    transfer_ownership:
-        - narrate Transfer!
     delete:
         - define FACTION_UUID <player.flag[FACTION]>
 

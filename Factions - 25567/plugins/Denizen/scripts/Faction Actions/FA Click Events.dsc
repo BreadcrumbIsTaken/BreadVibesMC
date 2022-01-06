@@ -9,6 +9,10 @@ player_clicks_in_faction_action_inventory:
         on player clicks faction_danger_zone_faction_deletion_confirmation_item in faction_action_danger_zone_delete_confirmation_inventory:
             - inventory close
             - run faction.delete
+        # Opens the Transfer Ownership Inventory from the Danger Zone Inventory
+        on player clicks faction_danger_zone_transfer_ownership_item in faction_action_danger_zone_inventory:
+            - inventory close
+            - run faction.transfer_ownership
 
         # Opens the Danger Zone Inventory from the Faction Action Inventory.
         on player clicks faction_danger_zone_item in faction_action_default_inventory:
