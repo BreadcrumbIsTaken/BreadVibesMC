@@ -1,5 +1,7 @@
 # BreadVibesMC 🍞
 
+[![wakatime](https://wakatime.com/badge/user/579d6e69-f91a-4a71-9119-b9f35cac7d1f/project/b8d3bc53-9e63-43ed-a149-4ba9deedadee.svg)](https://wakatime.com/badge/user/579d6e69-f91a-4a71-9119-b9f35cac7d1f/project/b8d3bc53-9e63-43ed-a149-4ba9deedadee)
+
 probably the most epic gotdam minecraft server you've ever seen *(that is still in development)*!
 
 you can see me make this on my [youtube](https://www.youtube.com/channel/UCT1_5td4SWg67fhElGz1S4A?sub_confirmation=1) or [odysee](https://odysee.com/@Breadcrumb) channels
