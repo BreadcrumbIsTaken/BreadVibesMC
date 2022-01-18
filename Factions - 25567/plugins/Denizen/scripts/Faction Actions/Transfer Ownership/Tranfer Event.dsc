@@ -20,15 +20,15 @@ player_chooses_heir:
                         - narrate "<[new_owner].name> is already an owner of a faction."
                         - inventory close
                     - else:
-                        - flag player waiting_for_owner_transfer_request_acceptance:<[new_owner]> expire:5s
+                        - flag player waiting_for_owner_transfer_request_acceptance:<[new_owner]> expire:10m
                         - inventory close
                 - else:
-                    - flag player waiting_for_owner_transfer_request_acceptance:<[new_owner]> expire:5s
+                    - flag player waiting_for_owner_transfer_request_acceptance:<[new_owner]> expire:10m
                     - inventory close
 
-                    - flag <[new_owner]> has_ownership_offer:<[faction]> expire:5s
+                    - flag <[new_owner]> has_ownership_offer:<[faction]> expire:10m
                     - runlater out_of_time_for_transfer delay:5s def.new_owner:<[new_owner]>
-                    - narrate targets:<[new_owner]> "<green><player.name>, want you to become the new owner of their faction<reset>: <[faction].proc[get_display_name]>. <green>To accept, please issue the command<reset>: <yellow>accept<reset>. <green>To deny, please issue the command<reset>: <yellow>deny <green>or, do nothing. This request will expire in 3 minutes."
+                    - narrate targets:<[new_owner]> "<green><player.name>, want you to become the new owner of their faction<reset>: <[faction].proc[get_display_name]>. <green>To accept, please issue the command<reset>: <yellow>accept<reset>. <green>To deny, please issue the command<reset>: <yellow>deny <green>or, do nothing. This request will expire in 10 minutes."
             - else:
                 - narrate "<[new_owner].name> already has a valid offer. Please try again soon."
 
