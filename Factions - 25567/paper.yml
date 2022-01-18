@@ -34,6 +34,7 @@ settings:
   enable-player-collisions: true
   save-empty-scoreboard-teams: false
   unsupported-settings:
+    perform-username-validation: true
     allow-piston-duplication: false
     allow-permanent-block-break-exploits: false
     allow-headless-pistons: false

@@ -1,3 +1,5 @@
+# TODO: Make a seperate inventory for members of the faction who aren't owners that don't have the ability to delete, transfer ownership, or change anything else. Just teleport to home (coming soon), see it's members and so forth.
+
 # Main faction task.
 faction:
     type: task
@@ -48,6 +50,7 @@ faction:
 
         - narrate "<green>Faction created! Check it out by using '/faction'!"
     delete:
+        # TODO: Loop through all members of the faction and remove their FACTION flag
         - define FACTION_UUID <player.flag[FACTION]>
 
         - foreach <proc[get_all_claims]> as:cl:

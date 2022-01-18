@@ -153,4 +153,7 @@ get_player_faction:
     type: procedure
     definitions: player
     script:
-        - determine <[player].flag[faction]>
+        - if <[player].has_flag[faction]>:
+            - determine <[player].flag[faction]>
+        - else:
+            - determine null

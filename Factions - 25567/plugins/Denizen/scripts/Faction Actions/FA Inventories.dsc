@@ -59,6 +59,7 @@ faction_action_danger_zone_transfer_ownership_player_list_inventory:
     inventory: chest
     gui: true
     title: Pick a new owner.
+    debug: false
     procedural items:
         - define players <server.online_players>
         - define head_list <list[]>
