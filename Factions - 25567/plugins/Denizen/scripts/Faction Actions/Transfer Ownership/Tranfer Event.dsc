@@ -46,10 +46,16 @@ player_accepts_or_denies_offer_to_be_new_owner:
                 - flag server factions.<[faction]>.owner:<player.uuid>
                 - flag server factions.<[faction]>.members:->:<player.uuid>
                 - flag <player> FACTION:<[faction]>
+
+                - flag <player> has_ownership_offer:!
+                - flag <[old_owner]> waiting_for_owner_transfer_request_acceptance:!
             - else if <context.message.to_lowercase> == deny:
                 - determine passively cancelled
                 - narrate "You have denyed the offer."
                 - narrate "<player.name> <red>has declined your offer to become owner of your faction." targets:<[old_owner]>
+
+                - flag <player> has_ownership_offer:!
+                - flag <[old_owner]> waiting_for_owner_transfer_request_acceptance:!
             - else:
                 - determine cancelled
 
