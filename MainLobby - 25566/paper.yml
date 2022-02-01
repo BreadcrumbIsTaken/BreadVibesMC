@@ -1,10 +1,10 @@
 # This is the main configuration file for Paper.
 # As you can see, there's tons to configure. Some options may impact gameplay, so use
 # with caution, and make sure you know what each option does before configuring.
-# 
+#
 # If you need help with the configuration or have any questions related to Paper,
 # join us in our Discord or IRC channel.
-# 
+#
 # Discord: https://discord.gg/papermc
 # IRC: #paper @ irc.esper.net ( https://webchat.esper.net/?channels=paper ) 
 # Website: https://papermc.io/ 
@@ -12,8 +12,10 @@
 
 verbose: false
 use-display-name-in-quit-message: false
-config-version: 23
+config-version: 24
 settings:
+  fix-target-selector-tag-completion: true
+  time-command-affects-all-worlds: false
   log-player-ip-addresses: true
   send-full-pos-for-hard-colliding-entities: true
   lag-compensate-block-breaking: true
@@ -34,6 +36,7 @@ settings:
   enable-player-collisions: true
   save-empty-scoreboard-teams: false
   unsupported-settings:
+    perform-username-validation: true
     allow-piston-duplication: false
     allow-permanent-block-break-exploits: false
     allow-headless-pistons: false
@@ -118,6 +121,21 @@ messages:
     authentication-servers-down: ''
 world-settings:
   default:
+    wateranimal-spawn-height:
+      minimum: default
+      maximum: default
+    anticheat:
+      obfuscation:
+        items:
+          hide-itemmeta: false
+          hide-durability: false
+    monster-spawn-max-light-level: -1
+    slime-spawn-height:
+      swamp-biome:
+        maximum: 70.0
+        minimum: 50.0
+      slime-chunk:
+        maximum: 40.0
     split-overstacked-loot: true
     piglins-guard-chests: true
     map-item-frame-cursor-update-interval: 10
@@ -233,6 +251,7 @@ world-settings:
       - NORMAL
       - HARD
     hopper:
+      ignore-occluding-blocks: true
       cooldown-when-full: true
       disable-move-event: false
     lightning-strike-distance-limit:
@@ -240,10 +259,12 @@ world-settings:
       impact-sound: -1
       flash: -1
     spawn-limits:
-      monsters: -1
-      animals: -1
-      water-animals: -1
-      water-ambient: -1
+      axolotls: -1
+      monster: -1
+      creature: -1
+      underground_water_creature: -1
+      water_creature: -1
+      water_ambient: -1
       ambient: -1
     anti-xray:
       max-block-height: 64
@@ -291,8 +312,30 @@ world-settings:
       MinimumTicks: 100
       MaximumTicks: 600
     despawn-ranges:
-      soft: 32
-      hard: 128
+      axolotls:
+        soft: 32
+        hard: 128
+      monster:
+        soft: 32
+        hard: 128
+      creature:
+        soft: 32
+        hard: 128
+      ambient:
+        soft: 32
+        hard: 128
+      underground_water_creature:
+        soft: 32
+        hard: 128
+      water_creature:
+        soft: 32
+        hard: 128
+      water_ambient:
+        soft: 32
+        hard: 64
+      misc:
+        soft: 32
+        hard: 128
     frosted-ice:
       enabled: true
       delay:

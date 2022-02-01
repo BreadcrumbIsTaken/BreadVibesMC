@@ -1,10 +1,10 @@
 # This is the main configuration file for Paper.
 # As you can see, there's tons to configure. Some options may impact gameplay, so use
 # with caution, and make sure you know what each option does before configuring.
-# 
+#
 # If you need help with the configuration or have any questions related to Paper,
 # join us in our Discord or IRC channel.
-# 
+#
 # Discord: https://discord.gg/papermc
 # IRC: #paper @ irc.esper.net ( https://webchat.esper.net/?channels=paper ) 
 # Website: https://papermc.io/ 
@@ -14,6 +14,8 @@ verbose: false
 use-display-name-in-quit-message: false
 config-version: 24
 settings:
+  time-command-affects-all-worlds: false
+  fix-target-selector-tag-completion: true
   log-player-ip-addresses: true
   send-full-pos-for-hard-colliding-entities: true
   lag-compensate-block-breaking: true
@@ -119,6 +121,21 @@ messages:
     authentication-servers-down: ''
 world-settings:
   default:
+    wateranimal-spawn-height:
+      maximum: default
+      minimum: default
+    anticheat:
+      obfuscation:
+        items:
+          hide-itemmeta: false
+          hide-durability: false
+    monster-spawn-max-light-level: -1
+    slime-spawn-height:
+      swamp-biome:
+        maximum: 70.0
+        minimum: 50.0
+      slime-chunk:
+        maximum: 40.0
     split-overstacked-loot: true
     piglins-guard-chests: true
     map-item-frame-cursor-update-interval: 10
@@ -242,6 +259,7 @@ world-settings:
       impact-sound: -1
       flash: -1
     spawn-limits:
+      axolotls: -1
       monster: -1
       creature: -1
       underground_water_creature: -1
@@ -294,6 +312,9 @@ world-settings:
       MinimumTicks: 100
       MaximumTicks: 600
     despawn-ranges:
+      axolotls:
+        soft: 32
+        hard: 128
       monster:
         soft: 32
         hard: 128

@@ -1,4 +1,3 @@
-prevent_proxy_connections: false
 listeners:
 - query_port: 35565
   motd: |2-
@@ -9,8 +8,8 @@ listeners:
   proxy_protocol: false
   ping_passthrough: false
   priorities:
-  - lobby
   - factions
+  - lobby
   bind_local_address: true
   host: 0.0.0.0:35565
   max_players: 1
@@ -33,6 +32,7 @@ log_pings: true
 connection_throttle_limit: 3
 server_connect_timeout: 5000
 timeout: 30000
+stats: 6fc56c77-08d1-4e26-9de8-9469e4e87b4a
 player_limit: -1
 ip_forward: true
 groups:
@@ -41,7 +41,7 @@ groups:
 remote_ping_timeout: 5000
 connection_throttle: 4000
 log_commands: false
-stats: 6fc56c77-08d1-4e26-9de8-9469e4e87b4a
+prevent_proxy_connections: false
 online_mode: true
 forge_support: false
 disabled_commands:
