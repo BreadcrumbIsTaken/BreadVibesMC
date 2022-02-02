@@ -1,8 +1,9 @@
+server_connect_timeout: 5000
 listeners:
 - query_port: 35565
   motd: |2-
      §6              ~+~§9§kf§d §x§f§f§6§9§b§8§l§nBread§x§1§4§b§5§e§b§l§nVibes§x§f§f§f§a§f§a§l§nMC§9§k f§6~+~§r
-     §a[§b1§a.§c17§a.§e1§a] §e★§a ▶§f §x§0§D§C§9§F§0P§x§1§8§C§4§E§Fl§x§2§4§B§F§E§Fa§x§2§F§B§B§E§Ey§x§3§B§B§6§E§E.§x§4§6§B§2§E§EB§x§5§2§A§D§E§Dr§x§5§D§A§9§E§De§x§6§9§A§4§E§Da§x§7§4§A§0§E§Cd§x§8§0§9§B§E§CV§x§8§B§9§7§E§Ci§x§9§7§9§2§E§Bb§x§A§2§8§E§E§Be§x§A§E§8§9§E§Bs§x§B§9§8§5§E§AM§x§C§5§8§0§E§AC§x§D§0§7§C§E§A.§x§D§C§7§7§E§9C§x§E§7§7§3§E§9o§x§F§3§6§E§E§9m §a◀ §e★
+     §a[§b1§a.§c18§a.§e1§a] §e★§a ▶§f §x§0§D§C§9§F§0P§x§1§8§C§4§E§Fl§x§2§4§B§F§E§Fa§x§2§F§B§B§E§Ey§x§3§B§B§6§E§E.§x§4§6§B§2§E§EB§x§5§2§A§D§E§Dr§x§5§D§A§9§E§De§x§6§9§A§4§E§Da§x§7§4§A§0§E§Cd§x§8§0§9§B§E§CV§x§8§B§9§7§E§Ci§x§9§7§9§2§E§Bb§x§A§2§8§E§E§Be§x§A§E§8§9§E§Bs§x§B§9§8§5§E§AM§x§C§5§8§0§E§AC§x§D§0§7§C§E§A.§x§D§C§7§7§E§9C§x§E§7§7§3§E§9o§x§F§3§6§E§E§9m §a◀ §e★
   tab_list: SERVER
   query_enabled: false
   proxy_protocol: false
@@ -30,9 +31,8 @@ permissions:
   - bungeecord.command.reload
 log_pings: true
 connection_throttle_limit: 3
-server_connect_timeout: 5000
+prevent_proxy_connections: false
 timeout: 30000
-stats: 6fc56c77-08d1-4e26-9de8-9469e4e87b4a
 player_limit: -1
 ip_forward: true
 groups:
@@ -41,7 +41,7 @@ groups:
 remote_ping_timeout: 5000
 connection_throttle: 4000
 log_commands: false
-prevent_proxy_connections: false
+stats: 6fc56c77-08d1-4e26-9de8-9469e4e87b4a
 online_mode: true
 forge_support: false
 disabled_commands:
