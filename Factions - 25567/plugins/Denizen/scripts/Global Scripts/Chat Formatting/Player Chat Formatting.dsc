@@ -4,7 +4,7 @@
 #   Steve: yo
 format_player_chat:
     type: format
-    format: <proc[p_nameplate]><&co> <text>
+    format: <proc[p_nameplate]><&co> <[text]>
 
 # Display Chat Prefix in Tab List Event
 # Desc:

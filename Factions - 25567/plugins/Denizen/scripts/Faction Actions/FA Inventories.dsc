@@ -75,3 +75,16 @@ faction_action_danger_zone_transfer_ownership_player_list_inventory:
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
+
+faction_action_player_not_owner_inventory:
+    type: inventory
+    inventory: chest
+    gui: true
+    title: <&color[#1569EA]>Faction Actions
+    slots:
+        - [] [] [] [] [] [] [] [] []
+        - [] [] [] [] [] [] [] [] []
+        - [] [] [] [] [faction_inventory_item] [] [] [] []
+        - [] [] [] [] [] [] [] [] []
+        - [] [] [] [] [] [] [] [] []
+        - [] [] [] [] [] [] [] [] []

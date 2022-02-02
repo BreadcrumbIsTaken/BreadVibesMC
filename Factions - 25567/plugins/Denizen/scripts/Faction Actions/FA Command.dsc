@@ -15,7 +15,9 @@ faction_command:
         - else:
             - if <player.uuid> == <player.flag[faction].proc[get_owner]>:
                 - define inv <inventory[faction_action_default_inventory]>
-                - inventory d:<[inv]> adjust slot:14 "display_name:<player.name>'s Faction"
+                - inventory d:<[inv]> adjust slot:14 display_name:<player.flag[faction].proc[get_display_name]>
                 - inventory open d:<[inv]>
             - else:
-                - narrate "<yellow>You aren't the owner of the faction!"
+                - define inv <inventory[faction_action_player_not_owner_inventory]>
+                - inventory d:<[inv]> adjust slot:14 display_name:<player.flag[faction].proc[get_display_name]>
+                - inventory open d:<[inv]>
