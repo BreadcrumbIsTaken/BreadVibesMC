@@ -19,9 +19,8 @@ player_chooses_new_owner_of_faction:
                     - if <[new_owner].uuid> == <[faction_owner].uuid>:
                         - narrate "<&color[#1569EA]>You can't transfer ownership to yourself! You are already the owner."
                         - inventory close
-                    - else:
-                        - flag player waiting_for_owner_transfer_request_acceptance:<[new_owner]> expire:10m
-                        - inventory close
+                    - flag player waiting_for_owner_transfer_request_acceptance:<[new_owner]> expire:10m
+                    - inventory close
                 - else:
                     - flag player waiting_for_owner_transfer_request_acceptance:<[new_owner]> expire:10m
                     - inventory close
@@ -40,22 +39,37 @@ player_accepts_or_denies_offer_to_be_new_owner:
             - define faction <player.flag[has_ownership_offer]>
             - if <context.message.to_lowercase> == accept:
                 - determine passively cancelled
-                - narrate "You are now the owner of <player.flag[has_ownership_offer].proc[get_display_name]>!"
-                - narrate "<player.name> has accepted the offer to become owner! You are now no longer the owner of <[faction].proc[get_display_name]>, but are now a regular member." targets:<[old_owner]>
+
+                # Removes both the old owner and new owner from their factions to avoid any errors.
+                - if <[old_owner].has_flag[faction]>:
+                    - flag server factions.<[old_owner].flag[faction]>.members:<-:<[old_owner].uuid>
+                    - flag <[old_owner]> faction:!
+                - if <player.has_flag[faction]>:
+                    - flag server factions.<player.flag[faction]>.members:<-:<player.uuid>
+                    - flag player faction:!
 
                 - flag server factions.<[faction]>.owner:<player.uuid>
                 - flag server factions.<[faction]>.members:->:<player.uuid>
-                - flag <player> FACTION:<[faction]>
+                - flag player FACTION:<[faction]>
+
+                # Re-adds the owner to the faction.
+                - flag server factions.<[faction]>.members:->:<[old_owner].uuid>
+                - flag <[old_owner]> faction:<[faction]>
 
                 - flag <player> has_ownership_offer:!
                 - flag <[old_owner]> waiting_for_owner_transfer_request_acceptance:!
+
+                - narrate "You are now the owner of <player.flag[has_ownership_offer].proc[get_display_name]>!"
+                - narrate "<player.name> has accepted the offer to become owner! You are now no longer the owner of <[faction].proc[get_display_name]>, but are now a regular member." targets:<[old_owner]>
+
             - else if <context.message.to_lowercase> == deny:
                 - determine passively cancelled
-                - narrate "You have denyed the offer."
-                - narrate "<player.name> <red>has declined your offer to become owner of your faction." targets:<[old_owner]>
 
                 - flag <player> has_ownership_offer:!
                 - flag <[old_owner]> waiting_for_owner_transfer_request_acceptance:!
+
+                - narrate "You have denyed the offer."
+                - narrate "<player.name> <red>has declined your offer to become owner of your faction." targets:<[old_owner]>
             - else:
                 - determine cancelled
 

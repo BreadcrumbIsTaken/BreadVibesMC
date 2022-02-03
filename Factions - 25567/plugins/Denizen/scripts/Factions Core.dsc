@@ -74,3 +74,10 @@ faction:
         # - flag server "factions.all claims:!"
         - flag server FACTION_IDS:-1
         - narrate Wiped.
+    leave:
+        - if <player.uuid> == <player.flag[faction].proc[get_owner]>:
+            - narrate "Sorry, but you are going to have to tranfer ownership of your faction before you can leave it. You can do so in the <red>Danger Zone<reset> section of the Faction Action Inventory. (<bold>/f<reset>)"
+            - stop
+        - flag server factions.<player.flag[faction]>.members:<-:<player.uuid>
+        - flag player factions:!
+        - narrate "You have successfully left the faction."

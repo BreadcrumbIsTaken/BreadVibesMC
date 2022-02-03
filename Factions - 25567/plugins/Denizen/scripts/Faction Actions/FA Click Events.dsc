@@ -13,6 +13,9 @@ player_clicks_in_faction_action_inventory:
         on player clicks faction_danger_zone_transfer_ownership_item in faction_action_danger_zone_inventory:
             - inventory close
             - run faction.transfer_ownership
+        on player clicks faction_danger_zone_leave_faction_item in faction_action_danger_zone_inventory:
+            - inventory close
+            - run faction.leave
 
         # Opens the Danger Zone Inventory from the Faction Action Inventory.
         on player clicks faction_danger_zone_item in faction_action_default_inventory:

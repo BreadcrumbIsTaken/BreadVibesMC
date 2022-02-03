@@ -35,7 +35,7 @@ faction_action_danger_zone_inventory:
     slots:
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
-        - [] [] [faction_danger_zone_transfer_ownership_item] [] [] [] [faction_danger_zone_delete_faction_item] [] []
+        - [] [] [faction_danger_zone_transfer_ownership_item] [] [faction_danger_zone_leave_faction_item] [] [faction_danger_zone_delete_faction_item] [] []
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
         - [previous_page_item] [] [] [] [] [] [] [] []

@@ -88,3 +88,17 @@ faction_danger_zone_faction_deletion_confirmation_item:
         - <red>it is gone FOREVER!!
     mechanisms:
         skull_skin: b4e096c1-65b2-4abd-bedc-e67842bb42b1|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2UyYTUzMGY0MjcyNmZhN2EzMWVmYWI4ZTQzZGFkZWUxODg5MzdjZjgyNGFmODhlYThlNGM5M2E0OWM1NzI5NCJ9fX0=
+
+faction_danger_zone_leave_faction_item:
+    type: item
+    material: player_head
+    display name: Leave Faction.
+    lore:
+        - Don't worry, you can
+        - always rejoin. If you
+        - are the owner of the
+        - faction, then you must
+        - tranfer ownership before
+        - leaving.
+    mechanisms:
+        skull_skin: 6e79d58c-f622-4a11-8852-8b9f1e3ea6cc|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGU0YjhiOGQyMzYyYzg2NGUwNjIzMDE0ODdkOTRkMzI3MmE2YjU3MGFmYmY4MGMyYzViMTQ4Yzk1NDU3OWQ0NiJ9fX0=
