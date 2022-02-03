@@ -54,3 +54,5 @@ SENSITIVE DATA/
 *.bat
 Factions - 25567/plugins/latest.txt
 MainLobby - 25566/plugins/latest.txt
+
+**/server.properties

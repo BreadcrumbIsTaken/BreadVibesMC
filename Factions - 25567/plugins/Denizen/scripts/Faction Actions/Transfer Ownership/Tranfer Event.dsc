@@ -1,10 +1,10 @@
 # TODO: So far, this only works for those who are not part of the faction (as far as I can tell. I have not tested what happens if so yet, so I may be wrong).
 
-# Player Chooses Heir
+# Player Chooses New Owner of Faction
 # Written by Breadcrumb (on stream!!!)
 # Description:
 #   Handle getting the selected player to transfer the ownership to.
-player_chooses_heir:
+player_chooses_new_owner_of_faction:
     type: world
     events:
         on player clicks item in faction_action_danger_zone_transfer_ownership_player_list_inventory:
@@ -17,7 +17,7 @@ player_chooses_heir:
             - if !<player.has_flag[has_ownership_offer]>:
                 - if <[new_owner].has_flag[faction]>:
                     - if <[new_owner].uuid> == <[faction_owner].uuid>:
-                        - narrate "<[new_owner].name> is already an owner of a faction."
+                        - narrate "<&color[#1569EA]>You can't transfer ownership to yourself! You are already the owner."
                         - inventory close
                     - else:
                         - flag player waiting_for_owner_transfer_request_acceptance:<[new_owner]> expire:10m
@@ -28,7 +28,7 @@ player_chooses_heir:
 
                     - flag <[new_owner]> has_ownership_offer:<[faction]> expire:10m
                     - runlater out_of_time_for_transfer delay:5s def.new_owner:<[new_owner]>
-                    - narrate targets:<[new_owner]> "<green><player.name>, want you to become the new owner of their faction<reset>: <[faction].proc[get_display_name]>. <green>To accept, please issue the command<reset>: <yellow>accept<reset>. <green>To deny, please issue the command<reset>: <yellow>deny <green>or, do nothing. This request will expire in 10 minutes."
+                    - narrate targets:<[new_owner]> "<green><player.name>, wants you to become the new owner of their faction<reset>, <[faction].proc[get_display_name]>. <green>To accept, please issue the command<reset>: <yellow>accept<reset>. <green>To deny, please issue the command<reset>: <yellow>deny <green>or, do nothing. This request will expire in 10 minutes."
             - else:
                 - narrate "<[new_owner].name> already has a valid offer. Please try again soon."
 
