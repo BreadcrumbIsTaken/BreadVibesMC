@@ -17,7 +17,7 @@ player_chooses_new_owner_of_faction:
             - if !<player.has_flag[has_ownership_offer]>:
                 - if <[new_owner].has_flag[faction]>:
                     - if <[new_owner].uuid> == <[faction_owner].uuid>:
-                        - narrate "<&color[#1569EA]>You can't transfer ownership to yourself! You are already the owner."
+                        - narrate "<&color[#1569EA]>You can't transfer ownership to yourself! You are already the owner." format:faction_action_format
                         - inventory close
                     - flag player waiting_for_owner_transfer_request_acceptance:<[new_owner]> expire:10m
                     - inventory close
@@ -27,9 +27,9 @@ player_chooses_new_owner_of_faction:
 
                     - flag <[new_owner]> has_ownership_offer:<[faction]> expire:10m
                     - runlater out_of_time_for_transfer delay:5s def.new_owner:<[new_owner]>
-                    - narrate targets:<[new_owner]> "<green><player.name>, wants you to become the new owner of their faction<reset>, <[faction].proc[get_display_name]>. <green>To accept, please issue the command<reset>: <yellow>accept<reset>. <green>To deny, please issue the command<reset>: <yellow>deny <green>or, do nothing. This request will expire in 10 minutes."
+                    - narrate targets:<[new_owner]> "<green><player.name>, wants you to become the new owner of their faction<reset>, <[faction].proc[get_display_name]>. <green>To accept, please issue the command<reset>: <yellow>accept<reset>. <green>To deny, please issue the command<reset>: <yellow>deny <green>or, do nothing. This request will expire in 10 minutes." format:faction_action_format
             - else:
-                - narrate "<[new_owner].name> already has a valid offer. Please try again soon."
+                - narrate "<[new_owner].name> already has a valid offer. Please try again soon." format:faction_action_format
 
 player_accepts_or_denies_offer_to_be_new_owner:
     type: world
@@ -59,8 +59,8 @@ player_accepts_or_denies_offer_to_be_new_owner:
                 - flag <player> has_ownership_offer:!
                 - flag <[old_owner]> waiting_for_owner_transfer_request_acceptance:!
 
-                - narrate "You are now the owner of <player.flag[has_ownership_offer].proc[get_display_name]>!"
-                - narrate "<player.name> has accepted the offer to become owner! You are now no longer the owner of <[faction].proc[get_display_name]>, but are now a regular member." targets:<[old_owner]>
+                - narrate "You are now the owner of <player.flag[has_ownership_offer].proc[get_display_name]>!" format:faction_action_format
+                - narrate "<player.name> has accepted the offer to become owner! You are now no longer the owner of <[faction].proc[get_display_name]>, but are now a regular member." targets:<[old_owner]> format:faction_action_format
 
             - else if <context.message.to_lowercase> == deny:
                 - determine passively cancelled
@@ -68,8 +68,8 @@ player_accepts_or_denies_offer_to_be_new_owner:
                 - flag <player> has_ownership_offer:!
                 - flag <[old_owner]> waiting_for_owner_transfer_request_acceptance:!
 
-                - narrate "You have denyed the offer."
-                - narrate "<player.name> <red>has declined your offer to become owner of your faction." targets:<[old_owner]>
+                - narrate "You have denyed the offer." format:faction_action_format
+                - narrate "<player.name> <red>has declined your offer to become owner of your faction." targets:<[old_owner]> format:faction_action_format
             - else:
                 - determine cancelled
 
@@ -78,6 +78,6 @@ out_of_time_for_transfer:
     definitions: new_owner
     script:
         - if <player.has_flag[has_ownership_offer]>:
-            - narrate "Sorry, the ownership offer has expired." targets:<[new_owner]>
+            - narrate "Sorry, the ownership offer has expired." targets:<[new_owner]> format:faction_action_format
         - else:
             - stop

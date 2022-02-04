@@ -88,3 +88,17 @@ faction_action_player_not_owner_inventory:
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
+
+faction_action_danger_zone_player_leave_confirm_inventory:
+    type: inventory
+    inventory: chest
+    gui: true
+    title: <red>Are you sure?
+    debug: false
+    slots:
+        - [] [] [] [] [] [] [] [] []
+        - [] [] [] [] [] [] [] [] []
+        - [] [] [] [] [faction_danger_zone_leave_faction_confirmation_item] [] [] [] []
+        - [] [] [] [] [] [] [] [] []
+        - [] [] [] [] [] [] [] [] []
+        - [] [] [] [] [] [] [] [] []

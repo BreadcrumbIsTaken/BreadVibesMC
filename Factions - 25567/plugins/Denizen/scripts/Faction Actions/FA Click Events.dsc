@@ -13,7 +13,8 @@ player_clicks_in_faction_action_inventory:
         on player clicks faction_danger_zone_transfer_ownership_item in faction_action_danger_zone_inventory:
             - inventory close
             - run faction.transfer_ownership
-        on player clicks faction_danger_zone_leave_faction_item in faction_action_danger_zone_inventory:
+        # Leaves the faction.
+        on player clicks faction_danger_zone_leave_faction_confirmation_item in faction_action_danger_zone_player_leave_confirm_inventory:
             - inventory close
             - run faction.leave
 
@@ -26,3 +27,6 @@ player_clicks_in_faction_action_inventory:
         # Opens the Delete Confirmation Inventory from the Danger Zone Inventory.
         on player clicks faction_danger_zone_delete_faction_item in faction_action_danger_zone_inventory:
             - inventory open d:faction_action_danger_zone_delete_confirmation_inventory
+        # Opens the Leave Faction Confirmation Inventory from the Danger Zone Inventory.
+        on player clicks faction_danger_zone_leave_faction_item in faction_action_danger_zone_inventory:
+            - inventory open d:faction_action_danger_zone_player_leave_confirm_inventory
