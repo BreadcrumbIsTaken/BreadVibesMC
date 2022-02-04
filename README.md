@@ -4,7 +4,7 @@
 
 probably the most epic gotdam minecraft server you've ever seen *(that is still in development)*!
 
-you can see me make this on my [youtube](https://www.youtube.com/channel/UCT1_5td4SWg67fhElGz1S4A?sub_confirmation=1) or [odysee](https://odysee.com/@Breadcrumb) channels
+you can see me make this on my [youtube](https://www.youtube.com/BreadcrumbMC?sub_confirmation=1) or [odysee](https://odysee.com/@Breadcrumb) channels
 
 ### Note:
 
