@@ -11,4 +11,4 @@ announce_notice_to_ops:
 
 ops_format:
     type: format
-    format: <&color[#E3831C]>[Operators]<&co> <text>
+    format: <&color[#E3831C]>[Operators]<&co> <[text]>
