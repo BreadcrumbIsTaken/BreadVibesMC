@@ -1,4 +1,4 @@
-create_new_faction_item:
+faction_action_create_new_faction_item:
     type: item
     material: player_head
     display name: Create a New Faction!
