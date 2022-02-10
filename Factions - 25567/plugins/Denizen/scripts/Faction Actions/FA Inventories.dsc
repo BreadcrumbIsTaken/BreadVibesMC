@@ -6,7 +6,7 @@ faction_action_default_inventory:
     debug: false
     slots:
         - [] [] [] [] [] [] [] [] []
-        - [] [] [] [] [faction_inventory_item] [] [] [] []
+        - [] [] [] [] [faction_action_faction_name_item] [] [] [] []
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
         - [] [] [faction_invite_players_item] [] [faction_claim_more_land_item] [] [faction_settings_item] [] []
@@ -84,7 +84,7 @@ faction_action_player_not_owner_inventory:
     slots:
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
-        - [] [] [] [] [faction_inventory_item] [] [] [] []
+        - [] [] [] [] [faction_action_faction_name_item] [] [] [] []
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []

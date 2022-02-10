@@ -30,7 +30,7 @@ not_in_any_faction_item:
     mechanisms:
         skull_skin: d6dee635-8b08-465e-b616-bbc34fda41ad|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmUzZjUwYmE2MmNiZGEzZWNmNTQ3OWI2MmZlZGViZDYxZDc2NTg5NzcxY2MxOTI4NmJmMjc0NWNkNzFlNDdjNiJ9fX0=
 
-faction_inventory_item:
+faction_action_faction_name_item:
     type: item
     material: player_head
     display name: PLAYER's Faction
