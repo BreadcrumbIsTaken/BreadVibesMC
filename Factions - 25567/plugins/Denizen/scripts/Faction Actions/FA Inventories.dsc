@@ -23,7 +23,7 @@ faction_action_player_not_in_any_faction_inventory:
         - [] [] [] [] [not_in_any_faction_item] [] [] [] []
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
-        - [] [] [faction_action_create_new_faction_item] [] [] [] [join_new_faction_item] [] []
+        - [] [] [faction_action_create_new_faction_item] [] [] [] [faction_action_join_new_faction_item] [] []
         - [] [] [] [] [] [] [] [] []
 
 faction_action_danger_zone_inventory:

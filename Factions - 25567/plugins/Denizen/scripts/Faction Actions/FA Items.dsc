@@ -9,7 +9,7 @@ faction_action_create_new_faction_item:
     mechanisms:
         skull_skin: b4f61444-f5fa-4668-91f0-9e00408d6298|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2VkZDIwYmU5MzUyMDk0OWU2Y2U3ODlkYzRmNDNlZmFlYjI4YzcxN2VlNmJmY2JiZTAyNzgwMTQyZjcxNiJ9fX0=
 
-join_new_faction_item:
+faction_action_join_new_faction_item:
     type: item
     material: player_head
     display name: Join a Faction!
