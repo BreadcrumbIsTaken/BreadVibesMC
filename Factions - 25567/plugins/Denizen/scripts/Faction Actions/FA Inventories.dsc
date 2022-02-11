@@ -9,8 +9,8 @@ faction_action_default_inventory:
         - [] [] [] [] [faction_action_faction_name_item] [] [] [] []
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
-        - [] [] [faction_invite_players_item] [] [faction_claim_more_land_item] [] [faction_settings_item] [] []
-        - [faction_danger_zone_item] [] [] [] [] [] [] [] []
+        - [] [] [faction_action_invite_players_item] [] [faction_action_claim_more_land_item] [] [faction_action_faction_settings_item] [] []
+        - [faction_action_danger_zone_item] [] [] [] [] [] [] [] []
 
 faction_action_player_not_in_any_faction_inventory:
     type: inventory
@@ -20,7 +20,7 @@ faction_action_player_not_in_any_faction_inventory:
     debug: false
     slots:
         - [] [] [] [] [] [] [] [] []
-        - [] [] [] [] [not_in_any_faction_item] [] [] [] []
+        - [] [] [] [] [faction_action_not_in_any_faction_item] [] [] [] []
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
         - [] [] [faction_action_create_new_faction_item] [] [] [] [faction_action_join_new_faction_item] [] []
@@ -35,7 +35,7 @@ faction_action_danger_zone_inventory:
     slots:
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
-        - [] [] [faction_danger_zone_transfer_ownership_item] [] [faction_danger_zone_leave_faction_item] [] [faction_danger_zone_delete_faction_item] [] []
+        - [] [] [faction_action_danger_zone_transfer_ownership_item] [] [faction_action_danger_zone_leave_faction_item] [] [faction_action_danger_zone_delete_faction_item] [] []
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
         - [previous_page_item] [] [] [] [] [] [] [] []
@@ -49,7 +49,7 @@ faction_action_danger_zone_delete_confirmation_inventory:
     slots:
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
-        - [] [] [] [] [faction_danger_zone_faction_deletion_confirmation_item] [] [] [] []
+        - [] [] [] [] [faction_action_danger_zone_faction_deletion_confirmation_item] [] [] [] []
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
@@ -98,7 +98,7 @@ faction_action_danger_zone_player_leave_confirm_inventory:
     slots:
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
-        - [] [] [] [] [faction_danger_zone_leave_faction_confirmation_item] [] [] [] []
+        - [] [] [] [] [faction_action_danger_zone_leave_faction_confirmation_item] [] [] [] []
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
