@@ -17,7 +17,7 @@ gamemode_changer:
         2: <server.online_players.parse[name]>
     script:
         # defines everything
-        - define PLAYER <server.match_player[<context.args.get[2]>].if_null[null]>
+        - define PLAYER <server.match_player[<context.args.get[2].if_null[null]>].if_null[null]>
         - define GM <context.args.get[1]>
 
         # if the player is not null, then decides what to do with the given parameters
