@@ -1,4 +1,4 @@
-# TODO: Make a seperate inventory for members of the faction who aren't owners that don't have the ability to delete, transfer ownership, or change anything else. Just teleport to home (coming soon), see it's members and so forth.
+# TODO: Rewrite the faction creation system to store the player (<player>) instead of the player's uuid (<player.uuid>). This will work because I'm flagging the server, and not saving it to YAML like I was going to do in the orginal impl.
 
 # Main faction task.
 faction:
