@@ -9,7 +9,7 @@ faction_action_default_inventory:
         - [] [] [] [] [faction_action_faction_name_item] [] [] [] []
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
-        - [] [] [faction_action_invite_players_item] [] [faction_action_claim_more_land_item] [] [faction_action_faction_settings_item] [] []
+        - [] [] [faction_action_invite_players_item] [] [faction_action_claim_more_land_item] [] [faction_action_settings_item] [] []
         - [faction_action_danger_zone_item] [] [] [] [] [] [] [] []
 
 faction_action_player_not_in_any_faction_inventory:
@@ -52,7 +52,7 @@ faction_action_danger_zone_delete_confirmation_inventory:
         - [] [] [] [] [faction_action_danger_zone_faction_deletion_confirmation_item] [] [] [] []
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
-        - [] [] [] [] [] [] [] [] []
+        - [previous_page_item] [] [] [] [] [] [] [] []
 
 faction_action_danger_zone_transfer_ownership_player_list_inventory:
     type: inventory
@@ -101,4 +101,14 @@ faction_action_danger_zone_player_leave_confirm_inventory:
         - [] [] [] [] [faction_action_danger_zone_leave_faction_confirmation_item] [] [] [] []
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
+        - [previous_page_item] [] [] [] [] [] [] [] []
+
+faction_action_settings_inventory:
+    type: inventory
+    inventory: chest
+    gui: true
+    title: <&color[#1569EA]>Faction Settings
+    slots:
         - [] [] [] [] [] [] [] [] []
+        - [] [] [faction_action_settings_faction_name_item] [] [faction_action_settings_color_item] [] [faction_action_settings_permissions_item] [] []
+        - [previous_page_item] [] [] [] [] [] [] [] []
