@@ -10,7 +10,7 @@ player_chooses_new_owner_of_faction:
         on player clicks item in faction_action_danger_zone_transfer_ownership_player_list_inventory:
             - define new_owner <context.item.flag[player_id]>
 
-            - define faction <player.proc[get_player_faction]>
+            - define faction <player.proc[get_faction]>
 
             - define faction_owner <player[<proc[get_owner].context[<[faction]>]>]>
 

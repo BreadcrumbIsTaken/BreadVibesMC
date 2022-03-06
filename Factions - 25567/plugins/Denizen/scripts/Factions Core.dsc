@@ -8,7 +8,10 @@ faction:
     invite:
         - narrate Invite! format:faction_action_format
     settings:
-        - narrate Settings! format:faction_action_format
+        - define inv <inventory[faction_action_settings_inventory]>
+        # Dynamic dye item based off of faction's color.
+        - inventory d:<[inv]> adjust slot:14 material:<proc[ColorEngine].context[<proc[get_settings].context[<player.flag[faction]>].get[color]>|DYE]>_dye
+        - inventory open d:<[inv]>
     transfer_ownership:
         - if !<player.has_flag[waiting_for_owner_transfer_request_acceptance]>:
             - inventory open d:faction_action_danger_zone_transfer_ownership_player_list_inventory

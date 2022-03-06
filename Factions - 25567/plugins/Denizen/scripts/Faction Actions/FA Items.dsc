@@ -37,13 +37,6 @@ faction_action_faction_name_item:
     mechanisms:
         skull_skin: 06ca0142-cdb9-4a4d-9f3d-1fb220dd2003|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmZiMjkwYTEzZGY4ODI2N2VhNWY1ZmNmNzk2YjYxNTdmZjY0Y2NlZTVjZDM5ZDQ2OTcyNDU5MWJhYmVlZDFmNiJ9fX0=
 
-faction_action_settings_item:
-    type: item
-    material: player_head
-    display name: Faction Settings
-    mechanisms:
-        skull_skin: 9f6ce665-7429-42a4-a5aa-212c51a4b833|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGRmZTVhOTYzODY5NDE1MzQwZDJjZWMwZjgyZDA4ZGY3M2RjYjE2ODQyODQ4N2I1MTRhYThkNGVjMTlmZTJjIn19fQ==
-
 faction_action_invite_players_item:
     type: item
     material: player_head
@@ -57,78 +50,3 @@ faction_action_claim_more_land_item:
     display name: Claim More Land for Your Faction!
     mechanisms:
         skull_skin: 15bec315-811e-433e-a685-bd1c622604f4|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDUyOGVkNDU4MDI0MDBmNDY1YjVjNGUzYTZiN2E5ZjJiNmE1YjNkNDc4YjZmZDg0OTI1Y2M1ZDk4ODM5MWM3ZCJ9fX0=
-
-faction_action_danger_zone_item:
-    type: item
-    material: player_head
-    display name: Danger Zone
-    mechanisms:
-        skull_skin: 042edbfa-1399-4a0f-8772-5ee688897b8b|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2M2MDBmMTkyNWMwZGU4MzNkZjA0MTc2MDRlNDYwZGYyZGM0MmFhOWNhNmNiYzNhN2FjZjZjN2M3M2M3M2Y3MiJ9fX0=
-
-faction_action_danger_zone_transfer_ownership_item:
-    type: item
-    material: player_head
-    display name: Tranfer Faction Ownership
-    mechanisms:
-        skull_skin: 94fbab2d-668a-4a42-860a-c357f7acc19a|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmNmZTg4NDVhOGQ1ZTYzNWZiODc3MjhjY2M5Mzg5NWQ0MmI0ZmMyZTZhNTNmMWJhNzhjODQ1MjI1ODIyIn19fQ==
-
-faction_action_danger_zone_delete_faction_item:
-    type: item
-    material: player_head
-    display name: Delete Faction
-    mechanisms:
-        skull_skin: 5ecfabf0-5253-47b0-a44d-9a0c924081b9|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmViNTg4YjIxYTZmOThhZDFmZjRlMDg1YzU1MmRjYjA1MGVmYzljYWI0MjdmNDYwNDhmMThmYzgwMzQ3NWY3In19fQ==
-
-faction_action_danger_zone_faction_deletion_confirmation_item:
-    type: item
-    material: player_head
-    display name: Yes, I want to delete my faction.
-    lore:
-        - <red>Once you delete your faction,
-        - <red>it is gone FOREVER!!
-    mechanisms:
-        skull_skin: b4e096c1-65b2-4abd-bedc-e67842bb42b1|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2UyYTUzMGY0MjcyNmZhN2EzMWVmYWI4ZTQzZGFkZWUxODg5MzdjZjgyNGFmODhlYThlNGM5M2E0OWM1NzI5NCJ9fX0=
-
-faction_action_danger_zone_leave_faction_item:
-    type: item
-    material: player_head
-    display name: Leave Faction.
-    mechanisms:
-        skull_skin: 6e79d58c-f622-4a11-8852-8b9f1e3ea6cc|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGU0YjhiOGQyMzYyYzg2NGUwNjIzMDE0ODdkOTRkMzI3MmE2YjU3MGFmYmY4MGMyYzViMTQ4Yzk1NDU3OWQ0NiJ9fX0=
-
-faction_action_danger_zone_leave_faction_confirmation_item:
-    type: item
-    material: player_head
-    display name: Yes, I want to leave my faction.
-    lore:
-        - <red>Don't worry, you can
-        - <red>always rejoin. If you
-        - <red>are the owner of the
-        - <red>faction, then you must
-        - <red>tranfer ownership before
-        - <red>leaving. If there is no one
-        - <red>else in the faction, then
-        - <red>the faction will be deleted.
-    mechanisms:
-        skull_skin: b4e096c1-65b2-4abd-bedc-e67842bb42b1|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2UyYTUzMGY0MjcyNmZhN2EzMWVmYWI4ZTQzZGFkZWUxODg5MzdjZjgyNGFmODhlYThlNGM5M2E0OWM1NzI5NCJ9fX0=
-
-faction_action_settings_faction_name_item:
-    type: item
-    material: player_head
-    display name: <yellow>Change faction name
-    mechanisms:
-        skull_skin: 06ca0142-cdb9-4a4d-9f3d-1fb220dd2003|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmZiMjkwYTEzZGY4ODI2N2VhNWY1ZmNmNzk2YjYxNTdmZjY0Y2NlZTVjZDM5ZDQ2OTcyNDU5MWJhYmVlZDFmNiJ9fX0=
-
-faction_action_settings_color_item:
-    type: item
-    material: white_wool
-    display name: <yellow>Change faction color
-
-faction_action_settings_permissions_item:
-    type: item
-    material: player_head
-    display name: <yellow>Change faction permissions
-    lore:
-        - work on later
-    mechanisms:
-        skull_skin: ddddbe2f-62ff-4076-86c6-e46d3aac6e21|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTFjMmY5MjhjNGFiZTMxZTM0MmM4MGM3MWZlZjcyM2U5OTA1NzE3ZjQ5OGRkNzQ2ZWJmOTQxNzk4ODlhNzVjMyJ9fX0=

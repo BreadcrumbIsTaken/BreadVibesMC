@@ -149,7 +149,7 @@ get_all_claims:
 # Written by Breadcrumb
 # Description:
 #   Get's the player's faction.
-get_player_faction:
+get_faction:
     type: procedure
     definitions: player
     script:
