@@ -13,7 +13,7 @@ faction_command:
         - if !<player.has_flag[FACTION]>:
             - inventory open d:faction_action_player_not_in_any_faction_inventory
         - else:
-            - if <player.uuid> == <player.flag[faction].proc[get_owner]>:
+            - if <player> == <player.flag[faction].proc[get_owner]>:
                 - define inv <inventory[faction_action_default_inventory]>
                 - inventory d:<[inv]> adjust slot:14 display_name:<player.flag[faction].proc[get_display_name]>
                 - inventory open d:<[inv]>

@@ -45,11 +45,11 @@ player_accepts_or_denies_offer_to_be_new_owner:
                     - flag server factions.<[old_owner].flag[faction]>.members:<-:<[old_owner].uuid>
                     - flag <[old_owner]> faction:!
                 - if <player.has_flag[faction]>:
-                    - flag server factions.<player.flag[faction]>.members:<-:<player.uuid>
+                    - flag server factions.<player.flag[faction]>.members:<-:<player>
                     - flag player faction:!
 
-                - flag server factions.<[faction]>.owner:<player.uuid>
-                - flag server factions.<[faction]>.members:->:<player.uuid>
+                - flag server factions.<[faction]>.owner:<player>
+                - flag server factions.<[faction]>.members:->:<player>
                 - flag player FACTION:<[faction]>
 
                 # Re-adds the owner to the faction.

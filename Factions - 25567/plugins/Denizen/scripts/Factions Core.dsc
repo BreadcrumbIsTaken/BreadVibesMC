@@ -1,5 +1,3 @@
-# TODO: Rewrite the faction creation system to store the player (<player>) instead of the player's uuid (<player.uuid>). This will work because I'm flagging the server, and not saving it to YAML like I was going to do in the orginal impl.
-
 # Main faction task.
 faction:
     type: task
@@ -28,8 +26,8 @@ faction:
         - flag player FACTION:<[FACTION_UUID]>
 
         - definemap default_faction_data:
-            owner: <player.uuid>
-            members: <list[<player.uuid>]>
+            owner: <player>
+            members: <list[<player>]>
             name: <player.name>'s Faction
             settings:
                 permissions:
@@ -64,10 +62,10 @@ faction:
         - narrate "<&[success]>Successfully deleted the faction!" format:faction_action_format
     leave:
         - define faction <player.flag[faction]>
-        - if <player.uuid> == <[faction].proc[get_owner]>:
+        - if <player> == <[faction].proc[get_owner]>:
             - narrate "Sorry, but you are going to have to tranfer ownership of your faction before you can leave it. You can do so in the <red>Danger Zone<reset> section of the Faction Action Inventory. (<bold>/f<reset>)" format:faction_action_format
             - stop
-        - if <[faction].proc[get_members]> == <list[<player.uuid>]>:
+        - if <[faction].proc[get_members]> == <list[<player>]>:
             - narrate "You have successfully left the faction." format:faction_action_format
             - inject faction.delete
     wipe:
