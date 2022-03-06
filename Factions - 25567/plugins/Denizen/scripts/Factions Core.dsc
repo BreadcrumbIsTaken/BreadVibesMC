@@ -19,7 +19,7 @@ faction:
     create:
         - if !<server.has_flag[factions]>:
             - flag server factions:<map[]>
-            - flag server "factions.all claims:<list[]>"
+            - flag server factions.all_claims:<list[]>
 
         - flag server FACTION_IDS:++
 
@@ -45,7 +45,7 @@ faction:
             claims: <list[<player.location.chunk.cuboid>]>
 
         - note <player.location.chunk.cuboid> as:faction_cuboid_<[FACTION_UUID]>
-        - flag server "factions.all claims:->:<player.location.chunk.cuboid>"
+        - flag server factions.all_claims:->:<player.location.chunk.cuboid>
         - flag server factions.<[FACTION_UUID]>:<[default_faction_data]>
 
         - narrate "<green>Faction created! Check it out by using '/faction'!" format:faction_action_format
@@ -57,7 +57,7 @@ faction:
             - flag <player[<[m]>]> faction:!
 
         - foreach <proc[get_all_claims]> as:cl:
-            - flag server "factions.all claims:<-:<[cl]>"
+            - flag server factions.all_claims:<-:<[cl]>
 
         - flag server factions:<-:<[FACTION_UUID]>
 
@@ -76,11 +76,10 @@ faction:
                 - flag <[p]> FACTION:!
         - foreach <proc[get_factions]> as:i:
             - flag server factions:<-:<[i]>
-        - flag server "factions:<-:all claims"
+        - flag server factions:<-:all_claims
         - flag server factions:!
         - foreach <server.notes[cuboids]> as:n:
             - if <[n].advanced_matches_text[*faction_cuboid_*]>:
                 - note remove as:<[n].note_name>
-        # - flag server "factions.all claims:!"
         - flag server FACTION_IDS:-1
         - narrate Wiped. format:faction_action_format

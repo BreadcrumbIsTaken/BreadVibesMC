@@ -129,7 +129,7 @@ get_factions:
     type: procedure
     script:
         - if <server.flag[factions].exists>:
-            - determine "<server.flag[factions].exclude[all claims]>"
+            - determine <server.flag[factions].exclude[all_claims]>
         - else:
             - determine null
 
@@ -141,7 +141,7 @@ get_all_claims:
     type: procedure
     script:
         - if <server.flag[factions].exists>:
-            - determine "<server.flag[factions.all claims]>"
+            - determine <server.flag[factions.all_claims]>
         - else:
             - determine null
 

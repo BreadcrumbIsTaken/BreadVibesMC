@@ -1,4 +1,4 @@
-prevent_proxy_connections: false
+server_connect_timeout: 5000
 listeners:
 - query_port: 35565
   motd: |2-
@@ -31,7 +31,7 @@ permissions:
   - bungeecord.command.reload
 log_pings: true
 connection_throttle_limit: 3
-server_connect_timeout: 5000
+prevent_proxy_connections: false
 timeout: 30000
 player_limit: -1
 ip_forward: true

@@ -12,8 +12,9 @@
 
 verbose: false
 use-display-name-in-quit-message: false
-config-version: 24
+config-version: 25
 settings:
+  use-dimension-type-for-custom-spawners: false
   time-command-affects-all-worlds: false
   fix-target-selector-tag-completion: true
   log-player-ip-addresses: true
@@ -87,7 +88,7 @@ settings:
     global-max-chunk-send-rate: -1.0
     enable-frustum-priority: false
     global-max-chunk-load-rate: -1.0
-    player-max-concurrent-loads: 4.0
+    player-max-concurrent-loads: 20.0
     global-max-concurrent-loads: 500.0
   packet-limiter:
     kick-message: '&cSent too many packets'
