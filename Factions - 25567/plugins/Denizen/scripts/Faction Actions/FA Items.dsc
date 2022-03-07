@@ -33,7 +33,7 @@ faction_action_not_in_any_faction_item:
 faction_action_faction_name_item:
     type: item
     material: player_head
-    display name: PLAYER's Faction
+    display name: FACTION NAME
     mechanisms:
         skull_skin: 06ca0142-cdb9-4a4d-9f3d-1fb220dd2003|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmZiMjkwYTEzZGY4ODI2N2VhNWY1ZmNmNzk2YjYxNTdmZjY0Y2NlZTVjZDM5ZDQ2OTcyNDU5MWJhYmVlZDFmNiJ9fX0=
 

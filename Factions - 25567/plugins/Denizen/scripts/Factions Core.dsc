@@ -2,9 +2,17 @@
 faction:
     type: task
     script:
-        - narrate Claim! format:faction_action_format
-    edit:
-        - narrate Edit! format:faction_action_format
+        - if !<player.has_flag[FACTION]>:
+            - inventory open d:faction_action_player_not_in_any_faction_inventory
+        - else:
+            - if <player> == <player.flag[faction].proc[get_owner]>:
+                - define inv <inventory[faction_action_default_inventory]>
+                - inventory d:<[inv]> adjust slot:14 display_name:<player.flag[faction].proc[get_display_name]>
+                - inventory open d:<[inv]>
+            - else:
+                - define inv <inventory[faction_action_player_not_owner_inventory]>
+                - inventory d:<[inv]> adjust slot:14 display_name:<player.flag[faction].proc[get_display_name]>
+                - inventory open d:<[inv]>
     invite:
         - narrate Invite! format:faction_action_format
     settings:
@@ -39,7 +47,7 @@ faction:
                     - MembersGetBasicPerms
                     - OutsidersDoNotGetPerms
                 color: <white>
-            display name: <white><player.name>'s Faction
+            display_name: <white><player.name>'s Faction
             rivalries: <list[]>
             allies: <list[]>
             power: 100

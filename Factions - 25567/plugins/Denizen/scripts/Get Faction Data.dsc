@@ -7,7 +7,7 @@ get_display_name:
     definitions: id
     script:
         - if <server.flag[factions].exists>:
-            - determine "<server.flag[factions.<[id]>.display name]>"
+            - determine <server.flag[factions.<[id]>.display_name]>
         - else:
             - determine null
 
