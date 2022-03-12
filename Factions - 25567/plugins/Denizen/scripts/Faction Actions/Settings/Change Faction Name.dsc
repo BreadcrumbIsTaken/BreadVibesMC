@@ -19,4 +19,7 @@ player_editing_name_change_sign:
     type: world
     events:
         after player changes sign flagged:editing_faction_name_sign:
+            - if <context.new.get[1].length> < 3:
+                - narrate "Your faction's name must have <yellow>3-15<reset> characters!" format:faction_action_error_format
+                - stop
             - run change_faction_name def.faction:<player.proc[get_faction]> def.name:<context.new>
