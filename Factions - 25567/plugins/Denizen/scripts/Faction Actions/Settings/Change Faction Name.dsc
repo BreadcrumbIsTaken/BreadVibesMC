@@ -2,8 +2,9 @@ change_faction_name:
     type: task
     definitions: faction|name
     script:
-        - flag server factions.<[faction]>.name:<[name].get[1]>
-        - flag server factions.<[faction]>.display_name:<[faction].proc[get_settings].get[color]><[name].get[1]>
+        - run change_faction_setting def.faction:<[faction]> def.setting:name def.value:<[name].get[1]>
+        - run change_faction_setting def.faction:<[faction]> def.setting:display_name def.value:<[faction].proc[get_settings].get[color]><[name].get[1]>
+
         - run faction_name_change_textbox.finish
         - narrate "Your faction is now named: <[faction].proc[get_display_name]>!" format:faction_action_format
 

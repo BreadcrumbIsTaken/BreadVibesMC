@@ -8,3 +8,5 @@ faction_action_settings_inventory_click_events:
         on player clicks faction_action_settings_faction_name_item in faction_action_settings_inventory:
             - inventory close
             - run faction_name_change_textbox
+        on player clicks faction_action_settings_color_item in faction_action_settings_inventory:
+            - inventory open d:faction_action_settings_color_change_inventory
