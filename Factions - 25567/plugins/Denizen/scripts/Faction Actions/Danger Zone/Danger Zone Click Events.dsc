@@ -14,7 +14,7 @@ danger_zone_click_events:
         on player clicks previous_page_item in faction_action_danger_zone_player_leave_confirm_inventory:
             - inventory open d:faction_action_danger_zone_inventory
         on player clicks previous_page_item in faction_action_danger_zone_inventory:
-            - inventory open d:faction_action_default_inventory
+            - run open_faction_action_inventory
 
         # Deletes the faction from the Danger Zone Confirmation Inventory.
         on player clicks faction_action_danger_zone_faction_deletion_confirmation_item in faction_action_danger_zone_delete_confirmation_inventory:
