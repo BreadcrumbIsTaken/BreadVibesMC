@@ -52,7 +52,7 @@ match_color_code_to_dye:
         - else if <[color]> == <blue>:
             - determine blue
         - else if <[color]> == <dark_blue>:
-            - determine dark_blue
+            - determine cyan
         - else if <[color]> == <light_purple>:
             - determine magenta
         - else if <[color]> == <dark_purple>:
