@@ -17,8 +17,9 @@ player_chooses_new_owner_of_faction:
             - if !<player.has_flag[has_ownership_offer]>:
                 - if <[new_owner].has_flag[faction]>:
                     - if <[new_owner].uuid> == <[faction_owner].uuid>:
-                        - narrate "<&color[#1569EA]>You can't transfer ownership to yourself! You are already the owner." format:faction_action_format
+                        - narrate "You can't transfer ownership to yourself! You are already the owner." format:faction_action_error_format
                         - inventory close
+                        - stop
                     - flag player waiting_for_owner_transfer_request_acceptance:<[new_owner]> expire:10m
                     - inventory close
                 - else:
