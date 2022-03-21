@@ -47,26 +47,39 @@ faction:
             rivalries: <list[]>
             allies: <list[]>
             power: 100
-            claims: <list[<player.location.chunk.cuboid>]>
+            claims: <list[]>
 
-        - note <player.location.chunk.cuboid> as:faction_cuboid_<[FACTION_UUID]>
         - flag server factions.all_claims:->:<player.location.chunk.cuboid>
         - flag server factions.<[FACTION_UUID]>:<[default_faction_data]>
+        - run faction.claim.claim_chunk def:<player.location.chunk.cuboid>|<[FACTION_UUID]>
 
         - narrate "<green>Faction created! Check it out by using '/faction'!" format:faction_action_format
     delete:
-        - define FACTION_UUID <player.flag[FACTION]>
+        # - define FACTION_UUID <player.flag[FACTION]>
 
-        - define members <[FACTION_UUID].proc[get_members]>
-        - foreach <[members]> as:m:
-            - flag <player[<[m]>]> faction:!
+        # - define members <[FACTION_UUID].proc[get_members]>
+        # - foreach <[members]> as:m:
+        #     - flag <player[<[m]>]> faction:!
 
-        - foreach <proc[get_all_claims]> as:cl:
-            - flag server factions.all_claims:<-:<[cl]>
+        # - foreach <proc[get_all_claims]> as:cl:
+        #     - flag server factions.all_claims:<-:<[cl]>
+        #     - run faction.claim.unclaim_chunk def:<[FACTION_UUID]>|<[cl]>
 
-        - flag server factions:<-:<[FACTION_UUID]>
+        # - flag server factions:<-:<[FACTION_UUID]>
 
-        - narrate "<&[success]>Successfully deleted the faction!" format:faction_action_format
+        # - narrate "<&[success]>Successfully deleted the faction!" format:faction_action_format
+        - define faction <player.proc[get_faction]>
+
+        - define members <[faction].proc[get_members]>
+        - foreach <[members]> as i:
+            - flag <[i]> faction:!
+
+        - foreach <[faction].proc[get_claims]> as:i:
+            - flag server factions.all_claims:<-:<[i]>
+            - run faction.claim.unclaim_chunk def:<[faction]>|<[i]>
+
+        - flag server factions:<-:<[faction]>
+        - narrate "<green>Successfully deleted faction!" format:faction_action_format
     leave:
         - define faction <player.flag[faction]>
         - if <player> == <[faction].proc[get_owner]>:
@@ -79,12 +92,46 @@ faction:
         - foreach <server.offline_players.include[<server.online_players>]> as:p:
             - if <[p].has_flag[FACTION]>:
                 - flag <[p]> FACTION:!
-        - foreach <proc[get_factions]> as:i:
-            - flag server factions:<-:<[i]>
-        - flag server factions:<-:all_claims
-        - flag server factions:!
-        - foreach <server.notes[cuboids]> as:n:
-            - if <[n].advanced_matches_text[*faction_cuboid_*]>:
-                - note remove as:<[n].note_name>
-        - flag server FACTION_IDS:-1
+        - define factions <proc[get_factions]>
+        - if <[factions]> != null:
+            - foreach <proc[get_factions]> as:i:
+                - flag server factions:<-:<[i]>
+            - flag server factions:<-:all_claims
+            - flag server factions:!
+            - foreach <server.notes[cuboids]> as:n:
+                - if <[n].note_name.advanced_matches_text[faction_*_chunk_claim_*]>:
+                    - note remove as:<[n].note_name>
+            - flag server FACTION_IDS:-1
         - narrate Wiped. format:faction_action_format
+    claim:
+        claim_chunk:
+            # Chunk
+            - define loc <[1]>
+            # Faction
+            - define faction <[2]>
+
+            # If there are no claims, set to 0.
+            - define claimed_chunks <[faction].proc[get_claims].if_null[0]>
+
+            #| If claimed_chunks == 0 (meaning there are no claims already), return 0 again.
+            #| If claimed_chunks != 0 (meaning there are already claims), return the amount of claims.
+            - define claim_number <element[<[claimed_chunks].equals[0]>].if_true[0].if_false[<[claimed_chunks].size>]>
+
+            # Now, time for a little rant:
+            # WHY IS IT ".size" AND NOT ".length" TO GET THE NUMBER OF ITEMS IN A LIST????????????
+
+            - if <[claim_number]> == 0:
+                # Sets it to 1
+                - define claim_number:++
+            - else:
+                - foreach <[claimed_chunks]>:
+                    - define claimed_chunks:++
+
+            - note <[loc]> as:<[faction]>_chunk_claim_<[claim_number]>
+
+            - flag server factions.<[faction]>.claims:->:<[faction]>_chunk_claim_<[claim_number]>
+        unclaim_chunk:
+            - define faction <[1]>
+            - define chunk <[2]>
+
+            - note remove as:<[faction]>_chunk_claim_<[chunk]>

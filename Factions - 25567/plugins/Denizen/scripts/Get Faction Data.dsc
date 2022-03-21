@@ -8,8 +8,6 @@ get_display_name:
     script:
         - if <server.flag[factions].exists>:
             - determine <server.flag[factions.<[id]>.display_name]>
-        - else:
-            - determine null
 
 # Get Name Procedure
 # Written by Breadcrumb
@@ -21,8 +19,6 @@ get_name:
     script:
         - if <server.flag[factions].exists>:
             - determine <server.flag[factions.<[id]>.name]>
-        - else:
-            - determine null
 
 # Get Settings Procedure
 # Written by Breadcrumb
@@ -34,8 +30,6 @@ get_settings:
     script:
         - if <server.flag[factions].exists>:
             - determine <server.flag[factions.<[id]>.settings]>
-        - else:
-            - determine null
 
 # Get Owner Procedure
 # Written by Breadcrumb
@@ -47,8 +41,6 @@ get_owner:
     script:
         - if <server.flag[factions].exists>:
             - determine <server.flag[factions.<[id]>.owner]>
-        - else:
-            - determine null
 
 # Get Members Procedure
 # Written by Breadcrumb
@@ -60,8 +52,6 @@ get_members:
     script:
         - if <server.flag[factions].exists>:
             - determine <server.flag[factions.<[id]>.members]>
-        - else:
-            - determine null
 
 # Get Rivalries Procedure
 # Written by Breadcrumb
@@ -73,8 +63,6 @@ get_rivalries:
     script:
         - if <server.flag[factions].exists>:
             - determine <server.flag[factions.<[id]>.rivalries]>
-        - else:
-            - determine null
 
 # Get Allies Procedure
 # Written by Breadcrumb
@@ -86,8 +74,6 @@ get_allies:
     script:
         - if <server.flag[factions].exists>:
             - determine <server.flag[factions.<[id]>.allies]>
-        - else:
-            - determine null
 
 # Get Power Procedure
 # Written by Breadcrumb
@@ -99,8 +85,6 @@ get_power:
     script:
         - if <server.flag[factions].exists>:
             - determine <server.flag[factions.<[id]>.power]>
-        - else:
-            - determine null
 
 # Get Claims Procedure
 # Written by Breadcrumb
@@ -112,8 +96,6 @@ get_claims:
     script:
         - if <server.flag[factions].exists>:
             - determine <server.flag[factions.<[id]>.claims]>
-        - else:
-            - determine null
 
 # get_teleport_coords:
 #     type: procedure
@@ -130,8 +112,6 @@ get_factions:
     script:
         - if <server.flag[factions].exists>:
             - determine <server.flag[factions].exclude[all_claims]>
-        - else:
-            - determine null
 
 # Get All Claims Procedure
 # Written by Breadcrumb
@@ -142,8 +122,6 @@ get_all_claims:
     script:
         - if <server.flag[factions].exists>:
             - determine <server.flag[factions.all_claims]>
-        - else:
-            - determine null
 
 # Get Player Faction Procedure
 # Written by Breadcrumb
@@ -155,5 +133,3 @@ get_faction:
     script:
         - if <[player].has_flag[faction]>:
             - determine <[player].flag[faction]>
-        - else:
-            - determine null
