@@ -55,19 +55,6 @@ faction:
 
         - narrate "<green>Faction created! Check it out by using '/faction'!" format:faction_action_format
     delete:
-        # - define FACTION_UUID <player.flag[FACTION]>
-
-        # - define members <[FACTION_UUID].proc[get_members]>
-        # - foreach <[members]> as:m:
-        #     - flag <player[<[m]>]> faction:!
-
-        # - foreach <proc[get_all_claims]> as:cl:
-        #     - flag server factions.all_claims:<-:<[cl]>
-        #     - run faction.claim.unclaim_chunk def:<[FACTION_UUID]>|<[cl]>
-
-        # - flag server factions:<-:<[FACTION_UUID]>
-
-        # - narrate "<&[success]>Successfully deleted the faction!" format:faction_action_format
         - define faction <player.proc[get_faction]>
 
         - define members <[faction].proc[get_members]>
