@@ -43,8 +43,10 @@ faction:
                     - MembersGetBasicPerms
                     - OutsidersDoNotGetPerms
                 color: <white>
+                tagline_color: <white>
             display_name: <white><player.name>'s Faction
             tagline: Cool Faction
+            tagline_display: <white>Cool Faction
             rivalries: <list[]>
             allies: <list[]>
             power: 100

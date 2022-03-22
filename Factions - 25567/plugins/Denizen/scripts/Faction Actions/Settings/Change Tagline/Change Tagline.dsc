@@ -3,8 +3,9 @@ change_faction_tagline:
     definitions: faction|tagline
     script:
         - run change_faction_setting def.faction:<[faction]> def.setting:tagline def.value:<[tagline].get[1]>
+        - run change_faction_setting def.faction:<[faction]> def.setting:tagline_display def.value:<[faction].proc[get_tagline_color]><[tagline].get[1]>
         - run faction_tagline_change_textbox.finish
-        - narrate "Your faction's tagline is now: <[faction].proc[get_tagline]>!" format:faction_action_format
+        - narrate "Your faction's tagline is now: <[faction].proc[get_tagline_display]><reset>!" format:faction_action_format
 
 faction_tagline_change_textbox:
     type: task

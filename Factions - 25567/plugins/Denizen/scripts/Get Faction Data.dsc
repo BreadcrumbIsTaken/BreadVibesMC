@@ -104,6 +104,20 @@ get_tagline:
         - if <server.flag[factions].exists>:
             - determine <server.flag[factions.<[id]>.tagline]>
 
+get_tagline_display:
+    type: procedure
+    definitions: id
+    script:
+        - if <server.flag[factions].exists>:
+            - determine <server.flag[factions.<[id]>.tagline_display]>
+
+get_tagline_color:
+    type: procedure
+    definitions: id
+    script:
+        - if <server.flag[factions].exists>:
+            - determine <server.flag[factions.<[id]>.settings.tagline_color]>
+
 # get_teleport_coords:
 #     type: procedure
 #     definitions: id

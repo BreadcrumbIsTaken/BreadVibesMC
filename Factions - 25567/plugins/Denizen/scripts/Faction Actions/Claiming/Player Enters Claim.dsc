@@ -15,6 +15,6 @@ enter_claim:
             # will only match:
             #  faction_32
             - define faction <context.area.note_name.proc[get_faction_from_claim_name]>
-            - title title:<[faction].proc[get_display_name]> stay:2s targets:<player> subtitle:<&color[#1569EA]><[faction].proc[get_tagline]>
+            - title title:<[faction].proc[get_display_name]> stay:2s targets:<player> subtitle:<[faction].proc[get_tagline_display]>
         on player exits faction_*_chunk_claim_*:
             - title "title:<green>- Wilderness -" targets:<player>
