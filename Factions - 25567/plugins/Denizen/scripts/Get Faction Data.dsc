@@ -133,3 +133,21 @@ get_faction:
     script:
         - if <[player].has_flag[faction]>:
             - determine <[player].flag[faction]>
+
+get_faction_from_claim_name:
+    type: procedure
+    definitions: claim
+    script:
+        # Regex:
+        #  Negative lookahead:
+        #   Matches "faction_"
+        #   Matches any character "."
+        #   Matches previous token between zero and unlimited times as possible "*"
+        #  Matches "_chunk"
+        #  Matches any character "."
+        #  Matches previous token between zero and unlimited times as possible "*"
+        # Example:
+        #  faction_32_chunk_claim_5
+        # will only match:
+        #  faction_32
+        - determine <[claim].replace_text[regex:(?!faction_.*)_chunk.*]>
