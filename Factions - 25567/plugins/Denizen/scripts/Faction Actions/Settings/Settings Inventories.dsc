@@ -5,7 +5,7 @@ faction_action_settings_inventory:
     title: <&color[#1569EA]>Faction Settings
     slots:
         - [] [] [] [] [] [] [] [] []
-        - [] [] [faction_action_settings_faction_name_item] [] [faction_action_settings_color_item] [] [faction_action_settings_permissions_item] [] []
+        - [] [] [faction_action_settings_faction_name_item] [faction_action_settings_color_item] [faction_action_settings_permissions_item] [faction_action_settings_tagline_item] [] [] []
         - [previous_page_item] [] [] [] [] [] [] [] []
 
 faction_action_settings_color_change_inventory:

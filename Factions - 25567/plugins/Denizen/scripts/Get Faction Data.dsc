@@ -97,6 +97,13 @@ get_claims:
         - if <server.flag[factions].exists>:
             - determine <server.flag[factions.<[id]>.claims]>
 
+get_tagline:
+    type: procedure
+    definitions: id
+    script:
+        - if <server.flag[factions].exists>:
+            - determine <server.flag[factions.<[id]>.tagline]>
+
 # get_teleport_coords:
 #     type: procedure
 #     definitions: id

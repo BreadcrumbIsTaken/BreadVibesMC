@@ -18,6 +18,8 @@ faction_action_settings_color_item:
     type: item
     material: white_wool
     display name: <yellow>Change faction color
+    lore:
+        - <white>Change the color of your faction!
 
 faction_action_settings_permissions_item:
     type: item
@@ -27,3 +29,13 @@ faction_action_settings_permissions_item:
         - work on later
     mechanisms:
         skull_skin: ddddbe2f-62ff-4076-86c6-e46d3aac6e21|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTFjMmY5MjhjNGFiZTMxZTM0MmM4MGM3MWZlZjcyM2U5OTA1NzE3ZjQ5OGRkNzQ2ZWJmOTQxNzk4ODlhNzVjMyJ9fX0=
+
+faction_action_settings_tagline_item:
+    type: item
+    material: player_head
+    display name: <yellow>Change faction tagline
+    lore:
+        - <white>Shows up beneath faction name
+        - <white>when a player enters your faction.
+    mechanisms:
+        skull_skin: 1d2e29ca-8b4e-4ef6-b025-3ef4fb62e92c|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjFjNjJmOGRlM2IwZDQwZDYyYTNjNGNlNjUzMTRmMDNhNGIxNjQwMWQ4OTViYWRjMWRkMDhmZTg1YjlmYzFhMyJ9fX0=
