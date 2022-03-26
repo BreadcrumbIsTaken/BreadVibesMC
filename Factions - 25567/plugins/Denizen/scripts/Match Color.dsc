@@ -1,3 +1,7 @@
+#| These procedures should not be used by anything else, as these are just for
+#| choosing the colors for a faction based on the dye chosen in the inventory.
+#| These are not actual color comparisons.
+
 match_dye_to_color_code:
     type: procedure
     definitions: item
