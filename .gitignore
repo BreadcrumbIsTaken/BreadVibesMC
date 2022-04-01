@@ -60,3 +60,5 @@ Factions - 25567/plugins/Denizen/scripts/Third Party
 BungeeCord - 35565/config.yml
 Factions - 25567/paper.yml
 MainLobby - 25566/server.properties
+
+**/secrets.secret
