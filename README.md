@@ -1,10 +1,6 @@
-# BreadVibesMC 🍞 ***UNSTABLE BRANCH***
+# BreadVibesMC 🍞
 
 [![wakatime](https://wakatime.com/badge/user/579d6e69-f91a-4a71-9119-b9f35cac7d1f/project/b8d3bc53-9e63-43ed-a149-4ba9deedadee.svg)](https://wakatime.com/badge/user/579d6e69-f91a-4a71-9119-b9f35cac7d1f/project/b8d3bc53-9e63-43ed-a149-4ba9deedadee)
-
-the `unstable` branch is for code that has not been tested an written on the go. This code may not work AT ALL and is mostly used for me to get my ideas and implementations down.
-
-**do NOT ever use code from this branch. again, it is ONLY for putting code down on the go and is not tested at all.**
 
 probably the most epic gotdam minecraft server you've ever seen *(that is still in development)*!
 
