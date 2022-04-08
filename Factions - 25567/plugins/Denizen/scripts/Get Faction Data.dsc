@@ -172,3 +172,13 @@ get_faction_from_claim_name:
         # will only match:
         #  faction_32
         - determine <[claim].replace_text[regex:(?!faction_.*)_chunk.*]>
+
+get_faction_from_claim:
+    type: procedure
+    definitions: claim
+    script:
+        - foreach <proc[get_factions]> as:faction:
+            - if <[claim]> in <[faction].proc[get_claims]>:
+                - determine <[faction]>
+            - else:
+                - foreach next

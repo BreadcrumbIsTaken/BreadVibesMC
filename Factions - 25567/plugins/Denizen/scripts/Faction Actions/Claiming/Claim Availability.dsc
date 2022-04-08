@@ -1,5 +1,5 @@
 is_chunk_cuboid_claimable:
-    type: proc
+    type: procedure
     definitions: cuboid
     script:
         - define claims <proc[get_all_claims].if_null[none]>
