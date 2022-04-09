@@ -155,28 +155,22 @@ get_faction:
         - if <[player].has_flag[faction]>:
             - determine <[player].flag[faction]>
 
-get_faction_from_claim_name:
+get_faction_name_from_claim:
     type: procedure
     definitions: claim
     script:
-        # Regex:
-        #  Negative lookahead:
-        #   Matches "faction_"
-        #   Matches any character "."
-        #   Matches previous token between zero and unlimited times as possible "*"
-        #  Matches "_chunk"
-        #  Matches any character "."
-        #  Matches previous token between zero and unlimited times as possible "*"
-        # Example:
-        #  faction_32_claim_number_5
-        # will only match:
-        #  faction_32
-        - determine <[claim].replace_text[regex:(?!faction_.*)_claim.*]>
+        - foreach <proc[get_all_claims]> key:claim_name as:location:
+            - foreach <proc[get_factions]> key:faction as:faction_data:
+                - foreach <[faction_data].get[claims]> as:faction_claim:
+                    - if <[claim]> == <[faction_claim]>:
+                        - determine <[faction]>
 
 get_faction_from_claim:
     type: procedure
     definitions: claim
     script:
-        - foreach <proc[get_factions]> as:faction:
-            - if <[claim]> in <[faction].proc[get_claims]>:
-                - determine <[faction]>
+        - foreach <proc[get_all_claims]> key:claim_name as:location:
+            - foreach <proc[get_factions]> as:faction:
+                - foreach <[faction].get[claims]> as:faction_claim:
+                    - if <[claim]> == <[faction_claim]>:
+                        - determine <[faction]>
