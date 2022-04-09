@@ -168,10 +168,10 @@ get_faction_from_claim_name:
         #  Matches any character "."
         #  Matches previous token between zero and unlimited times as possible "*"
         # Example:
-        #  faction_32_chunk_claim_5
+        #  faction_32_claim_number_5
         # will only match:
         #  faction_32
-        - determine <[claim].replace_text[regex:(?!faction_.*)_chunk.*]>
+        - determine <[claim].replace_text[regex:(?!faction_.*)_claim.*]>
 
 get_faction_from_claim:
     type: procedure
@@ -180,5 +180,3 @@ get_faction_from_claim:
         - foreach <proc[get_factions]> as:faction:
             - if <[claim]> in <[faction].proc[get_claims]>:
                 - determine <[faction]>
-            - else:
-                - foreach next

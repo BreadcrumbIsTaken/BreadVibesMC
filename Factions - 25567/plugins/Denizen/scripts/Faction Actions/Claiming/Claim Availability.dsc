@@ -6,7 +6,7 @@ is_chunk_cuboid_claimable:
         - if <[claims]> == none:
             - determine true
         - else:
-            - if <[cuboid]> in <[claims]>:
+            - foreach <[claims]> key:claim_name as:location:
+                - if <[claims].get[<[claim_name]>]> == <[cuboid]>:
+                    - determine true
                 - determine false
-            - else:
-                - determine true
