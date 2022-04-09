@@ -24,7 +24,11 @@ faction:
     create:
         - if !<server.has_flag[factions]>:
             - flag server factions:<map[]>
-            - flag server factions.all_claims:<list[]>
+            # Map:
+            # claim_name = claim_location
+            # ex:
+            # faction_1_claim_number_1 = cu@...
+            - flag server factions.all_claims:<map[]>
 
         - flag server FACTION_IDS:++
 
@@ -52,21 +56,18 @@ faction:
             power: 100
             claims: <list[]>
 
-        - flag server factions.all_claims:->:<player.location.chunk.cuboid>
         - flag server factions.<[FACTION_UUID]>:<[default_faction_data]>
-        - run faction.claim.claim_chunk def:<player.location.chunk.cuboid>|<[FACTION_UUID]>
+        - run faction.claiming.claim def:<player.location.chunk.cuboid>|<[FACTION_UUID]>
 
         - narrate "<green>Faction created! Check it out by using '/faction'!" format:faction_action_format
     delete:
         - define faction <player.proc[get_faction]>
 
         - define members <[faction].proc[get_members]>
-        - foreach <[members]> as i:
+        - foreach <[members]> as:i:
             - flag <[i]> faction:!
 
-        - foreach <[faction].proc[get_claims]> as:i:
-            - flag server factions.all_claims:<-:<[i]>
-            - run faction.claim.unclaim_chunk def:<[faction]>|<[i]>
+        - run faction.claiming.unclaim_all def:<[faction]>
 
         - flag server factions:<-:<[faction]>
         - narrate "<green>Successfully deleted faction!" format:faction_action_format
@@ -84,44 +85,38 @@ faction:
                 - flag <[p]> FACTION:!
         - define factions <proc[get_factions]>
         - if <[factions]> != null:
-            - foreach <proc[get_factions]> as:i:
-                - flag server factions:<-:<[i]>
-            - flag server factions:<-:all_claims
-            - flag server factions:!
-            - foreach <server.notes[cuboids]> as:n:
-                - if <[n].note_name.advanced_matches_text[faction_*_chunk_claim_*]>:
-                    - note remove as:<[n].note_name>
             - flag server FACTION_IDS:-1
+            - foreach <[factions].keys> as:faction:
+                - run faction.claiming.unclaim_all def:<[faction]>
+            - flag server factions:!
         - narrate Wiped. format:faction_action_format
-    claim:
-        claim_chunk:
-            # Chunk
+    claiming:
+        claim:
             - define loc <[1]>
-            # Faction
             - define faction <[2]>
 
-            # If there are no claims, set to 0.
-            - define claimed_chunks <[faction].proc[get_claims].if_null[0]>
+            - define claim_number <[faction].proc[get_claims].equals[0].if_true[1].if_false[<[faction].proc[get_claims].size.add[1]>]>
 
-            #| If claimed_chunks == 0 (meaning there are no claims already), return 0 again.
-            #| If claimed_chunks != 0 (meaning there are already claims), return the amount of claims.
-            - define claim_number <element[<[claimed_chunks].equals[0]>].if_true[0].if_false[<[claimed_chunks].size>]>
-
-            # Now, time for a little rant:
-            # WHY IS IT ".size" AND NOT ".length" TO GET THE NUMBER OF ITEMS IN A LIST????????????
-
-            - if <[claim_number]> == 0:
-                # Sets it to 1
-                - define claim_number:++
-            - else:
-                - foreach <[claimed_chunks]>:
-                    - define claimed_chunks:++
-
-            - note <[loc]> as:<[faction]>_chunk_claim_<[claim_number]>
-
-            - flag server factions.<[faction]>.claims:->:<[faction]>_chunk_claim_<[claim_number]>
-        unclaim_chunk:
+            - define claim_name <[faction]>_claim_number_<[claim_number]>
+            - note <[loc]> as:<[claim_name]>
+            - define name_loc_map <map[<[claim_name]>=<[loc]>]>
+            - define all_claims <proc[get_all_claims]>
+            - flag server factions.all_claims:<[all_claims].include[<[name_loc_map]>]>
+            - flag server factions.<[faction]>.claims:->:<[claim_name]>
+        unclaim:
             - define faction <[1]>
-            - define chunk <[2]>
+            - define loc <[2]>
 
-            - note remove as:<[faction]>_chunk_claim_<[chunk]>
+            - foreach <proc[get_all_claims]> key:claim_name as:location:
+                - if <[location]> == <[loc]>:
+                    - flag server factions.<[faction]>.claims:<-:<[claim_name]>
+                    - flag server factions.all_claims:<proc[get_all_claims].exclude[<[claim_name]>]>
+                    - note remove as:<[claim_name]>
+        unclaim_all:
+            - define faction <[1]>
+
+            - foreach <proc[get_all_claims]> key:claim_name as:location:
+                - if <[faction].proc[get_claims]> contains <[claim_name]>:
+                    - flag server factions.<[faction]>.claims:<-:<[claim_name]>
+                    - flag server factions.all_claims:<proc[get_all_claims].exclude[<[claim_name]>]>
+                    - note remove as:<[claim_name]>
