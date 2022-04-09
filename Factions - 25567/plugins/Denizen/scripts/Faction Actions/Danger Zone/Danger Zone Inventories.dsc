@@ -4,6 +4,8 @@ faction_action_danger_zone_inventory:
     gui: true
     title: <&color[#1569EA]>Faction Actions <reset>(<red>Danger Zone<reset>)
     debug: false
+    procedural items:
+        - determine <item[filler].repeat_as_list[54]>
     slots:
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
@@ -18,6 +20,8 @@ faction_action_danger_zone_delete_confirmation_inventory:
     gui: true
     title: <red>Are you sure?
     debug: false
+    procedural items:
+        - determine <item[filler].repeat_as_list[54]>
     slots:
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
@@ -31,7 +35,8 @@ faction_action_danger_zone_player_leave_confirm_inventory:
     inventory: chest
     gui: true
     title: <red>Are you sure?
-    debug: false
+    procedural items:
+        - determine <item[filler].repeat_as_list[54]>
     slots:
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []

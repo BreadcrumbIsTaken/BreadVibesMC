@@ -4,6 +4,8 @@ faction_action_default_inventory:
     gui: true
     title: <&color[#1569EA]>Faction Actions
     debug: false
+    procedural items:
+        - determine <item[filler].repeat_as_list[54]>
     slots:
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [faction_action_faction_name_item] [] [] [] []
@@ -18,6 +20,8 @@ faction_action_player_not_in_any_faction_inventory:
     gui: true
     title: <&color[#1569EA]>Faction Actions
     debug: false
+    procedural items:
+        - determine <item[filler].repeat_as_list[54]>
     slots:
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [faction_action_not_in_any_faction_item] [] [] [] []
@@ -31,6 +35,8 @@ faction_action_player_not_owner_inventory:
     inventory: chest
     gui: true
     title: <&color[#1569EA]>Faction Actions
+    procedural items:
+        - determine <item[filler].repeat_as_list[54]>
     slots:
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
