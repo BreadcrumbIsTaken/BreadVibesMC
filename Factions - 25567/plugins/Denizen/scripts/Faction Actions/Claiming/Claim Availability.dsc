@@ -2,7 +2,7 @@ is_chunk_cuboid_claimable:
     type: procedure
     definitions: cuboid
     script:
-        - define claims <proc[get_all_claims].if_null[none]>
+        - define claims <proc[get_all_claims]||none>
         - if <[claims]> == none:
             - determine true
         - else:
