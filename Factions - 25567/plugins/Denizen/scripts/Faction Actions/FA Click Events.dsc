@@ -1,3 +1,4 @@
+# Click events for the Faction Action inventory.
 player_clicks_in_faction_action_inventory:
     type: world
     events:

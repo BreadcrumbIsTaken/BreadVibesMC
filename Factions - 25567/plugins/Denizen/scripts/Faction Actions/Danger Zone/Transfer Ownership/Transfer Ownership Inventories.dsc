@@ -1,4 +1,5 @@
 # TODO: Add pagination support.
+# List of all the players that you can transfer ownership to.
 faction_action_danger_zone_transfer_ownership_player_list_inventory:
     type: inventory
     inventory: chest

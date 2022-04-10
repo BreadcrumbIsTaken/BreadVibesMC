@@ -1,3 +1,4 @@
+# The main Faction Action Danger Zone Inventory.
 faction_action_danger_zone_inventory:
     type: inventory
     inventory: chest
@@ -14,6 +15,7 @@ faction_action_danger_zone_inventory:
         - [] [] [] [] [] [] [] [] []
         - [previous_page_item] [] [] [] [] [] [] [] []
 
+# The deletion confirmation inventory.
 faction_action_danger_zone_delete_confirmation_inventory:
     type: inventory
     inventory: chest
@@ -30,6 +32,7 @@ faction_action_danger_zone_delete_confirmation_inventory:
         - [] [] [] [] [] [] [] [] []
         - [previous_page_item] [] [] [] [] [] [] [] []
 
+# The leave confirmation inventory.
 faction_action_danger_zone_player_leave_confirm_inventory:
     type: inventory
     inventory: chest

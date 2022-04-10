@@ -1,7 +1,4 @@
-# List Factions Command
-# Written by Breadcrumb
-# Description:
-#   Opens the inventory that lists all the factions that are currently existing.
+# Command to open a list of all the existing factions on the server.
 list_factions_command:
     type: command
     name: listfactions
@@ -13,6 +10,7 @@ list_factions_command:
     script:
         - inventory open d:list_factions_command_list_inventory
 
+# The inventory that lists all the factions and it's data on the server.
 list_factions_command_list_inventory:
     type: inventory
     inventory: chest

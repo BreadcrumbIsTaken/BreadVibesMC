@@ -1,3 +1,4 @@
+# Opens the faction action inventory.
 open_faction_action_inventory:
     type: task
     script:
@@ -6,6 +7,7 @@ open_faction_action_inventory:
         - inventory d:<[inv]> adjust slot:14 lore:<player.proc[get_faction].proc[get_tagline_display]>
         - inventory open d:<[inv]>
 
+# Opens the faction action member inventory. (The one that shows up if the player is not the owner of the faction)
 open_faction_action_member_inventory:
     type: task
     script:

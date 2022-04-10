@@ -1,3 +1,4 @@
+# Faction Action tranfer ownership inventory click events.
 faction_action_transfer_ownership_click_events:
     type: world
     events:

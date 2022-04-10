@@ -1,3 +1,4 @@
+# Changes the color of the faction's tagline based on which dye they clicked in the inventory.
 change_faction_color_click_event:
     type: world
     events:

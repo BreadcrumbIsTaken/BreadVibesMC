@@ -1,3 +1,4 @@
+# Faction Action Danger Zone inventory click events.
 danger_zone_click_events:
     type: world
     events:

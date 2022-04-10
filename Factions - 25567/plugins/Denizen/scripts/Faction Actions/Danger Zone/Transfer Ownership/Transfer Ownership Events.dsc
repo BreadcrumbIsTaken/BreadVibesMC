@@ -1,9 +1,6 @@
 # TODO: So far, this only works for those who are not part of the faction (as far as I can tell. I have not tested what happens if so yet, so I may be wrong).
 
-# Player Chooses New Owner of Faction
-# Written by Breadcrumb (on stream!!!)
-# Description:
-#   Handle getting the selected player to transfer the ownership to.
+# Choosing the new owner of the faction.
 player_chooses_new_owner_of_faction:
     type: world
     events:
@@ -32,6 +29,7 @@ player_chooses_new_owner_of_faction:
             - else:
                 - narrate "<[new_owner].name> already has a valid offer. Please try again soon." format:faction_action_format
 
+# Player accepts or denies the request to be the new owner.
 player_accepts_or_denies_offer_to_be_new_owner:
     type: world
     events:

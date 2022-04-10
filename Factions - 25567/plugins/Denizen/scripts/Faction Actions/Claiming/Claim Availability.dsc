@@ -1,3 +1,4 @@
+# Checks if a given claim (chunk.cuboid) is claimable or not.
 is_chunk_cuboid_claimable:
     type: procedure
     definitions: cuboid

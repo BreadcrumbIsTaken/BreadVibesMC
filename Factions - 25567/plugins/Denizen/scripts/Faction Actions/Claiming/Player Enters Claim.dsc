@@ -1,3 +1,4 @@
+# Display faction name and tagline when they enter the faction, and display the wilderness warning when they leave.
 enter_claim:
     type: world
     debug: false

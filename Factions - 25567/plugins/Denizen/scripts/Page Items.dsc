@@ -1,16 +1,10 @@
-# Previous Page Item
-# Written by Breadcrumb
-# Description:
-#   A back page item for inventory pages.
+# A back page item that can be used for pagination in inventories.
 previous_page_item:
     type: item
     material: spectral_arrow
     display name: Back
 
-# Next Page Item
-# Written by Breadcrumb
-# Description:
-#   A next page item for inventory pages.
+# A next page item that can be used for pagination in inventories.
 next_page_item:
     type: item
     material: spectral_arrow

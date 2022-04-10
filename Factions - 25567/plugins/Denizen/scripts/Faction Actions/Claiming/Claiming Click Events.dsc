@@ -1,3 +1,4 @@
+# Faction Action claiming inventory click events.
 faction_action_claiming_click_events:
     type: world
     events:

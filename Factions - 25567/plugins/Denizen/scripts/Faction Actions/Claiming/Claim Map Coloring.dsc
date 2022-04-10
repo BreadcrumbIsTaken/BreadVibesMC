@@ -1,3 +1,4 @@
+# Color the claim map then open it.
 color_claim_map_and_open:
     type: task
     script:

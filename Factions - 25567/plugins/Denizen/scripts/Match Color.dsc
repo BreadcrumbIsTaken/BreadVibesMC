@@ -2,6 +2,7 @@
 #| choosing the colors for a faction based on the dye chosen in the inventory.
 #| These are not actual color comparisons.
 
+# Matches the name of a given dye to a Minecraft color code.
 match_dye_to_color_code:
     type: procedure
     definitions: item
@@ -37,6 +38,7 @@ match_dye_to_color_code:
                 - default:
                     - determine <white>
 
+# Matches the Minecraft color code to the name of a dye.
 match_color_code_to_dye:
     type: procedure
     definitions: color
@@ -68,6 +70,7 @@ match_color_code_to_dye:
         - else:
             - determine white
 
+# Matches a Minecraft color code to a readable name.
 match_color_code_to_name:
     type: procedure
     definitions: color

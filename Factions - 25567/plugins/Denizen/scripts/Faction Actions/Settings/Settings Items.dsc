@@ -1,3 +1,4 @@
+# Item to access the Faction Action settings.
 faction_action_settings_item:
     type: item
     material: player_head
@@ -5,6 +6,7 @@ faction_action_settings_item:
     mechanisms:
         skull_skin: 9f6ce665-7429-42a4-a5aa-212c51a4b833|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGRmZTVhOTYzODY5NDE1MzQwZDJjZWMwZjgyZDA4ZGY3M2RjYjE2ODQyODQ4N2I1MTRhYThkNGVjMTlmZTJjIn19fQ==
 
+# Item to change the faction's name.
 faction_action_settings_faction_name_item:
     type: item
     material: player_head
@@ -14,6 +16,7 @@ faction_action_settings_faction_name_item:
     mechanisms:
         skull_skin: 06ca0142-cdb9-4a4d-9f3d-1fb220dd2003|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmZiMjkwYTEzZGY4ODI2N2VhNWY1ZmNmNzk2YjYxNTdmZjY0Y2NlZTVjZDM5ZDQ2OTcyNDU5MWJhYmVlZDFmNiJ9fX0=
 
+# Item to change the faction's color.
 faction_action_settings_color_item:
     type: item
     material: white_wool
@@ -21,6 +24,8 @@ faction_action_settings_color_item:
     lore:
         - <white>Change the color of your faction!
 
+# Item to change the faction's permissions.
+# TODO: Work on this.
 faction_action_settings_permissions_item:
     type: item
     material: player_head
@@ -30,6 +35,7 @@ faction_action_settings_permissions_item:
     mechanisms:
         skull_skin: ddddbe2f-62ff-4076-86c6-e46d3aac6e21|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTFjMmY5MjhjNGFiZTMxZTM0MmM4MGM3MWZlZjcyM2U5OTA1NzE3ZjQ5OGRkNzQ2ZWJmOTQxNzk4ODlhNzVjMyJ9fX0=
 
+# Item to change the faction's tagline.
 faction_action_settings_tagline_item:
     type: item
     material: player_head
@@ -40,6 +46,7 @@ faction_action_settings_tagline_item:
     mechanisms:
         skull_skin: 1d2e29ca-8b4e-4ef6-b025-3ef4fb62e92c|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjFjNjJmOGRlM2IwZDQwZDYyYTNjNGNlNjUzMTRmMDNhNGIxNjQwMWQ4OTViYWRjMWRkMDhmZTg1YjlmYzFhMyJ9fX0=
 
+# Item to change the faction's tagline color.
 faction_action_settings_tagline_color_item:
     type: item
     material: player_head

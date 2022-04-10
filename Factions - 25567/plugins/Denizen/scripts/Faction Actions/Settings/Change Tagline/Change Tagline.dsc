@@ -1,3 +1,4 @@
+# The task that changes the faction's tagline.
 change_faction_tagline:
     type: task
     definitions: faction|tagline
@@ -7,6 +8,7 @@ change_faction_tagline:
         - run faction_tagline_change_textbox.finish
         - narrate "Your faction's tagline is now: <[faction].proc[get_tagline_display]><reset>!" format:faction_action_format
 
+# The textbox (sign) that appears for the player to enter in their faction's tagline.
 faction_tagline_change_textbox:
     type: task
     script:
@@ -15,6 +17,7 @@ faction_tagline_change_textbox:
     finish:
         - flag <player> editing_faction_tagline_sign:!
 
+# Event that fires when the player has edided the sign, finalizing the new tagline of the faction.
 player_edits_tagline_change_sign:
     type: world
     events:

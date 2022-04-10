@@ -1,3 +1,4 @@
+# Item to transfer ownership of a faction.
 faction_action_danger_zone_transfer_ownership_item:
     type: item
     material: player_head

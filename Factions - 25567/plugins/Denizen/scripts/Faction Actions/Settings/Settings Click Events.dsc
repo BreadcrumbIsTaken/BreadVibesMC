@@ -1,3 +1,4 @@
+# Inventory click events for the Faction Action settings.
 faction_action_settings_inventory_click_events:
     type: world
     events:
