@@ -1,6 +1,6 @@
 # BreadVibesMC 🍞
 
-[![wakatime](https://wakatime.com/badge/user/579d6e69-f91a-4a71-9119-b9f35cac7d1f/project/b8d3bc53-9e63-43ed-a149-4ba9deedadee.svg)](https://wakatime.com/badge/user/579d6e69-f91a-4a71-9119-b9f35cac7d1f/project/b8d3bc53-9e63-43ed-a149-4ba9deedadee)
+[![wakatime](https://wakatime.com/badge/github/BreadcrumbIsTaken/BreadvibesMC.svg)](https://wakatime.com/badge/github/BreadcrumbIsTaken/BreadvibesMC)
 
 probably the most epic gotdam minecraft server you've ever seen *(that is still in development)*!
 
