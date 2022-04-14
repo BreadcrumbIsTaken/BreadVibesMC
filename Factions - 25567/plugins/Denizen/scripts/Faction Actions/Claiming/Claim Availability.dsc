@@ -1,13 +1,14 @@
 # Checks if a given claim (chunk.cuboid) is claimable or not.
-is_chunk_cuboid_claimable:
+is_claimable:
     type: procedure
     definitions: cuboid
     script:
-        - define claims <proc[get_all_claims]||none>
-        - if <[claims]> == none:
+        - define claims <proc[get_all_claims]||null>
+        - if <[claims]> == null:
             - determine true
         - else:
-            - foreach <[claims]> key:claim_name as:location:
-                - if <[claims].get[<[claim_name]>]> == <[cuboid]>:
+            - foreach <[claims].values> as:locations:
+                - if <[cuboid]> in <[locations]>:
+                    - determine false
+                - else:
                     - determine true
-                - determine false

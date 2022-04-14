@@ -144,3 +144,23 @@ get_faction_from_claim:
                 - foreach <[faction].get[claims]> as:faction_claim:
                     - if <[claim]> == <[faction_claim]>:
                         - determine <[faction]>
+
+# Get a faction's name from a claim's note name. (cuboid).
+get_faction_name_from_claim_note_name:
+    type: procedure
+    definitions: claim
+    script:
+        - foreach <proc[get_all_claims]> key:claim_name as:location:
+            - foreach <proc[get_factions]> key:faction as:faction_data:
+                - if <[claim]> == <[location]>:
+                    - determine <[faction]>
+
+# Get a faction's data from a claim's note name (cuboid).
+get_faction_from_claim_note_name:
+    type: procedure
+    definitions: claim
+    script:
+        - foreach <proc[get_all_claims]> key:claim_name as:location:
+            - foreach <proc[get_factions]> key:faction as:faction_data:
+                - if <[claim]> == <[location]>:
+                    - determine <[faction_data]>

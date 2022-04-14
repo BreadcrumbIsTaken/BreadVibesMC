@@ -12,6 +12,7 @@ gamemode_changer:
     permission: BreadVibesMC.Admin
     description: Changes your game mode. Player name is optional. If None, your gamemode will change.
     usage: /GM <&lt>gamemode<&gt> [player]
+    debug: false
     tab completions:
         1: s|sp|a|c
         2: <server.online_players.parse[name]>

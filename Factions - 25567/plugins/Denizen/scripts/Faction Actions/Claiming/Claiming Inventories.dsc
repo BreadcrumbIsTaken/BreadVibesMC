@@ -9,6 +9,6 @@ claim_map_inventory:
         # The claimability of the chunks will be determined via code.
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
-        - [] [] [] [] [player_location_claim_map_item] [] [] [] []
+        - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []

@@ -22,3 +22,35 @@ location_is_not_claimable_claim_map_item:
     lore:
         - <white>CLAIMED_BY
         - <white>LOCATION
+
+# Shows where north is on the claim map.
+north_indicator_item:
+    type: item
+    material: compass
+    display name: <yellow>North
+    lore:
+        - <white>FACING
+
+# Shows where east is on the claim map.
+east_indicator_item:
+    type: item
+    material: compass
+    display name: <yellow>East
+    lore:
+        - <white>FACING
+
+# Shows where south is on the claim map.
+south_indicator_item:
+    type: item
+    material: compass
+    display name: <yellow>South
+    lore:
+        - <white>FACING
+
+# Shows where west is on the claim map.
+west_indicator_item:
+    type: item
+    material: compass
+    display name: <yellow>West
+    lore:
+        - <white>FACING
