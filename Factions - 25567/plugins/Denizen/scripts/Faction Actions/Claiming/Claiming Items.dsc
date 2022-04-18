@@ -4,7 +4,9 @@ player_location_claim_map_item:
     material: yellow_stained_glass_pane
     display name: <yellow>You are here!
     lore:
-        - <white>LOCATION
+        - <white>Left click on an avaliable chunk
+        - <white>on the map to claim the chunk
+        - <white>for your faction.
 
 # The item that shows that a chunk is unclaimed.
 location_is_claimable_claim_map_item:
@@ -12,7 +14,7 @@ location_is_claimable_claim_map_item:
     material: lime_stained_glass_pane
     display name: <yellow>Unclaimed land.
     lore:
-        - <white>LOCATION
+        - LOCATION
 
 # The item that shows that a chunk is claimed.
 location_is_not_claimable_claim_map_item:
@@ -20,8 +22,8 @@ location_is_not_claimable_claim_map_item:
     material: red_stained_glass_pane
     display name: <yellow>Claimed land.
     lore:
-        - <white>CLAIMED_BY
-        - <white>LOCATION
+        - CLAIMED_BY
+        - LOCATION
 
 # Shows where north is on the claim map.
 north_indicator_item:
@@ -29,7 +31,7 @@ north_indicator_item:
     material: compass
     display name: <yellow>North
     lore:
-        - <white>FACING
+        - FACING
 
 # Shows where east is on the claim map.
 east_indicator_item:
@@ -37,7 +39,7 @@ east_indicator_item:
     material: compass
     display name: <yellow>East
     lore:
-        - <white>FACING
+        - FACING
 
 # Shows where south is on the claim map.
 south_indicator_item:
@@ -45,7 +47,7 @@ south_indicator_item:
     material: compass
     display name: <yellow>South
     lore:
-        - <white>FACING
+        - FACING
 
 # Shows where west is on the claim map.
 west_indicator_item:
@@ -53,4 +55,4 @@ west_indicator_item:
     material: compass
     display name: <yellow>West
     lore:
-        - <white>FACING
+        - FACING
