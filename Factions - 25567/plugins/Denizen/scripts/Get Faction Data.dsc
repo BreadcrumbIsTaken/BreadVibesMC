@@ -124,43 +124,43 @@ get_faction:
             - determine <[player].flag[faction]>
 
 # Get a faction's name from a claim (cuboid).
-get_faction_name_from_claim:
+get_faction_name_from_note_name:
     type: procedure
-    definitions: claim
+    definitions: note_name
     script:
         - foreach <proc[get_all_claims]> key:claim_name as:location:
             - foreach <proc[get_factions]> key:faction as:faction_data:
                 - foreach <[faction_data].get[claims]> as:faction_claim:
-                    - if <[claim]> == <[faction_claim]>:
+                    - if <[note_name]> == <[faction_claim]>:
                         - determine <[faction]>
 
 # Get a faction's data from a claim (cuboid).
-get_faction_from_claim:
+get_faction_data_from_note_name:
     type: procedure
-    definitions: claim
+    definitions: note_name
     script:
         - foreach <proc[get_all_claims]> key:claim_name as:location:
             - foreach <proc[get_factions]> as:faction:
                 - foreach <[faction].get[claims]> as:faction_claim:
-                    - if <[claim]> == <[faction_claim]>:
+                    - if <[note_name]> == <[faction_claim]>:
                         - determine <[faction]>
 
 # Get a faction's name from a claim's note name. (cuboid).
-get_faction_name_from_claim_note_name:
+get_faction_name_from_cuboid:
     type: procedure
-    definitions: claim
+    definitions: cuboid
     script:
         - foreach <proc[get_all_claims]> key:claim_name as:location:
             - foreach <proc[get_factions]> key:faction as:faction_data:
-                - if <[claim]> == <[location]>:
+                - if <[cuboid]> == <[location]>:
                     - determine <[faction]>
 
 # Get a faction's data from a claim's note name (cuboid).
-get_faction_from_claim_note_name:
+get_faction_data_name_from_cuboid:
     type: procedure
-    definitions: claim
+    definitions: cuboid
     script:
         - foreach <proc[get_all_claims]> key:claim_name as:location:
             - foreach <proc[get_factions]> key:faction as:faction_data:
-                - if <[claim]> == <[location]>:
+                - if <[cuboid]> == <[location]>:
                     - determine <[faction_data]>

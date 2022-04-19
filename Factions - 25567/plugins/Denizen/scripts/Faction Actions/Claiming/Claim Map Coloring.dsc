@@ -1,4 +1,3 @@
-# TODO: Power/Mana/Whateveritscalled check. The more claims you have the more power you need to claim more land. You can earn more power by doing various things.
 # Color the claim map then open it.
 color_claim_map_and_open:
     type: task
@@ -26,11 +25,11 @@ color_claim_map_and_open:
 
         - foreach <[cuboids]> as:cuboid:
             - if <[cuboid].proc[is_claimable]>:
-                - inventory set d:<[inv]> slot:<[loop_index]> o:<item[location_is_claimable_claim_map_item]>
+                - inventory set d:<[inv]> slot:<[loop_index]> o:<item[location_is_claimable_claim_map_item].with_flag[cuboid_location:<[cuboid]>]>
                 - inventory adjust d:<[inv]> slot:<[loop_index]> "lore:<white>Left click to claim!"
             - else:
                 - inventory set d:<[inv]> slot:<[loop_index]> o:<item[location_is_not_claimable_claim_map_item]>
-                - inventory adjust d:<[inv]> slot:<[loop_index]> "lore:<red>Unclaimable!|<white>Aready claimed by <[cuboid].proc[get_faction_name_from_claim_note_name].proc[get_display_name]>."
+                - inventory adjust d:<[inv]> slot:<[loop_index]> "lore:<red>Unclaimable!|<white>Aready claimed by <[cuboid].proc[get_faction_name_from_cuboid].proc[get_display_name]>."
 
         # x
         - inventory set d:<[inv]> slot:23 o:<item[player_location_claim_map_item]>
