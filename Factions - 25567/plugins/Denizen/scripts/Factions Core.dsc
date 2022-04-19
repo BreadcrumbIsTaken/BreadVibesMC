@@ -54,8 +54,8 @@ faction:
                 color: <white>
                 tagline_color: <white>
             display_name: <white><player.name>'s Faction
-            tagline: Cool Faction
-            tagline_display: <white>Cool Faction
+            tagline: Wow!
+            tagline_display: <white>Wow!
             rivalries: <list[]>
             allies: <list[]>
             power: 100
