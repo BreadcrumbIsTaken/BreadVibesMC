@@ -47,7 +47,7 @@ faction:
             name: <player.name>'s Faction
             settings:
                 permissions:
-                    # This is just place holder stuff ;0
+                    # This is just placeholder stuff ;0
                     - OwnersGetAllPerms
                     - MembersGetBasicPerms
                     - OutsidersDoNotGetPerms
