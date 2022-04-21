@@ -108,11 +108,11 @@ faction:
             - define claim_number <[faction].proc[get_claims].equals[0].if_true[1].if_false[<[faction].proc[get_claims].size.add[1]>]>
 
             - define claim_name <[faction]>_claim_number_<[claim_number]>
-            - note <[loc]> as:<[claim_name]>
             - define name_loc_map <map[<[claim_name]>=<[loc]>]>
-            - define all_claims <proc[get_all_claims]>
-            - flag server factions.all_claims:<[all_claims].include[<[name_loc_map]>]>
+
+            - flag server factions.all_claims:<proc[get_all_claims].include[<[name_loc_map]>]>
             - flag server factions.<[faction]>.claims:->:<[claim_name]>
+            - note <[loc]> as:<[claim_name]>
         # Unclaims a chunk.
         unclaim:
             - define faction <[1]>
@@ -128,7 +128,8 @@ faction:
             - define faction <[1]>
 
             - foreach <proc[get_all_claims]> key:claim_name as:location:
-                - if <[faction].proc[get_claims]> contains <[claim_name]>:
-                    - flag server factions.<[faction]>.claims:<-:<[claim_name]>
-                    - flag server factions.all_claims:<proc[get_all_claims].exclude[<[claim_name]>]>
-                    - note remove as:<[claim_name]>
+                - foreach <[faction].proc[get_claims]> as:claim:
+                    - if <[claim]> == <[claim_name]>:
+                        - flag server factions.<[faction]>.claims:<-:<[claim_name]>
+                        - flag server factions.all_claims:<proc[get_all_claims].exclude[<[claim_name]>]>
+                        - note remove as:<[claim_name]>
