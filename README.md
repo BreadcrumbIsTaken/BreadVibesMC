@@ -8,7 +8,7 @@ you can see me make this on my [youtube](https://www.youtube.com/BreadcrumbMC?su
 
 ### Note:
 
-This server and it's code is nowhere near production ready, as it has many things still needed to be implemented and created. There is very little fallbacks and there could be some cases in that tge code will break and throw an error when trying to use them if a certain case occurs. This code is not intended for release and will most likely never be so. This repository exists as a way to show others what Denizen is and how ***I*** would implement things like games.
+This server and it's code is nowhere near production ready, as it has many things still needed to be implemented and created. There is very little fallbacks and there could be some cases in that the code could break and throw an error when trying to use them if a certain case occurs. This code is not intended for release and will most likely never be so. This repository exists as a way to show others what Denizen is and how ***I*** would implement things like games.
 
 ![](https://camo.githubusercontent.com/ed26a15bb41f4cc6064ed9d557f3646d730835eba6291865796160f3dda80302/68747470733a2f2f6d656469612e646973636f72646170702e6e65742f6174746163686d656e74732f3538343733383731333833383431393936382f3932383035363033393832323231333138302f627265616476696265736d635f696e5f616c6c5f6974735f676c6f72795f6f6d672e706e673f77696474683d31313933266865696768743d363731)
 
