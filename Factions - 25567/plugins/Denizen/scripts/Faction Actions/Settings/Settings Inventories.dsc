@@ -1,6 +1,7 @@
 # The Faction Action settings inventory.
 faction_action_settings_inventory:
     type: inventory
+    debug: false
     inventory: chest
     gui: true
     title: <&color[#1569EA]>Faction Settings
@@ -14,6 +15,7 @@ faction_action_settings_inventory:
 # The inventory where you can change the color of your faction.
 faction_action_settings_color_change_inventory:
     type: inventory
+    debug: false
     inventory: chest
     gui: true
     title: <&color[#1569EA]>Select New Faction Color!
@@ -26,6 +28,7 @@ faction_action_settings_color_change_inventory:
 # The inventory where you can change the color of your faction's tagline.
 faction_action_settings_tagline_color_change_inventory:
     type: inventory
+    debug: false
     inventory: chest
     gui: true
     title: <&color[#1569EA]>Select New Tagline Color!

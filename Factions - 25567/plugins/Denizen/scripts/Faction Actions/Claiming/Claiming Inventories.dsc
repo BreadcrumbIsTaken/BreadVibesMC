@@ -4,7 +4,6 @@ claim_map_inventory:
     inventory: chest
     gui: true
     title: Claim Map
-    debug: false
     slots:
         # The claimability of the chunks will be determined via code.
         - [] [] [] [] [] [] [] [] []

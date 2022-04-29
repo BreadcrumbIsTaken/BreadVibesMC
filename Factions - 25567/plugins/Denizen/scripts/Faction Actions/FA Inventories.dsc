@@ -1,10 +1,10 @@
 # Main Faction Action Inventory.
 faction_action_default_inventory:
     type: inventory
+    debug: false
     inventory: chest
     gui: true
     title: <&color[#1569EA]>Faction Actions
-    debug: false
     procedural items:
         - determine <item[filler].repeat_as_list[54]>
     slots:
@@ -18,10 +18,10 @@ faction_action_default_inventory:
 # Inventory that appears when the player is not in a faction.
 faction_action_player_not_in_any_faction_inventory:
     type: inventory
+    debug: false
     inventory: chest
     gui: true
     title: <&color[#1569EA]>Faction Actions
-    debug: false
     procedural items:
         - determine <item[filler].repeat_as_list[54]>
     slots:
@@ -35,6 +35,7 @@ faction_action_player_not_in_any_faction_inventory:
 # Inventory that appears when the player is not an owner of a faction.
 faction_action_player_not_owner_inventory:
     type: inventory
+    debug: false
     inventory: chest
     gui: true
     title: <&color[#1569EA]>Faction Actions

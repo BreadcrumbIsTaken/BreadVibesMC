@@ -1,6 +1,7 @@
 # Opens the Faction Action inventory.
 faction_command:
     type: command
+    debug: false
     name: faction
     usage: /faction
     aliases:
