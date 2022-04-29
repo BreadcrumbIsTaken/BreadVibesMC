@@ -32,7 +32,7 @@ faction:
             # Map:
             # claim_name = claim_location
             # ex:
-            # faction_1_claim_number_1 = cu@...
+            # faction_1_claim_1 = cu@...
             - flag server factions.all_claims:<map[]>
 
         - flag server FACTION_IDS:++
@@ -107,7 +107,7 @@ faction:
 
             - define claim_number <[faction].proc[get_claims].equals[0].if_true[1].if_false[<[faction].proc[get_claims].size.add[1]>]>
 
-            - define claim_name <[faction]>_claim_number_<[claim_number]>
+            - define claim_name <[faction]>_claim_<[claim_number]>
             - define name_loc_map <map[<[claim_name]>=<[loc]>]>
 
             - flag server factions.all_claims:<proc[get_all_claims].include[<[name_loc_map]>]>
