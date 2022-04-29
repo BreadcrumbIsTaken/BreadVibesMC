@@ -109,7 +109,7 @@ get_tagline_color:
 # TODO: Implement a teleport coordinate system for factions, giving the player the ability to specify where to be taken when they want to teleport to their faction.
 # get_teleport_coords:
 #     type: procedure
-debug: false
+#     debug: false
 #     definitions: id
 #     script:
 #         - determine "<server.flag[factions.<[id]>.teleport coords]>"
