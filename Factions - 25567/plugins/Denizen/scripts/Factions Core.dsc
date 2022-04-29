@@ -91,7 +91,7 @@ faction:
         - foreach <server.offline_players.include[<server.online_players>]> as:p:
             - if <[p].has_flag[FACTION]>:
                 - flag <[p]> FACTION:!
-        - define factions <proc[get_factions]>
+        - define factions <proc[get_factions]||null>
         - if <[factions]> != null:
             - flag server FACTION_IDS:-1
             - foreach <[factions].keys> as:faction:
