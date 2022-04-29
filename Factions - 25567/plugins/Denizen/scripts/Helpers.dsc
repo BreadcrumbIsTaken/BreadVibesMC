@@ -1,6 +1,7 @@
 # Logs all the faction data as YAML into the chat.
 log_faction_data:
     type: task
+    debug: false
     script:
         - narrate "<server.flag[factions].to_yaml.if_null[No data.]>"
 
@@ -9,6 +10,7 @@ log_faction_data:
 # Saves all the faction data as a YAML file.
 faction_data_to_yaml:
     type: task
+    debug: false
     script:
         - yaml create id:faction_data_yaml
         - yaml id:faction_data_yaml set "factions:<server.flag[factions].if_null[No data.]>"

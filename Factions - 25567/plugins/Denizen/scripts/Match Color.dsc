@@ -5,6 +5,7 @@
 # Matches the name of a given dye to a Minecraft color code.
 match_dye_to_color_code:
     type: procedure
+    debug: false
     definitions: item
     script:
         - if <[item].material.name.contains[dye]>:
@@ -41,6 +42,7 @@ match_dye_to_color_code:
 # Matches the Minecraft color code to the name of a dye.
 match_color_code_to_dye:
     type: procedure
+    debug: false
     definitions: color
     script:
         - if <[color]> == <red>:
@@ -73,6 +75,7 @@ match_color_code_to_dye:
 # Matches a Minecraft color code to a readable name.
 match_color_code_to_name:
     type: procedure
+    debug: false
     definitions: color
     script:
         - if <[color]> == <red>:

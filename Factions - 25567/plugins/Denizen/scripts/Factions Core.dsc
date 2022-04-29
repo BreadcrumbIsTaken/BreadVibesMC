@@ -1,6 +1,7 @@
 # Main faction script. Holds all the important faction details and code to be run.
 faction:
     type: task
+    debug: false
     script:
         # Creates a faction or opens the Faction Action Inventory.
         - if !<player.has_flag[FACTION]>:

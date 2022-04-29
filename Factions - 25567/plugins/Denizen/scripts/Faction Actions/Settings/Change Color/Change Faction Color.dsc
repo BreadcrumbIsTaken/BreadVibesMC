@@ -1,6 +1,7 @@
 # Changes the color of the faction's tagline based on which dye they clicked in the inventory.
 change_faction_color_click_event:
     type: world
+    debug: false
     events:
         on player clicks in faction_action_settings_color_change_inventory:
             - if <context.item.material.name> != air:

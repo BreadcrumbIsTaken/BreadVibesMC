@@ -1,6 +1,7 @@
 # The task that changes the faction's tagline.
 change_faction_tagline:
     type: task
+    debug: false
     definitions: faction|tagline
     script:
         - run change_faction_setting def.faction:<[faction]> def.setting:tagline def.value:<[tagline].get[1]>
@@ -11,6 +12,7 @@ change_faction_tagline:
 # The textbox (sign) that appears for the player to enter in their faction's tagline.
 faction_tagline_change_textbox:
     type: task
+    debug: false
     script:
         - flag <player> editing_faction_tagline_sign
         - adjust <player> edit_sign
@@ -20,6 +22,7 @@ faction_tagline_change_textbox:
 # Event that fires when the player has edided the sign, finalizing the new tagline of the faction.
 player_edits_tagline_change_sign:
     type: world
+    debug: false
     events:
         after player changes sign flagged:editing_faction_tagline_sign:
             - if <context.new.get[1].length> < 3:

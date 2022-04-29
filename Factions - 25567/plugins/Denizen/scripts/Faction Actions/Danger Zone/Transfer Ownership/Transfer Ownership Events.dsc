@@ -3,6 +3,7 @@
 # Choosing the new owner of the faction.
 player_chooses_new_owner_of_faction:
     type: world
+    debug: false
     events:
         on player clicks item in faction_action_danger_zone_transfer_ownership_player_list_inventory:
             - define new_owner <context.item.flag[player_id]>
@@ -32,6 +33,7 @@ player_chooses_new_owner_of_faction:
 # Player accepts or denies the request to be the new owner.
 player_accepts_or_denies_offer_to_be_new_owner:
     type: world
+    debug: false
     events:
         on player chats flagged:has_ownership_offer:
             - define old_owner <player[<player.flag[has_ownership_offer].proc[get_owner]>]>
@@ -74,6 +76,7 @@ player_accepts_or_denies_offer_to_be_new_owner:
 
 out_of_time_for_transfer:
     type: task
+    debug: false
     definitions: new_owner
     script:
         - if <player.has_flag[has_ownership_offer]>:

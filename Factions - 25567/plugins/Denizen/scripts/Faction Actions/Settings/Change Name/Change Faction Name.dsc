@@ -1,6 +1,7 @@
 # The task that changes the faction's name.
 change_faction_name:
     type: task
+    debug: false
     definitions: faction|name
     script:
         - run change_faction_setting def.faction:<[faction]> def.setting:name def.value:<[name].get[1]>
@@ -12,6 +13,7 @@ change_faction_name:
 # The textbox (sign) that appears for the player to enter in their faction's name.
 faction_name_change_textbox:
     type: task
+    debug: false
     script:
         - flag <player> editing_faction_name_sign
         - adjust <player> edit_sign
@@ -21,6 +23,7 @@ faction_name_change_textbox:
 # Event that fires when the player has edided the sign, finalizing the new name of the faction.
 player_editing_name_change_sign:
     type: world
+    debug: false
     events:
         after player changes sign flagged:editing_faction_name_sign:
             - if <context.new.get[1].length> < 3:

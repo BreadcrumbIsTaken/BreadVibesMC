@@ -1,6 +1,7 @@
 # Displays a welcome message when a player joins the server.
 player_joins_the_server:
     type: world
+    debug: false
     events:
         on player joins:
             # This boi right here makes sure the default join message does not appear >:)
@@ -14,6 +15,7 @@ player_joins_the_server:
 # Displays a goodbye message when a player leaves the server.
 player_quits_the_server:
     type: world
+    debug: false
     events:
         on player quits:
             # This boi right here makes sure the default quit join message does not appear >:)

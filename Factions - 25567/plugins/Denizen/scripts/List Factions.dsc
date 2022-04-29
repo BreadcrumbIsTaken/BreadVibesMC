@@ -1,6 +1,7 @@
 # Command to open a list of all the existing factions on the server.
 list_factions_command:
     type: command
+    debug: false
     name: listfactions
     usage: /listfactions
     aliases:

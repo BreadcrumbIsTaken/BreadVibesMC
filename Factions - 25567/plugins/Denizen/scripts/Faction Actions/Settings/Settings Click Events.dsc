@@ -1,6 +1,7 @@
 # Inventory click events for the Faction Action settings.
 faction_action_settings_inventory_click_events:
     type: world
+    debug: false
     events:
         on player clicks faction_action_settings_item in faction_action_default_inventory:
             - run faction.settings
