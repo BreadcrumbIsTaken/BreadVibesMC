@@ -4,7 +4,7 @@ get_display_name:
     definitions: id
     script:
         - if <server.flag[factions].exists>:
-            - determine <server.flag[factions.<[id]>.display_name]>
+            - determine <server.flag[factions.<[id]>.display_name]||null>
 
 # Gets the name of a faction.
 get_name:
@@ -12,7 +12,7 @@ get_name:
     definitions: id
     script:
         - if <server.flag[factions].exists>:
-            - determine <server.flag[factions.<[id]>.name]>
+            - determine <server.flag[factions.<[id]>.name]||null>
 
 # Gets the settings of a faction.
 get_settings:
@@ -20,7 +20,7 @@ get_settings:
     definitions: id
     script:
         - if <server.flag[factions].exists>:
-            - determine <server.flag[factions.<[id]>.settings]>
+            - determine <server.flag[factions.<[id]>.settings]||null>
 
 # Gets the owner of the faction.
 get_owner:
@@ -28,7 +28,7 @@ get_owner:
     definitions: id
     script:
         - if <server.flag[factions].exists>:
-            - determine <server.flag[factions.<[id]>.owner]>
+            - determine <server.flag[factions.<[id]>.owner]||null>
 
 # Gets the factions rivals.
 get_members:
@@ -36,7 +36,7 @@ get_members:
     definitions: id
     script:
         - if <server.flag[factions].exists>:
-            - determine <server.flag[factions.<[id]>.members]>
+            - determine <server.flag[factions.<[id]>.members]||null>
 
 # Gets the faction's rivals.
 get_rivalries:
@@ -44,7 +44,7 @@ get_rivalries:
     definitions: id
     script:
         - if <server.flag[factions].exists>:
-            - determine <server.flag[factions.<[id]>.rivalries]>
+            - determine <server.flag[factions.<[id]>.rivalries]||null>
 
 # Gets the faction's allies.
 get_allies:
@@ -52,7 +52,7 @@ get_allies:
     definitions: id
     script:
         - if <server.flag[factions].exists>:
-            - determine <server.flag[factions.<[id]>.allies]>
+            - determine <server.flag[factions.<[id]>.allies]||null>
 
 # Gets the faction's power level.
 get_power:
@@ -60,7 +60,7 @@ get_power:
     definitions: id
     script:
         - if <server.flag[factions].exists>:
-            - determine <server.flag[factions.<[id]>.power]>
+            - determine <server.flag[factions.<[id]>.power]||null>
 
 # Gets the faction's claims.
 get_claims:
@@ -68,7 +68,7 @@ get_claims:
     definitions: id
     script:
         - if <server.flag[factions].exists>:
-            - determine <server.flag[factions.<[id]>.claims]>
+            - determine <server.flag[factions.<[id]>.claims]||null>
 
 # Gets a faction's tagline.
 get_tagline:
@@ -76,7 +76,7 @@ get_tagline:
     definitions: id
     script:
         - if <server.flag[factions].exists>:
-            - determine <server.flag[factions.<[id]>.tagline]>
+            - determine <server.flag[factions.<[id]>.tagline]||null>
 
 # Gets the display name of a faction's tagline.
 get_tagline_display:
@@ -84,7 +84,7 @@ get_tagline_display:
     definitions: id
     script:
         - if <server.flag[factions].exists>:
-            - determine <server.flag[factions.<[id]>.tagline_display]>
+            - determine <server.flag[factions.<[id]>.tagline_display]||null>
 
 # Gets the color of a faction's tagline.
 get_tagline_color:
@@ -92,7 +92,7 @@ get_tagline_color:
     definitions: id
     script:
         - if <server.flag[factions].exists>:
-            - determine <server.flag[factions.<[id]>.settings.tagline_color]>
+            - determine <server.flag[factions.<[id]>.settings.tagline_color]||null>
 
 # TODO: Implement a teleport coordinate system for factions, giving the player the ability to specify where to be taken when they want to teleport to their faction.
 # get_teleport_coords:
@@ -106,14 +106,14 @@ get_factions:
     type: procedure
     script:
         - if <server.flag[factions].exists>:
-            - determine <server.flag[factions].exclude[all_claims]>
+            - determine <server.flag[factions].exclude[all_claims]||null>
 
 # Gets all the claims registered on the server.
 get_all_claims:
     type: procedure
     script:
         - if <server.flag[factions].exists>:
-            - determine <server.flag[factions.all_claims]>
+            - determine <server.flag[factions.all_claims]||null>
 
 # Gets the faction that a player is in.
 get_faction:
@@ -121,7 +121,7 @@ get_faction:
     definitions: player
     script:
         - if <[player].has_flag[faction]>:
-            - determine <[player].flag[faction]>
+            - determine <[player].flag[faction]||null>
 
 # Get a faction's name from a claim (cuboid).
 get_faction_name_from_note_name:
@@ -132,7 +132,7 @@ get_faction_name_from_note_name:
             - foreach <proc[get_factions]> key:faction as:faction_data:
                 - foreach <[faction_data].get[claims]> as:faction_claim:
                     - if <[note_name]> == <[faction_claim]>:
-                        - determine <[faction]>
+                        - determine <[faction]||null>
 
 # Get a faction's data from a claim (cuboid).
 get_faction_data_from_note_name:
@@ -143,7 +143,7 @@ get_faction_data_from_note_name:
             - foreach <proc[get_factions]> as:faction:
                 - foreach <[faction].get[claims]> as:faction_claim:
                     - if <[note_name]> == <[faction_claim]>:
-                        - determine <[faction]>
+                        - determine <[faction]||null>
 
 # Get a faction's name from a claim's note name. (cuboid).
 get_faction_name_from_cuboid:
@@ -153,7 +153,7 @@ get_faction_name_from_cuboid:
         - foreach <proc[get_all_claims]> key:claim_name as:location:
             - foreach <proc[get_factions]> key:faction as:faction_data:
                 - if <[cuboid]> == <[location]>:
-                    - determine <[faction]>
+                    - determine <[faction]||null>
 
 # Get a faction's data from a claim's note name (cuboid).
 get_faction_data_name_from_cuboid:
@@ -163,4 +163,4 @@ get_faction_data_name_from_cuboid:
         - foreach <proc[get_all_claims]> key:claim_name as:location:
             - foreach <proc[get_factions]> key:faction as:faction_data:
                 - if <[cuboid]> == <[location]>:
-                    - determine <[faction_data]>
+                    - determine <[faction_data]||null>

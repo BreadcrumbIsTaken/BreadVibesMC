@@ -3,7 +3,7 @@ is_claimable:
     type: procedure
     definitions: cuboid
     script:
-        - define claims <proc[get_all_claims]||null>
+        - define claims <proc[get_all_claims]>
         - if <[claims]> == null:
             - determine true
         - else:
