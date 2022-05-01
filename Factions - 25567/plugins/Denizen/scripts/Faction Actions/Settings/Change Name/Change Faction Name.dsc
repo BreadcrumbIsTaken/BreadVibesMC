@@ -8,7 +8,7 @@ change_faction_name:
         - run change_faction_setting def.faction:<[faction]> def.setting:display_name def.value:<[faction].proc[get_settings].get[color]><[name].get[1]>
 
         - run faction_name_change_textbox.finish
-        - narrate "Your faction is now named: <[faction].proc[get_display_name]>!" format:faction_action_format
+        - narrate "Your faction is now named: <[faction].proc[get_display_name]><reset>!" format:faction_action_format
 
 # The textbox (sign) that appears for the player to enter in their faction's name.
 faction_name_change_textbox:
