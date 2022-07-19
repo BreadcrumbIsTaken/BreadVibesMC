@@ -62,3 +62,5 @@ Factions - 25567/paper.yml
 MainLobby - 25566/server.properties
 
 **/secrets.secret
+
+**/mcgen.txt

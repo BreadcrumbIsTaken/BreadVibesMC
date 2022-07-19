@@ -63,6 +63,7 @@ advancements:
   - minecraft:story/disabled
 world-settings:
   default:
+    hopper-can-load-chunks: false
     seed-nether: 30084232
     below-zero-generation-in-existing-chunks: true
     simulation-distance: default

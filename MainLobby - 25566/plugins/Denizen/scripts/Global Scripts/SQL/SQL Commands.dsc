@@ -21,14 +21,13 @@ connect_to_db:
     type: task
     debug: false
     script:
-        - if !<server.sql_connections.contains[breadvibesmc_db]>:
+        - if !<util.sql_connections.contains[breadvibesmc_db]>:
             - define ip <yaml[mysql_creds].read[creds.ip]>
             - define port <yaml[mysql_creds].read[creds.port]>
             - define db <yaml[mysql_creds].read[creds.db]>
             - define username <yaml[mysql_creds].read[creds.username]>
-            - define pass <yaml[mysql_creds].read[creds.pass]>
 
-            - ~sql id:breadvibesmc_db connect:<[ip]>:<[port]>/<[db]>?characterEncoding=utf8 username:<[username]> password:<[pass]> ssl:true
+            - ~sql id:breadvibesmc_db connect:<[ip]>:<[port]>/<[db]>?characterEncoding=utf8 username:<[username]> password:<secret[db_password]> ssl:true
 
 # Disconnect from Database Script
 # Desc:
@@ -36,7 +35,7 @@ connect_to_db:
 disconnect_from_db:
     type: task
     script:
-        - if <server.sql_connections.contains[breadvibesmc_db]>:
+        - if <util.sql_connections.contains[breadvibesmc_db]>:
             - ~sql disconnect id:breadvibesmc_db
 
 # Execute SQL Update Script
