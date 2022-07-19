@@ -89,7 +89,7 @@ faction:
     # Wipe ALL existing factions. Only used for testing, debugging, restarting, and publishing purposes.
     wipe:
         - foreach <server.online_players> as:__player:
-            - define faction <player.proc[get_faction]>
+            - define faction <player.proc[get_faction]||null>
             - if <[faction]> != null:
                 - run faction.claiming.unclaim_all def.1:<[faction]>
 
