@@ -44,7 +44,7 @@ faction_action_settings_tagline_item:
         - <white>Shows up beneath faction name
         - <white>when a player enters your faction.
     mechanisms:
-        skull_skin: 1d2e29ca-8b4e-4ef6-b025-3ef4fb62e92c|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjFjNjJmOGRlM2IwZDQwZDYyYTNjNGNlNjUzMTRmMDNhNGIxNjQwMWQ4OTViYWRjMWRkMDhmZTg1YjlmYzFhMyJ9fX0=
+        skull_skin: cc347b81-0698-4a3e-ba64-787069f5d961|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWQ3ZmNjNWQ3ZDJhZDIwNGZiMjVmM2ZiNmYxODRhNmVkMTdkZGVmNWEzNTc4ZWJhNWEzNzc3NWUyZTIzMzlkOSJ9fX0=
 
 # Item to change the faction's tagline color.
 faction_action_settings_tagline_color_item:

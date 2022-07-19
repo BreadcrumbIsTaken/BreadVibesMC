@@ -90,13 +90,14 @@ faction:
     wipe:
         - foreach <server.online_players> as:__player:
             - define faction <player.proc[get_faction]>
-            - run faction.claiming.unclaim_all def.1:<[faction]>
+            - if <[faction]> != null:
+                - run faction.claiming.unclaim_all def.1:<[faction]>
 
-            - define members <[faction].proc[get_members]>
-            - foreach <[members]> as:i:
-                - flag <[i]> faction:!
+                - define members <[faction].proc[get_members]>
+                - foreach <[members]> as:i:
+                    - flag <[i]> faction:!
 
-            - flag server factions:<-:<[faction]>
+                - flag server factions:<-:<[faction]>
         - flag server faction_ids:-1
         - narrate Wiped. format:faction_action_format
     # All the claiming scripts.
