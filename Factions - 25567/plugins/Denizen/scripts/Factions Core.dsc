@@ -40,7 +40,7 @@ faction:
 
         - define FACTION_UUID faction_<server.flag[FACTION_IDS]>
 
-        - flag player FACTION:<[FACTION_UUID]>
+        - flag <player> FACTION:<[FACTION_UUID]>
 
         - definemap default_faction_data:
             owner: <player>

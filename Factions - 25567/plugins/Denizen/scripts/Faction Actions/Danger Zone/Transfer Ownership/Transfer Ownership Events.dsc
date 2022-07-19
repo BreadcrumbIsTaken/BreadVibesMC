@@ -5,7 +5,7 @@ player_chooses_new_owner_of_faction:
     type: world
     debug: false
     events:
-        on player clicks item in faction_action_danger_zone_transfer_ownership_player_list_inventory:
+        on player clicks player_head in faction_action_danger_zone_transfer_ownership_player_list_inventory:
             - define new_owner <context.item.flag[player_id]>
 
             - define faction <player.proc[get_faction]>
@@ -18,10 +18,10 @@ player_chooses_new_owner_of_faction:
                         - narrate "You can't transfer ownership to yourself! You are already the owner." format:faction_action_error_format
                         - inventory close
                         - stop
-                    - flag player waiting_for_owner_transfer_request_acceptance:<[new_owner]> expire:10m
+                    - flag <player> waiting_for_owner_transfer_request_acceptance:<[new_owner]> expire:10m
                     - inventory close
                 - else:
-                    - flag player waiting_for_owner_transfer_request_acceptance:<[new_owner]> expire:10m
+                    - flag <player> waiting_for_owner_transfer_request_acceptance:<[new_owner]> expire:10m
                     - inventory close
 
                     - flag <[new_owner]> has_ownership_offer:<[faction]> expire:10m
@@ -47,11 +47,11 @@ player_accepts_or_denies_offer_to_be_new_owner:
                     - flag <[old_owner]> faction:!
                 - if <player.has_flag[faction]>:
                     - flag server factions.<player.flag[faction]>.members:<-:<player>
-                    - flag player faction:!
+                    - flag <player> faction:!
 
                 - flag server factions.<[faction]>.owner:<player>
                 - flag server factions.<[faction]>.members:->:<player>
-                - flag player FACTION:<[faction]>
+                - flag <player> FACTION:<[faction]>
 
                 # Re-adds the owner to the faction.
                 - flag server factions.<[faction]>.members:->:<[old_owner].uuid>
