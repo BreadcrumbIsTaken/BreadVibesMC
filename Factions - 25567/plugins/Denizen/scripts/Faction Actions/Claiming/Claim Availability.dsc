@@ -8,8 +8,9 @@ is_claimable:
         - if <[claims]> == null:
             - determine true
         - else:
-            - foreach <[claims].values> as:locations:
-                - if <[cuboid]> in <[locations]>:
-                    - determine false
-                - else:
-                    - determine true
+            - if <[claims].values.contains[<[cuboid]>]>:
+                - narrate unclaimable
+                - determine false
+            - else:
+                - narrate claimable
+                - determine true
