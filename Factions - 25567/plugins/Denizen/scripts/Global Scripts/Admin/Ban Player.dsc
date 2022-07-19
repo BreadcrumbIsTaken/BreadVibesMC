@@ -5,7 +5,7 @@ ban_player:
     type: command
     name: ban
     description: Ban a player. Default duration is 5d. When typing the reason, put it in quotation marks.
-    usage: /ban <&lt>player<&gt> "<&lt>reason<&gt>" [duration (s, m, h, d, y)]
+    usage: /ban <&lt>player<&gt> <&sq><&lt>reason<&gt><&sq> [duration (s, m, h, d, y)]
     tab completions:
         1: <server.online_players.parse[name]>
         2: reason for ban

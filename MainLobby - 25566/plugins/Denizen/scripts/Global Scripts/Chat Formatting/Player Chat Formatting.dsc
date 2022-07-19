@@ -10,7 +10,6 @@ format_player_chat:
 # Desc:
 #   Used apademide's dTab script as reference
 #   Updates the tab list whenever a player joins, quits, or every 5 seconds delta time.
-# TODO(maybe): Change the 'after' events to 'on'.
 display_chat_prefix_in_tab_list:
     type: world
     debug: false
