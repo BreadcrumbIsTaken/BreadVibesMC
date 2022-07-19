@@ -9,8 +9,6 @@ is_claimable:
             - determine true
         - else:
             - if <[claims].values.contains[<[cuboid]>]>:
-                - narrate unclaimable
                 - determine false
             - else:
-                - narrate claimable
                 - determine true
