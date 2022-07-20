@@ -64,6 +64,7 @@ faction:
 
         - flag server factions.<[FACTION_UUID]>:<[default_faction_data]>
         - run faction.claiming.claim def:<player.location.chunk.cuboid>|<[FACTION_UUID]>
+        - flag <player> is_in_wilderness:false
 
         - narrate "<green>Faction created! Check it out by using '/faction'!" format:faction_action_format
     # Deletes a faction.
@@ -77,6 +78,7 @@ faction:
 
         - flag server factions:<-:<[faction]>
         - narrate "<green>Successfully deleted faction!" format:faction_action_format
+        - flag <player> is_in_wilderness:true
     # Lets the player leave their faction.
     leave:
         - define faction <player.flag[faction]>
@@ -117,7 +119,7 @@ faction:
                 - define claims <proc[get_all_claims]>
 
             - flag server factions.all_claims:<[claims].include[<[name_loc_map]>]>
-            - flag server factions.<[faction]>.claims:->:<[claims].include[<[name_loc_map]>]>
+            - flag server factions.<[faction]>.claims:<[claims].include[<[name_loc_map]>]>
             - note <[loc]> as:<[claim_name]>
         # Unclaims a chunk.
         unclaim:
