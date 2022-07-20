@@ -60,7 +60,7 @@ faction:
             rivalries: <list[]>
             allies: <list[]>
             power: 100
-            claims: <list[]>
+            claims: <map[]>
 
         - flag server factions.<[FACTION_UUID]>:<[default_faction_data]>
         - run faction.claiming.claim def:<player.location.chunk.cuboid>|<[FACTION_UUID]>
@@ -117,7 +117,7 @@ faction:
                 - define claims <proc[get_all_claims]>
 
             - flag server factions.all_claims:<[claims].include[<[name_loc_map]>]>
-            - flag server factions.<[faction]>.claims:->:<[claim_name]>
+            - flag server factions.<[faction]>.claims:->:<[claims].include[<[name_loc_map]>]>
             - note <[loc]> as:<[claim_name]>
         # Unclaims a chunk.
         unclaim:
@@ -126,7 +126,7 @@ faction:
 
             - foreach <proc[get_all_claims]> key:claim_name as:location:
                 - if <[location]> == <[loc]>:
-                    - flag server factions.<[faction]>.claims:<-:<[claim_name]>
+                    - flag server factions.<[faction]>.claims:<proc[get_all_claims].exclude[<[claim_name]>]>
                     - flag server factions.all_claims:<proc[get_all_claims].exclude[<[claim_name]>]>
                     - note remove as:<[claim_name]>
         # Unclaims all the chunks in a faction. Used for debugging, testing, and deletion of a faction.
@@ -136,6 +136,6 @@ faction:
             - foreach <proc[get_all_claims]> key:claim_name as:location:
                 - foreach <[faction].proc[get_claims]> as:claim:
                     - if <[claim]> == <[claim_name]>:
-                        - flag server factions.<[faction]>.claims:<-:<[claim_name]>
+                        - flag server factions.<[faction]>.claims:<proc[get_all_claims].exclude[<[claim_name]>]>
                         - flag server factions.all_claims:<proc[get_all_claims].exclude[<[claim_name]>]>
                         - note remove as:<[claim_name]>
