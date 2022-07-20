@@ -4,6 +4,7 @@
 #   Steve: yo
 format_player_chat:
     type: format
+    debug: false
     format: <proc[p_nameplate]><&co> <[text]>
 
 # Display Chat Prefix in Tab List Event
@@ -38,6 +39,7 @@ update_tab_list:
 # Determines: The formated chat.
 player_chats_format_prefix:
     type: world
+    debug: false
     events:
         on player chats:
             - determine FORMAT:format_player_chat
@@ -48,6 +50,7 @@ player_chats_format_prefix:
 # Determines: Player's nameplate.
 p_nameplate:
     type: procedure
+    debug: false
     script:
         - determine <player.chat_prefix><player.name><reset>
 
@@ -59,7 +62,7 @@ p_nameplate:
 # Determines: Player's nameplate.
 p_nameplate_def:
     type: procedure
-    definitions: PLAYER
     debug: false
+    definitions: PLAYER
     script:
         - determine <[PLAYER].chat_prefix><[PLAYER].name><reset>

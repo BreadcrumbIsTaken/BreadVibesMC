@@ -4,6 +4,7 @@
 #   Teleports the player to the lobby spawn.
 return_to_spawn_command:
     type: command
+    debug: false
     usage: /spawn
     name: spawn
     description: Will teleport you back to the spawn.

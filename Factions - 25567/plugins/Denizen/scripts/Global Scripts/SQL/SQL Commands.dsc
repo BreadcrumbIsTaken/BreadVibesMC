@@ -3,6 +3,7 @@
 #   Loads the credentials needed from a YAML file in the Sensitive Data directory.
 load_mysql_creds:
     type: task
+    debug: false
     script:
         - ~yaml "load:../../../SENSITIVE DATA/mysql_credentials.yml" id:mysql_creds
 
@@ -11,6 +12,7 @@ load_mysql_creds:
 # Unloads MySQL credentials.
 unload_mysql_creds:
     type: task
+    debug: false
     script:
         - ~yaml unload id:mysql_creds
 
@@ -34,6 +36,7 @@ connect_to_db:
 #   Disconnects from the MySQL database.
 disconnect_from_db:
     type: task
+    debug: false
     script:
         - if <util.sql_connections.contains[breadvibesmc_db]>:
             - ~sql disconnect id:breadvibesmc_db
@@ -47,6 +50,7 @@ disconnect_from_db:
 execute_sql_update:
     type: task
     definitions: QUERY|PRINT_RESULT
+    debug: false
     script:
         - inject connect_to_db
 
@@ -66,6 +70,7 @@ execute_sql_update:
 execute_sql_query:
     type: task
     definitions: QUERY|PRINT_RESULT
+    debug: false
     script:
         # NOTE:
             # The 'inject' function puts a task in the same queue, unlike "run" where it makes a new queue along side it.

@@ -3,6 +3,7 @@
 #   Bans/Unbans a player for an optional duration.
 ban_player:
     type: command
+    debug: false
     name: ban
     description: Ban a player. Default duration is 5d. When typing the reason, put it in quotation marks.
     usage: /ban <&lt>player<&gt> <&sq><&lt>reason<&gt><&sq> [duration (s, m, h, d, y)]
@@ -24,6 +25,7 @@ ban_player:
 
 unban_player:
     type: command
+    debug: false
     description: Unbans a player.
     name: unban
     usage: /unban <&lt>player<&gt>
