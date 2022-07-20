@@ -9,6 +9,10 @@ danger_zone_click_events:
         # Opens the Leave Faction Confirmation Inventory from the Danger Zone Inventory.
         on player clicks faction_action_danger_zone_leave_faction_item in faction_action_danger_zone_inventory:
             - inventory open d:faction_action_danger_zone_player_leave_confirm_inventory
+        # Open inventory to remove a claim.
+        on player clicks faction_action_danger_zone_remove_claim_from_faction_item in faction_action_danger_zone_inventory:
+            - inventory close
+            - run color_remove_map
 
         # --- Player changes their mind and want to go back ---
         on player clicks previous_page_item in faction_action_danger_zone_delete_confirmation_inventory:

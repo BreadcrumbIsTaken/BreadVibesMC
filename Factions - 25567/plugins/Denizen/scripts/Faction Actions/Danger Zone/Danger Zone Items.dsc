@@ -49,3 +49,11 @@ faction_action_danger_zone_leave_faction_confirmation_item:
         - <red>the faction will be deleted.
     mechanisms:
         skull_skin: b4e096c1-65b2-4abd-bedc-e67842bb42b1|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2UyYTUzMGY0MjcyNmZhN2EzMWVmYWI4ZTQzZGFkZWUxODg5MzdjZjgyNGFmODhlYThlNGM5M2E0OWM1NzI5NCJ9fX0=
+
+# Item to open the inventory to remove a faction claim
+faction_action_danger_zone_remove_claim_from_faction_item:
+    type: item
+    material: player_head
+    display name: Remove a Claim.
+    mechanisms:
+        skull_skin: e85dcd04-1905-4344-a2fa-ca3295e4714e|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTM4NTJiZjYxNmYzMWVkNjdjMzdkZTRiMGJhYTJjNWY4ZDhmY2E4MmU3MmRiY2FmY2JhNjY5NTZhODFjNCJ9fX0=

@@ -135,8 +135,8 @@ faction:
         unclaim_all:
             - define faction <[1]>
 
-            - foreach <proc[get_all_claims]> key:claim_name as:location:
-                - foreach <[faction].proc[get_claims]> as:claim:
+            - foreach <proc[get_all_claims]> key:claim_name:
+                - foreach <[faction].proc[get_claims]> key:claim:
                     - if <[claim]> == <[claim_name]>:
                         - flag server factions.<[faction]>.claims:<proc[get_all_claims].exclude[<[claim_name]>]>
                         - flag server factions.all_claims:<proc[get_all_claims].exclude[<[claim_name]>]>

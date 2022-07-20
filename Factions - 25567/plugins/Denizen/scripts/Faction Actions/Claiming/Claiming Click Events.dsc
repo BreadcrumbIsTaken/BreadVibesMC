@@ -14,3 +14,20 @@ faction_action_claiming_click_events:
                 - narrate "You have successfully claimed the chunk for your faction!" format:faction_action_format
             - else:
                 - narrate "You cannot claim land as you are not in a faction! Concider creating or joining one." format:faction_action_error_format
+        on player clicks chunk_can_be_unclaimed_item in remove_claim_map:
+            - if <player.flag[faction].proc[get_claims].size> == 1:
+                - inventory open d:faction_action_claiming_remove_claim_last_claim_warning_inventory
+            - else:
+                - flag <player> removing_chunk_claim:<context.item.flag[cuboid_location]>
+                - inventory open d:faction_action_claiming_remove_claim_confirmation_inventory
+
+        # Remove a claim.
+        on player clicks claim_removal_confirmation_item in faction_action_claiming_remove_claim_confirmation_inventory:
+            - inventory close
+            - run faction.claiming.unclaim def.1:<player.flag[faction]> def.2:<player.flag[removing_chunk_claim]>
+            - flag <player> removing_chunk_claim:!
+            - narrate "Successfully removed claim!" format:faction_action_format
+        # Delete a faction if player is removing last claim.
+        on player clicks claim_removal_last_claim_warning_item in faction_action_claiming_remove_claim_last_claim_warning_inventory:
+            - inventory close
+            - run faction.delete
