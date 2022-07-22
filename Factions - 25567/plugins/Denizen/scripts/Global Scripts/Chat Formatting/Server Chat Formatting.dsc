@@ -5,4 +5,4 @@
 server_chat_format:
     type: format
     debug: false
-    format: <bold><&lb><reset><&color[#00ADFF]>SERVER<white><bold><&rb><reset> <[text]>
+    format: <&lb><reset><&color[#00ADFF]>SERVER<white><&rb><&co> <[text]>
