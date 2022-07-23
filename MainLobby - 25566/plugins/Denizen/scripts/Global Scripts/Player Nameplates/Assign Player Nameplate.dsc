@@ -3,6 +3,7 @@
 #   Chooses a random color, and sets the player to the group chosen, letting the chat and nameplates have color in them.
 choose_players_nameplate_and_set:
     type: task
+    debug: false
     script:
         - random:
             - define colored_nameplate dark_red
@@ -27,6 +28,7 @@ choose_players_nameplate_and_set:
 #   Assigns the player to a random nameplate color. If the group is a special group like owner, than don't assign the player a random nameplate.
 assign_player_colored_nameplate:
     type: task
+    debug: false
     script:
         - if !<player.in_group[owner]> || !<player.in_group[admin]> || !<player.in_group[dev]>:
             - run choose_players_nameplate_and_set

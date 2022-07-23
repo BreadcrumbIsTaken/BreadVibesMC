@@ -3,14 +3,15 @@
 #   Bans/Unbans a player for an optional duration.
 ban_player:
     type: command
+    debug: false
     name: ban
     description: Ban a player. Default duration is 5d. When typing the reason, put it in quotation marks.
-    usage: /ban <&lt>player<&gt> <&sq><&lt>reason<&gt><&sq> [duration (s, m, h, d, y)]
+    usage: /ban [player] [reason] (duration:# + s, m, h, d, y)
     tab completions:
         1: <server.online_players.parse[name]>
-        2: reason for ban
-        3: duration (s, m, h, d, y)
-    permission: BreadVibesMC.Admin
+        2: reason
+        3: duration<&co> # + s, m, h, d, y
+    permission: breadvibesmc.admin.ban
     script:
         - if <context.args.size> <= 3 && <context.args.size> > 1:
             - if <context.args.size> == 2:
@@ -24,12 +25,13 @@ ban_player:
 
 unban_player:
     type: command
+    debug: false
     description: Unbans a player.
     name: unban
-    usage: /unban <&lt>player<&gt>
+    usage: /unban [player]
     tab completions:
         1: <server.banned_players.parse[name]>
-    permission: BreadVibesMC.Admin
+    permission: breadvibesmc.admin.unban
     script:
         - if <context.args.size> == 0:
             - narrate "<&[error]>Woah! No arguments provided! Please provide arguments."
