@@ -14,7 +14,7 @@ list_factions_command:
 # The inventory that lists all the factions and it's data on the server.
 list_factions_command_list_inventory:
     type: inventory
-    # debug: false
+    debug: false
     inventory: chest
     gui: true
     title: List of All Factions
