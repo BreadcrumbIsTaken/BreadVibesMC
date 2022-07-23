@@ -27,22 +27,22 @@ gamemode_changer:
                 # - if args is s
                 - case s:
                     - adjust <[player]> gamemode:survival
-                    - narrate "Your gamemode is now <&gradient[from=#006bff;to=#4dff00]><bold>Survivial<reset>courtesy of <player.proc[p_nameplate]>" targets:<[player]>
+                    - narrate "Your gamemode is now <&gradient[from=#006bff;to=#4dff00]><bold>Survivial<reset> courtesy of <player.proc[p_nameplate]>" targets:<[player]>
                     - narrate "<[player].proc[p_nameplate_def]>'s gamemode is now <&gradient[from=#006bff;to=#4dff00]>Surivial"
                 # - if args is sp
                 - case sp:
                     - adjust <[player]> gamemode:spectator
-                    - narrate "Your gamemode is now <&gradient[from=#006bff;to=#4dff00]><bold>Spectator<reset>courtesy of <player.proc[p_nameplate]>" targets:<[player]>
+                    - narrate "Your gamemode is now <&gradient[from=#006bff;to=#4dff00]><bold>Spectator<reset> courtesy of <player.proc[p_nameplate]>" targets:<[player]>
                     - narrate "<[player].proc[p_nameplate_def]>'s gamemode is now <&gradient[from=#006bff;to=#4dff00]>Spectator"
                 # - if args is a
                 - case a:
                     - adjust <[player]> gamemode:adventure
-                    - narrate "Your gamemode is now <&gradient[from=#006bff;to=#4dff00]><bold>Adventure<reset>courtesy of <player.proc[p_nameplate]>" targets:<[player]>
+                    - narrate "Your gamemode is now <&gradient[from=#006bff;to=#4dff00]><bold>Adventure<reset> courtesy of <player.proc[p_nameplate]>" targets:<[player]>
                     - narrate "<[player].proc[p_nameplate_def]>'s gamemode is now <&gradient[from=#006bff;to=#4dff00]>Adventure"
                 # - if args is c
                 - case c:
                     - adjust <[player]> gamemode:creative
-                    - narrate "Your gamemode is now <&gradient[from=#006bff;to=#4dff00]><bold>Creative<reset>courtesy of <player.proc[p_nameplate]>" targets:<[player]>
+                    - narrate "Your gamemode is now <&gradient[from=#006bff;to=#4dff00]><bold>Creative<reset> courtesy of <player.proc[p_nameplate]>" targets:<[player]>
                     - narrate "<[player].proc[p_nameplate_def]>'s gamemode is now <&gradient[from=#006bff;to=#4dff00]>Creative"
             - playeffect effect:TOTEM at:<[player].location.add[0,3,0]> visibility:25 quantity:75
         # if the player is null, then effect the player who did the command
