@@ -14,7 +14,7 @@ list_factions_command:
 # The inventory that lists all the factions and it's data on the server.
 list_factions_command_list_inventory:
     type: inventory
-    debug: false
+    # debug: false
     inventory: chest
     gui: true
     title: List of All Factions
@@ -30,8 +30,8 @@ list_factions_command_list_inventory:
                     - define rivals "No rivals! :)"
                 - else:
                     - define rivals <[f].proc[get_rivalries].separated_by[,]>
-                - define lore "<list[<yellow>Owner: <player[<[f].proc[get_owner]>].name>|<yellow>Power: <[f].proc[get_power]>|<yellow>Allies: <[allies]>|<yellow>Rivals: <[rivals]>|<blue>Click to send a join request!]>"
-                - define skull_skin <[f].proc[get_owner]>
+                - define lore "<list[<yellow>Owner:<white> <player[<[f].proc[get_owner]>].name>|<yellow>Power:<white> <[f].proc[get_power]>|<yellow>Allies:<white> <[allies]>|<yellow>Rivals:<white> <[rivals]>|<blue>Click to send a join request!]>"
+                - define skull_skin <[f].proc[get_owner].uuid>
                 - define display <[f].proc[get_display_name]>
 
                 - define item <item[player_head[display=<[display]>;lore=<[lore]>;skull_skin=<[skull_skin]>]]>
