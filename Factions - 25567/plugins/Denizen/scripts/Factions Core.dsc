@@ -7,7 +7,7 @@ faction:
     debug: false
     script:
         # Creates a faction or opens the Faction Action Inventory.
-        - if !<player.has_flag[FACTION]>:
+        - if !<player.has_flag[faction]>:
             - inventory open d:faction_action_player_not_in_any_faction_inventory
         - else:
             - if <player> == <player.flag[faction].proc[get_owner]>:
