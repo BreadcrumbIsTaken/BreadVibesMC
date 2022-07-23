@@ -7,7 +7,7 @@ list_factions_command:
     aliases:
         - logfactions
         - factions
-    description: Lists all the current factions in an inventory UI.
+    description: Lists all the current factions in an inventory GUI.
     script:
         - inventory open d:list_factions_command_list_inventory
 
