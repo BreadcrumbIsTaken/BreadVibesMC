@@ -14,7 +14,7 @@ player_chooses_new_owner_of_faction:
 
             - if !<player.has_flag[has_ownership_offer]>:
                 - if <[new_owner].has_flag[faction]>:
-                    - if <[new_owner].uuid> == <[faction_owner].uuid>:
+                    - if <[new_owner]> == <[faction_owner]>:
                         - narrate "You can't transfer ownership to yourself! You are already the owner." format:faction_action_error_format
                         - inventory close
                         - stop
@@ -25,7 +25,7 @@ player_chooses_new_owner_of_faction:
                     - inventory close
 
                     - flag <[new_owner]> has_ownership_offer:<[faction]> expire:10m
-                    - runlater out_of_time_for_transfer delay:5s def.new_owner:<[new_owner]>
+                    - runlater out_of_time_for_transfer delay:10m def.new_owner:<[new_owner]>
                     - narrate targets:<[new_owner]> "<green><player.name>, wants you to become the new owner of their faction<reset>, <[faction].proc[get_display_name]>. <green>To accept, please issue the command<reset>: <yellow>accept<reset>. <green>To deny, please issue the command<reset>: <yellow>deny <green>or, do nothing. This request will expire in 10 minutes." format:faction_action_format
             - else:
                 - narrate "<[new_owner].name> already has a valid offer. Please try again soon." format:faction_action_format
@@ -43,7 +43,7 @@ player_accepts_or_denies_offer_to_be_new_owner:
 
                 # Removes both the old owner and new owner from their factions to avoid any errors.
                 - if <[old_owner].has_flag[faction]>:
-                    - flag server factions.<[old_owner].flag[faction]>.members:<-:<[old_owner].uuid>
+                    - flag server factions.<[old_owner].flag[faction]>.members:<-:<[old_owner]>
                     - flag <[old_owner]> faction:!
                 - if <player.has_flag[faction]>:
                     - flag server factions.<player.flag[faction]>.members:<-:<player>
@@ -54,7 +54,7 @@ player_accepts_or_denies_offer_to_be_new_owner:
                 - flag <player> FACTION:<[faction]>
 
                 # Re-adds the owner to the faction.
-                - flag server factions.<[faction]>.members:->:<[old_owner].uuid>
+                - flag server factions.<[faction]>.members:->:<[old_owner]>
                 - flag <[old_owner]> faction:<[faction]>
 
                 - flag <player> has_ownership_offer:!
