@@ -36,11 +36,11 @@ faction:
             # faction_1_claim_1 = cu@...
             - flag server factions.all_claims:<map[]>
 
-        - flag server FACTION_IDS:++
+        - flag server faction_ids:++
 
-        - define FACTION_UUID faction_<server.flag[FACTION_IDS]>
+        - define faction_uuid faction_<server.flag[faction_ids]>
 
-        - flag <player> FACTION:<[FACTION_UUID]>
+        - flag <player> faction:<[faction_uuid]>
 
         - definemap default_faction_data:
             owner: <player>
@@ -62,8 +62,8 @@ faction:
             power: 100
             claims: <map[]>
 
-        - flag server factions.<[FACTION_UUID]>:<[default_faction_data]>
-        - run faction.claiming.claim def:<player.location.chunk.cuboid>|<[FACTION_UUID]>
+        - flag server factions.<[faction_uuid]>:<[default_faction_data]>
+        - run faction.claiming.claim def:<player.location.chunk.cuboid>|<[faction_uuid]>
         - flag <player> is_in_wilderness:false
 
         - narrate "<green>Faction created! Check it out by using '/faction'!" format:faction_action_format
