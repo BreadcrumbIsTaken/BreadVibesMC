@@ -1,3 +1,6 @@
+# TODO: What happens if a player creates a new faction in a claimed chunk????
+# TODO: Fix "open_faction_action_member_inventory" showing placeholder data.
+
 # Main faction script. Holds all the important faction details and code to be run.
 faction:
     type: task
@@ -11,9 +14,10 @@ faction:
                 - run open_faction_action_inventory
             - else:
                 - run open_faction_action_member_inventory
-    # TODO: Inviting other players to the faction.
     invite:
-        - narrate Invite! format:faction_action_format
+        - inventory close
+        - run invite_player_message def:<player.flag[inviting]>
+        - flag <player> inviting:!
     # Opens the settings inventory.
     settings:
         - define inv <inventory[faction_action_settings_inventory]>
@@ -82,6 +86,7 @@ faction:
         - narrate "<green>Successfully deleted faction!" format:faction_action_format
         - flag <player> is_in_wilderness:true
     # Lets the player leave their faction.
+    # TODO: Work on letting normal members leave the faction
     leave:
         - define faction <player.flag[faction]>
         - if <player> == <[faction].proc[get_owner]>:
