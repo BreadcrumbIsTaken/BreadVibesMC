@@ -17,3 +17,6 @@ faction_action_settings_inventory_click_events:
             - run faction_tagline_change_textbox
         on player clicks faction_action_settings_tagline_color_item in faction_action_settings_inventory:
             - inventory open d:faction_action_settings_tagline_color_change_inventory
+        on player clicks faction_action_settings_teleport_coordinates_item in faction_action_settings_inventory:
+            - inventory close
+            - run select_teleport_coords

@@ -18,7 +18,7 @@ faction:
     settings:
         - define inv <inventory[faction_action_settings_inventory]>
         # Dynamic dye item based off of faction's color.
-        - inventory d:<[inv]> adjust slot:13 material:<proc[match_color_code_to_dye].context[<player.proc[get_faction].proc[get_settings].get[color]>]>_dye
+        - inventory d:<[inv]> adjust slot:12 material:<proc[match_color_code_to_dye].context[<player.proc[get_faction].proc[get_settings].get[color]>]>_dye
         - inventory open d:<[inv]>
     # Opens the transfer ownership inventory.
     transfer_ownership:
