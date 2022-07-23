@@ -1,4 +1,5 @@
-# TODO: What happens if a player creates a new faction in a claimed chunk????
+# TODO: Claim map shows that a claim is owned by player's faction even what it is not
+# TODO: Entering one faction into another faction wont show the new factions name
 
 # Main faction script. Holds all the important faction details and code to be run.
 faction:
@@ -31,6 +32,9 @@ faction:
             - narrate "You are still waiting for <player.flag[waiting_for_owner_transfer_request_acceptance].name> to accept the ownership!" format:faction_action_format
     # Creates a new faction.
     create:
+        - if <player.location.chunk.cuboid> in <proc[get_all_claims].values>:
+            - narrate "You cannot create a faction inside someone else's claim!" format:faction_action_error_format
+            - stop
         - if !<server.has_flag[factions]>:
             - flag server factions:<map[]>
             # Map:
