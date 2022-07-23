@@ -54,6 +54,7 @@ faction:
                     - OutsidersDoNotGetPerms
                 color: <white>
                 tagline_color: <white>
+                teleport_coords: null
             display_name: <white><player.name>'s Faction
             tagline: Wow!
             tagline_display: <white>Wow!
@@ -64,6 +65,7 @@ faction:
 
         - flag server factions.<[faction_uuid]>:<[default_faction_data]>
         - run faction.claiming.claim def:<player.location.chunk.cuboid>|<[faction_uuid]>
+        - flag server factions.<[faction_uuid]>.settings.teleport_coords:<player.location.chunk.cuboid.center.highest.add[0,1,0].with_pose[<player>]>
         - flag <player> is_in_wilderness:false
 
         - narrate "<green>Faction created! Check it out by using '/faction'!" format:faction_action_format
