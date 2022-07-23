@@ -1,5 +1,4 @@
 # TODO: What happens if a player creates a new faction in a claimed chunk????
-# TODO: Fix "open_faction_action_member_inventory" showing placeholder data.
 
 # Main faction script. Holds all the important faction details and code to be run.
 faction:

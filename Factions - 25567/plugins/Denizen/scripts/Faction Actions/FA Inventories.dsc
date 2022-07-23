@@ -38,13 +38,10 @@ faction_action_player_not_owner_inventory:
     debug: false
     inventory: chest
     gui: true
-    title: <&color[#1569EA]>Faction Actions
+    title: <&color[#1569EA]>Your Faction
     procedural items:
         - determine <item[filler].repeat_as_list[54]>
     slots:
         - [] [] [] [] [] [] [] [] []
-        - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [faction_action_faction_name_item] [] [] [] []
-        - [] [] [] [] [] [] [] [] []
-        - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
