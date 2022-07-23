@@ -9,9 +9,9 @@
 gamemode_changer:
     type: command
     name: gm
-    permission: BreadVibesMC.Admin
+    permission: breadvibesmc.admin.gamemode_changer
     description: Changes your game mode. Player name is optional. If None, your gamemode will change.
-    usage: /gm <&lt>gamemode<&gt> [player]
+    usage: /gm [gamemode] (player)
     debug: false
     tab completions:
         1: s|sp|a|c
