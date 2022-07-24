@@ -178,10 +178,11 @@ get_faction_name_from_cuboid:
     debug: false
     definitions: cuboid
     script:
-        - foreach <proc[get_all_claims]> as:location:
+        - foreach <proc[get_all_claims]>:
             - foreach <proc[get_factions]> key:faction:
-                - if <[cuboid]> == <[location]>:
-                    - determine <[faction]||null>
+                - foreach <[faction].proc[get_claims]> as:loc:
+                    - if <[cuboid]> == <[loc]>:
+                        - determine <[faction]||null>
 
 # Get a faction's data from a claim's note name (cuboid).
 get_faction_data_from_cuboid:
@@ -189,7 +190,8 @@ get_faction_data_from_cuboid:
     debug: false
     definitions: cuboid
     script:
-        - foreach <proc[get_all_claims]> as:location:
-            - foreach <proc[get_factions]> as:faction_data:
-                - if <[cuboid]> == <[location]>:
-                    - determine <[faction_data]||null>
+        - foreach <proc[get_all_claims]>:
+            - foreach <proc[get_factions]> key:faction as:faction_data:
+                - foreach <[faction].proc[get_claims]> as:loc:
+                    - if <[cuboid]> == <[loc]>:
+                        - determine <[faction_data]||null>
