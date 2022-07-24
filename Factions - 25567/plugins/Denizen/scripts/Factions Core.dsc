@@ -1,4 +1,3 @@
-# TODO: Claim map shows that a claim is owned by player's faction even what it is not
 # TODO: Entering one faction into another faction wont show the new factions name
 
 # Main faction script. Holds all the important faction details and code to be run.
