@@ -10,7 +10,7 @@ enter_claim:
 
             - if <player.flag[is_in_wilderness].if_null[false]>:
                 - flag <player> is_in_wilderness:!
-                - title title:<[faction].proc[get_display_name]> stay:2s targets:<player> subtitle:<[faction].proc[get_tagline_display]>
+                - title title:<[faction].proc[get_display_name]> stay:2s targets:<player> subtitle:<[faction].proc[get_tagline_display]> fade_in:.5s fade_out:.5s stay:1s
                 - repeat 2:
                     - playeffect at:<[claim].outline_2d[<player.location.y.add[<[value]>]>]> effect:redstone visibility:20 targets:<player> special_data:1|<[faction].proc[get_settings].get[color]>
             - else:
@@ -19,7 +19,7 @@ enter_claim:
             - define faction_entering_from <proc[get_faction_name_from_cuboid].context[<context.from.chunk.cuboid>]>
             - define faction_entering_to <context.to.chunk.cuboid.proc[get_faction_name_from_cuboid].if_null[unclaimed_chunk]>
             - if <[faction_entering_to]> == unclaimed_chunk:
-                - title "title:<green>- Wilderness -" targets:<player>
+                - title "title:<green>- Wilderness -" targets:<player> fade_in:.5s fade_out:.5s stay:1s
                 - flag <player> is_in_wilderness
             - else if <[faction_entering_from]> == <[faction_entering_to]>:
                 - stop
