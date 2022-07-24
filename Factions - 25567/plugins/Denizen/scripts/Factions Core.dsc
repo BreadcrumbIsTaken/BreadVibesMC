@@ -72,7 +72,7 @@ faction:
         - flag server factions.<[faction_uuid]>:<[default_faction_data]>
         - run faction.claiming.claim def:<player.location.chunk.cuboid>|<[faction_uuid]>
         - flag server factions.<[faction_uuid]>.settings.teleport_coords:<player.location.chunk.cuboid.center.highest.add[0,1,0].with_pose[<player>]>
-        - flag <player> is_in_wilderness:false
+        - flag <player> is_in_wilderness:!
 
         - narrate "<green>Faction created! Check it out by using '/faction'!" format:faction_action_format
     # Deletes a faction.
@@ -86,7 +86,7 @@ faction:
 
         - flag server factions:<-:<[faction]>
         - narrate "<green>Successfully deleted faction!" format:faction_action_format
-        - flag <player> is_in_wilderness:true
+        - flag <player> is_in_wilderness
     # Lets the player leave their faction.
     # TODO: Work on letting normal members leave the faction
     leave:
@@ -109,6 +109,7 @@ faction:
                     - flag <[i]> faction:!
 
                 - flag server factions:<-:<[faction]>
+                - flag <player> is_in_wilderness
         - flag server faction_ids:-1
         - narrate Wiped. format:faction_action_format
     # All the claiming scripts.
