@@ -79,6 +79,15 @@ get_claims:
         - if <server.flag[factions].exists>:
             - determine <server.flag[factions.<[id]>.claims]||null>
 
+# Gets the faction's color
+get_color:
+    type: procedure
+    debug: false
+    definitions: id
+    script:
+        - if <server.flag[factions].exists>:
+            - determine <server.flag[factions.<[id]>.settings.color]||null>
+
 # Gets a faction's tagline.
 get_tagline:
     type: procedure

@@ -9,4 +9,4 @@ teleport_to_faction_command:
         - narrate "Teleporting. . ." format:faction_action_format
         - teleport <player.flag[faction].proc[get_teleport_coords]>
         - playsound <player.location> sound:entity_puffer_fish_blow_up pitch:0.9
-        - playeffect at:<player.location> DUST_COLOR_TRANSITION special_data:1.6|<&color[#6E149B]>|<&color[#20A3DF]> quantity:30
+        - playeffect at:<player.location> DUST_COLOR_TRANSITION special_data:1.6|<player.flag[faction].proc[get_color]>|<player.flag[faction].proc[get_tagline_color]> quantity:30
