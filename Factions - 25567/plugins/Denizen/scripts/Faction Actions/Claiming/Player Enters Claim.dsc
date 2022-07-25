@@ -36,4 +36,4 @@ display_claim_enter_text:
         - flag <player> is_in_wilderness:!
         - title title:<[faction].proc[get_display_name]> stay:2s targets:<player> subtitle:<[faction].proc[get_tagline_display]> fade_in:.5s fade_out:.5s stay:1s
         - repeat 2:
-            - playeffect at:<[claim].outline_2d[<player.location.y.add[<[value]>]>]> effect:redstone visibility:20 targets:<player> special_data:1|<[faction].proc[get_settings].get[color]>
+            - playeffect at:<[claim].outline_2d[<player.location.y.add[<[value]>]>]> effect:redstone visibility:20 targets:<player> special_data:1.4|<[faction].proc[get_settings].get[color]>
