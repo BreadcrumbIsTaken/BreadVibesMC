@@ -24,7 +24,7 @@ invite_player_message:
                 - runlater notify_invitation_request_expired delay:2m id:invite_player_runlater_<[invited_player].uuid> def:<[invited_player]>|<player>
 
 
-                - narrate "Click <green><underline><element[here ✔].on_click[<entry[accept_invitation_clickable].command>]><reset> to accept, or <red><underline><element[here ❌].on_click[<entry[decline_invitation_clickable].command>]><reset> to decline." targets:<[invited_player]> format:faction_action_format
+                - narrate "Click <green><underline><element[here ✔].on_click[<entry[accept_invitation_clickable].command>].on_hover[Accept invitation]><reset> to accept, or <red><underline><element[here ❌].on_click[<entry[decline_invitation_clickable].command>].on_hover[Decline invitation.]><reset> to decline." targets:<[invited_player]> format:faction_action_format
 
 # Player accepts invitation
 accept_invitation:
