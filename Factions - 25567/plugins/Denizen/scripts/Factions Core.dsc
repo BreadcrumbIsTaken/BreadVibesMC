@@ -1,5 +1,3 @@
-# TODO: Fix removal of more than one claim using `/ex run faction.wipe` bugging out and not removing notes.
-
 # Main faction script. Holds all the important faction details and code to be run.
 faction:
     type: task
@@ -157,7 +155,6 @@ faction:
                     - flag server factions.<[faction]>.claims:<[claims].exclude[<[claim_name]>]>
                     - flag server factions.all_claims:<proc[get_all_claims].exclude[<[claim_name]>]>
                     - note remove as:<[claim_name]>
-
         # Unclaims all the chunks in a faction. Used for debugging, testing, and deletion of a faction.
         unclaim_all:
             - define faction <[1]>
