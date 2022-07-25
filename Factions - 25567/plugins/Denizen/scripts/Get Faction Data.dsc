@@ -61,14 +61,14 @@ get_allies:
         - if <server.flag[factions].exists>:
             - determine <server.flag[factions.<[id]>.allies]||null>
 
-# Gets the faction's power level.
-get_power:
+# Gets the faction's claim chips
+get_claim_chips:
     type: procedure
     debug: false
     definitions: id
     script:
         - if <server.flag[factions].exists>:
-            - determine <server.flag[factions.<[id]>.power]||null>
+            - determine <server.flag[factions.<[id]>.claim_chips]||null>
 
 # Gets the faction's claims.
 get_claims:

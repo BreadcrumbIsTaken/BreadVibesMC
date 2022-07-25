@@ -26,7 +26,13 @@ color_claim_map_and_open:
         - foreach <[cuboids]> as:cuboid:
             - if <[cuboid].proc[is_claimable]>:
                 - inventory set d:<[inv]> slot:<[loop_index]> o:<item[location_is_claimable_claim_map_item].with_flag[cuboid_location:<[cuboid]>]>
-                - inventory adjust d:<[inv]> slot:<[loop_index]> "lore:<white>Left click to claim!"
+
+                - define chip_multiplier <proc[claim_chip_multiplier].context[<player.flag[faction]>]>
+                - define chips_needed <player.flag[faction].proc[get_claims].size.mul[<[chip_multiplier]>]>
+                - if if <player.flag[faction].proc[get_claim_chips]> >= <[chips_needed]>:
+                    - inventory adjust d:<[inv]> slot:<[loop_index]> "lore:<white>Left click to claim!|<white>Cost: <[chips_needed].proc[cc_display]>|<white>Your faction has <player.flag[faction].proc[get_claim_chips].proc[cc_display]><white>."
+                - else:
+                    - inventory adjust d:<[inv]> slot:<[loop_index]> "lore:<white>Left click to claim!|<white>Cost: <[chips_needed].proc[cc_display]>|<white>Your faction has <player.flag[faction].proc[get_claim_chips].proc[cc_display]><white>.|<red>Not enough <yellow>CC!"
             - else:
                 - inventory set d:<[inv]> slot:<[loop_index]> o:<item[location_is_not_claimable_claim_map_item]>
                 - inventory adjust d:<[inv]> slot:<[loop_index]> "lore:<red>Unclaimable!|<white>Aready claimed by <[cuboid].proc[get_faction_name_from_cuboid].proc[get_display_name]>."

@@ -1,3 +1,5 @@
+# TODO: Fix removal of more than one claim using `/ex run faction.wipe` bugging out and not removing notes.
+
 # Main faction script. Holds all the important faction details and code to be run.
 faction:
     type: task
@@ -67,7 +69,7 @@ faction:
             tagline_display: <white>Wow!
             rivalries: <list[]>
             allies: <list[]>
-            power: 100
+            claim_chips: 1
             claims: <map[]>
 
         - flag server factions.<[faction_uuid]>:<[default_faction_data]>

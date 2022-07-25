@@ -30,7 +30,7 @@ list_factions_command_list_inventory:
                     - define rivals "No rivals! :)"
                 - else:
                     - define rivals <[f].proc[get_rivalries].separated_by[,]>
-                - define lore "<list[<yellow>Owner:<white> <player[<[f].proc[get_owner]>].name>|<yellow>Power:<white> <[f].proc[get_power]>|<yellow>Allies:<white> <[allies]>|<yellow>Rivals:<white> <[rivals]>|<blue>Click to send a join request!]>"
+                - define lore "<list[<yellow>Owner:<white> <player[<[f].proc[get_owner]>].name>|<yellow>Claim Chips:<white> <[f].proc[get_claim_chips]>|<yellow>Allies:<white> <[allies]>|<yellow>Rivals:<white> <[rivals]>|<blue>Click to send a join request!]>"
                 - define skull_skin <[f].proc[get_owner].uuid>
                 - define display <[f].proc[get_display_name]>
 
