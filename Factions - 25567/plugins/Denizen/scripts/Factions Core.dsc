@@ -1,5 +1,3 @@
-# TODO: Entering one faction into another faction wont show the new factions name
-
 # Main faction script. Holds all the important faction details and code to be run.
 faction:
     type: task
@@ -31,7 +29,7 @@ faction:
             - narrate "You are still waiting for <player.flag[waiting_for_owner_transfer_request_acceptance].name> to accept the ownership!" format:faction_action_format
     # Creates a new faction.
     create:
-        - if <player.location.chunk.cuboid> in <proc[get_all_claims].values>:
+        - if <player.location.chunk.cuboid> in <proc[get_all_claims].values||<list[]>>:
             - narrate "You cannot create a faction inside someone else's claim!" format:faction_action_error_format
             - stop
         - if !<server.has_flag[factions]>:
@@ -41,6 +39,9 @@ faction:
             # ex:
             # faction_1_claim_1 = cu@...
             - flag server factions.all_claims:<map[]>
+
+        - if !<server.has_flag[faction_ids]>:
+            - flag server faction_ids:-1
 
         - flag server faction_ids:++
 
@@ -99,18 +100,19 @@ faction:
             - inject faction.delete
     # Wipe ALL existing factions. Only used for testing, debugging, restarting, and publishing purposes.
     wipe:
-        - foreach <server.online_players> as:__player:
+        - foreach <server.players> as:__player:
             - define faction <player.proc[get_faction]||null>
             - if <[faction]> != null:
-                - run faction.claiming.unclaim_all def.1:<[faction]>
-
                 - define members <[faction].proc[get_members]>
                 - foreach <[members]> as:i:
                     - flag <[i]> faction:!
 
-                - flag server factions:<-:<[faction]>
+                - run faction.claiming.unclaim_all def.1:<[faction]>
+
+                - flag server factions:<server.flag[factions].exclude[<[faction]>]>
                 - flag <player> is_in_wilderness
         - flag server faction_ids:-1
+        - flag server factions:!
         - narrate Wiped. format:faction_action_format
     # All the claiming scripts.
     claiming:
@@ -128,26 +130,34 @@ faction:
             - else:
                 - define claims <proc[get_all_claims]>
 
+            - if <[faction].proc[get_claims]> == null:
+                - define faction_claims <map[]>
+            - else:
+                - define faction_claims <[faction].proc[get_claims]>
+
             - flag server factions.all_claims:<[claims].include[<[name_loc_map]>]>
-            - flag server factions.<[faction]>.claims:<[claims].include[<[name_loc_map]>]>
+            - flag server factions.<[faction]>.claims:<[faction_claims].include[<[name_loc_map]>]>
             - note <[loc]> as:<[claim_name]>
         # Unclaims a chunk.
         unclaim:
             - define faction <[1]>
             - define loc <[2]>
 
-            - foreach <proc[get_all_claims]> key:claim_name as:location:
-                - if <[location]> == <[loc]>:
-                    - flag server factions.<[faction]>.claims:<proc[get_all_claims].exclude[<[claim_name]>]>
+            - define claims <[faction].proc[get_claims]>
+
+            - foreach <[claims]> key:claim_name as:claim:
+                - if <[loc]> == <[claim]>:
+                    - flag server factions.<[faction]>.claims:<[claims].exclude[<[claim_name]>]>
                     - flag server factions.all_claims:<proc[get_all_claims].exclude[<[claim_name]>]>
                     - note remove as:<[claim_name]>
+
         # Unclaims all the chunks in a faction. Used for debugging, testing, and deletion of a faction.
         unclaim_all:
             - define faction <[1]>
 
-            - foreach <proc[get_all_claims]> key:claim_name:
+            - if <[faction].proc[get_claims]> != null:
                 - foreach <[faction].proc[get_claims]> key:claim:
-                    - if <[claim]> == <[claim_name]>:
-                        - flag server factions.<[faction]>.claims:<proc[get_all_claims].exclude[<[claim_name]>]>
-                        - flag server factions.all_claims:<proc[get_all_claims].exclude[<[claim_name]>]>
-                        - note remove as:<[claim_name]>
+                    - flag server factions.all_claims:<proc[get_all_claims].exclude[<[claim]>]>
+                    - note remove as:<[claim]>
+
+                - flag server factions.<[faction]>.claims:<map[]>
