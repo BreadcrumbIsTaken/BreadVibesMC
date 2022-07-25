@@ -29,7 +29,7 @@ color_claim_map_and_open:
 
                 - define chip_multiplier <proc[claim_chip_multiplier].context[<player.flag[faction]>]>
                 - define chips_needed <player.flag[faction].proc[get_claims].size.mul[<[chip_multiplier]>]>
-                - if if <player.flag[faction].proc[get_claim_chips]> >= <[chips_needed]>:
+                - if <player.flag[faction].proc[get_claim_chips]> >= <[chips_needed]>:
                     - inventory adjust d:<[inv]> slot:<[loop_index]> "lore:<white>Left click to claim!|<white>Cost: <[chips_needed].proc[cc_display]>|<white>Your faction has <player.flag[faction].proc[get_claim_chips].proc[cc_display]><white>."
                 - else:
                     - inventory adjust d:<[inv]> slot:<[loop_index]> "lore:<white>Left click to claim!|<white>Cost: <[chips_needed].proc[cc_display]>|<white>Your faction has <player.flag[faction].proc[get_claim_chips].proc[cc_display]><white>.|<red>Not enough <yellow>CC!"
