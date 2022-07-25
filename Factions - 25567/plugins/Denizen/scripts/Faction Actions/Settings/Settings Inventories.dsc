@@ -9,7 +9,7 @@ faction_action_settings_inventory:
         - determine <item[filler].repeat_as_list[27]>
     slots:
         - [] [] [] [] [] [] [] [] []
-        - [] [faction_action_settings_faction_name_item] [faction_action_settings_color_item] [faction_action_settings_permissions_item] [faction_action_settings_tagline_item] [faction_action_settings_tagline_color_item] [faction_action_settings_teleport_coordinates_item] [] []
+        - [] [faction_action_settings_faction_name_item] [faction_action_settings_color_item] [faction_action_settings_tagline_item] [faction_action_settings_tagline_color_item] [faction_action_settings_teleport_coordinates_item] [faction_action_settings_permissions_item] [] []
         - [previous_page_item] [] [] [] [] [] [] [] []
 
 # The inventory where you can change the color of your faction.

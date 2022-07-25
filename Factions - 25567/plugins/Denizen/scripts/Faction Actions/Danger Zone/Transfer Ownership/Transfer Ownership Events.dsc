@@ -1,5 +1,3 @@
-# TODO: So far, this only works for those who are not part of the faction (as far as I can tell. I have not tested what happens if so yet, so I may be wrong).
-
 # Choosing the new owner of the faction.
 player_chooses_new_owner_of_faction:
     type: world
