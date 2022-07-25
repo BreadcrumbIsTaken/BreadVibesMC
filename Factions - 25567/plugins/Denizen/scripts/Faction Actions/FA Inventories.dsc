@@ -43,5 +43,5 @@ faction_action_player_not_owner_inventory:
         - determine <item[filler].repeat_as_list[54]>
     slots:
         - [] [] [] [] [] [] [] [] []
-        - [] [] [] [] [faction_action_faction_name_item] [] [] [] []
+        - [] [] [faction_action_danger_zone_leave_faction_item] [] [faction_action_faction_name_item] [] [] [] []
         - [] [] [] [] [] [] [] [] []

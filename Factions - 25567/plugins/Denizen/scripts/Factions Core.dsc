@@ -82,22 +82,27 @@ faction:
         - run faction.claiming.unclaim_all def.1:<[faction]>
 
         - define members <[faction].proc[get_members]>
-        - foreach <[members]> as:i:
-            - flag <[i]> faction:!
+        - if <[members]> != null:
+            - foreach <[members]> as:i:
+                - flag <[i]> faction:!
 
-        - flag server factions:<-:<[faction]>
+        - flag server factions:<server.flag[factions].exclude[<[faction]>]>
         - narrate "<green>Successfully deleted faction!" format:faction_action_format
         - flag <player> is_in_wilderness
     # Lets the player leave their faction.
-    # TODO: Work on letting normal members leave the faction
     leave:
         - define faction <player.flag[faction]>
         - if <player> == <[faction].proc[get_owner]>:
-            - narrate "Sorry, but you are going to have to tranfer ownership of your faction before you can leave it. You can do so in the <red>Danger Zone<reset> section of the Faction Action Inventory. (<bold>/f<reset>)" format:faction_action_format
-            - stop
-        - if <[faction].proc[get_members]> == <list[<player>]>:
+            - if <[faction].proc[get_members].size> == 1:
+                - narrate "Sorry, but you are going to have to tranfer ownership of your faction before you can leave it. You can do so in the <red>Danger Zone<reset> section of the Faction Action Inventory. (<underline><element[/f].on_click[/help f].on_hover[Click to display help message for this command.]><reset>)" format:faction_action_error_format
+                - stop
+            - else:
+                - narrate "You have successfully left the faction." format:faction_action_format
+                - run faction.delete
+        - else:
+            - flag server factions.<player.flag[faction]>.members:<-:<player>
+            - flag <player> faction:!
             - narrate "You have successfully left the faction." format:faction_action_format
-            - inject faction.delete
     # Wipe ALL existing factions. Only used for testing, debugging, restarting, and publishing purposes.
     wipe:
         - foreach <server.players> as:__player:

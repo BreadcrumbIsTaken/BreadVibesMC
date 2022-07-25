@@ -26,3 +26,7 @@ danger_zone_click_events:
         on player clicks faction_action_danger_zone_faction_deletion_confirmation_item in faction_action_danger_zone_delete_confirmation_inventory:
             - inventory close
             - run faction.delete
+        # Leaves the faction.
+        on player clicks faction_action_danger_zone_leave_faction_confirmation_item in faction_action_danger_zone_player_leave_confirm_inventory:
+            - inventory close
+            - run faction.leave
