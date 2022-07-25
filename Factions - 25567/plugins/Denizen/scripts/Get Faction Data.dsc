@@ -155,9 +155,9 @@ get_faction_name_from_note_name:
     definitions: note_name
     script:
         - foreach <proc[get_all_claims]>:
-            - foreach <proc[get_factions]> key:faction as:faction_data:
-                - foreach <[faction_data].get[claims]> key:faction_note_name:
-                    - if <[note_name]> == <[faction_note_name]>:
+            - foreach <proc[get_factions]> key:faction:
+                - foreach <[faction].proc[get_claims]> key:name:
+                    - if <[note_name]> == <[name]>:
                         - determine <[faction]||null>
 
 # Get a faction's data from a claim (cuboid).
@@ -167,9 +167,9 @@ get_faction_data_from_note_name:
     definitions: note_name
     script:
         - foreach <proc[get_all_claims]>:
-            - foreach <proc[get_factions]> as:faction_data:
-                - foreach <[faction_data].get[claims]> key:faction_note_name:
-                    - if <[note_name]> == <[faction_note_name]>:
+            - foreach <proc[get_factions]> key:faction as:faction_data:
+                - foreach <[faction].proc[get_claims]> key:name:
+                    - if <[note_name]> == <[name]>:
                         - determine <[faction_data]||null>
 
 # Get a faction's name from a claim's note name. (cuboid).
