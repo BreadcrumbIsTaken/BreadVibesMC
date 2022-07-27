@@ -4,7 +4,7 @@ remember_gamemode_command:
     name: remgm
     debug: false
     description: Remember the gamemode that you are in and have it be applied when you rejoin the game. Works for this server only. The 'persist' flag will remember your choice/changes throughout servers, i.e. lobby, factions, etc.
-    usage: /remgm [toggle|true|false] (persist)
+    usage: /remgm [toggle/true/false] (persist)
     permission: breadvibesmc.admin.remember_gamemode
     aliases:
         - remembergamemode
