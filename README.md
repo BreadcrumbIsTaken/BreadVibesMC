@@ -10,6 +10,7 @@ This server and it's code is nowhere near production ready, as it has many thing
 
 ## Commits to Videos:
 
+- [c8fd79e ... Most recent commit](https://github.com/BreadcrumbIsTaken/BreadVibesMC/commits/main) -- Video in progress!
 - [2fd77f7 ... b28b498](https://github.com/BreadcrumbIsTaken/BreadVibesMC/compare/2fd77f7...b28b498) -- Video [6](https://www.youtube.com/watch?v=P6Xk473C8xk&list=PLUU0f6lFdRVHc6FYvv9SlZK8uwlFOKteQ&index=8)
 - [286f375 ... 20c1fd5](https://github.com/BreadcrumbIsTaken/BreadVibesMC/compare/286f375...20c1fd5) -- Video [5](https://www.youtube.com/watch?v=d0BRRIlsEn8&list=PLUU0f6lFdRVHc6FYvv9SlZK8uwlFOKteQ&index=6) and [Livestream 2](https://www.youtube.com/watch?v=JCYLK-JNC7Y&list=PLUU0f6lFdRVHc6FYvv9SlZK8uwlFOKteQ&index=7)
 - [f5bd6ef ... 2a157f1](https://github.com/BreadcrumbIsTaken/BreadVibesMC/compare/f5bd6ef...2a157f1) -- Videos [1](https://www.youtube.com/watch?v=DEJFn6eeQb8&list=PLUU0f6lFdRVHc6FYvv9SlZK8uwlFOKteQ&index=1), [2](https://www.youtube.com/watch?v=4pZH8hhz2YM&list=PLUU0f6lFdRVHc6FYvv9SlZK8uwlFOKteQ&index=2), [3](https://www.youtube.com/watch?v=lM5O8F_dzVc&list=PLUU0f6lFdRVHc6FYvv9SlZK8uwlFOKteQ&index=3), [4](https://www.youtube.com/watch?v=XW6vioVYuf0&list=PLUU0f6lFdRVHc6FYvv9SlZK8uwlFOKteQ&index=5), and [Livestream 1](https://www.youtube.com/watch?v=_d8LLSgTgKg&list=PLUU0f6lFdRVHc6FYvv9SlZK8uwlFOKteQ&index=4).
