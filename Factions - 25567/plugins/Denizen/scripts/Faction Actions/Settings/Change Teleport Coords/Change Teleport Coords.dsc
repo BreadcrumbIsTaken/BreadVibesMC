@@ -1,3 +1,6 @@
+# TODO: Protect the teleport area after player sets the coordinates. Maybe save the cuboid and listen for place events?
+# TODO: Let non-faction members teleport to other factions.
+
 # Get teleport coordinate selection setup
 select_teleport_coords:
     type: task
