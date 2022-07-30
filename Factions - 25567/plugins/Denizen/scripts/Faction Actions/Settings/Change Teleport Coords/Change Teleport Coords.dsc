@@ -8,9 +8,11 @@ select_teleport_coords:
     script:
         - if !<player.has_flag[selecting_teleport_coords]>:
             - define id player_select_teleport_coords_<player.uuid>
+
             - flag <player> teleport_coords_runlater:<[id]>
             - runlater notify_teleport_coords_experation delay:3m id:<[id]>
             - flag <player> selecting_teleport_coords expire:3m
+
             - narrate "Go to the place you want to set the coordinates. Must have no solid blocks within a 3 block radius. Type in chat: 'set' within 3 minutes to set new teleport coordinates, or 'cancel' to cancel the selection." format:faction_action_format
         - else:
             - narrate "You are already setting the teleport coordinates!" format:faction_action_error_format
