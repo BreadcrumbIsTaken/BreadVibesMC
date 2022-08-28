@@ -23,7 +23,7 @@ list_factions_command_list_inventory:
         - if <proc[get_factions]> != null:
             - foreach <proc[get_factions].keys> as:f:
                 - if <[f].proc[get_allies].is_empty>:
-                    - define allies "No allies <element[<&ns>crying.].hex_rainbow>"
+                    - define allies "No allies <element[<&ns>crying].hex_rainbow>."
                 - else:
                     - define allies <[f].proc[get_allies].separated_by[,]>
                 - if <[f].proc[get_rivalries].is_empty>:
