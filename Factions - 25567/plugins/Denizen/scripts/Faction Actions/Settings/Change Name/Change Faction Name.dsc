@@ -28,9 +28,11 @@ player_editing_name_change_sign:
         after player changes sign flagged:editing_faction_name_sign:
             - if <context.new.get[1].length> < 3:
                 - narrate "Your faction's name must have <yellow>3-15<reset> characters!" format:faction_action_error_format
+                - flag <player> editing_faction_name_sign:!
                 - stop
             - if <context.new.get[1]> in <server.flag[faction_names].values>:
                 - narrate "The name '<context.new.get[1]>' is already taken!" format:faction_action_error_format
+                - flag <player> editing_faction_name_sign:!
                 - stop
             - flag server faction_names:<server.flag[faction_names].exclude[<player.flag[faction].proc[get_name]>]>
             - flag server faction_names:<server.flag[faction_names].include[<context.new.get[1]>=<player.flag[faction]>]>

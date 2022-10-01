@@ -62,14 +62,21 @@ faction:
             name: <[default_name]>
             settings:
                 permissions:
-                    # This is just placeholder stuff ;0
-                    - OwnersGetAllPerms
-                    - MembersGetBasicPerms
-                    - OutsidersDoNotGetPerms
+                    owners: <list[]>
+                    members: <list[]>
+                    outsiders: <list[]>
+                    # Give specific players certain permissions.
+                    players: <list[]>
                 color: <white>
                 tagline_color: <white>
                 teleport_coords: null
-            display_name: <white><player.name>'s Faction
+                environment:
+                    weather: auto
+                    biome:
+                        type: auto
+                        original: null
+                    time: auto
+            display_name: <white><[default_name]>
             tagline: Wow!
             tagline_display: <white>Wow!
             rivalries: <list[]>
@@ -81,6 +88,7 @@ faction:
         - flag server faction_names:<map[<player.name>'s Faction=<[faction_uuid]>]>
         - run faction.claiming.claim def:<player.location.chunk.cuboid>|<[faction_uuid]>
         - flag server factions.<[faction_uuid]>.settings.teleport_coords:<player.location.chunk.cuboid.center.highest.add[0,1,0].with_pose[<player>]>
+        - flag server factions.<[faction_uuid]>.settings.environment.biome.original:<player.location.biome>
         - flag <player> is_in_wilderness:!
 
         - narrate "<green>Faction created! Check it out by using '<white>/faction<green>'!" format:faction_action_format
