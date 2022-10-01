@@ -10,6 +10,7 @@ player_joins_the_server:
             - adjust <player> gamemode:survival
 
             - announce "<proc[p_nameplate]> has <&gradient[from=#79c2f3;to=#ffb4ef]><bold>just joined <reset>the server!" format:quit_or_join_format
+            - wait 1s
             - actionbar "Welcome back to <&gradient[from=#ff69b8;to=#ffa74a]><bold>BreadVibesMC<reset>!" targets:<player>
 
 # Displays a goodbye message when a player leaves the server.

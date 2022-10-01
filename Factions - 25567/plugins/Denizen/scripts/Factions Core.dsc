@@ -48,11 +48,18 @@ faction:
         - define faction_uuid faction_<server.flag[faction_ids]>
 
         - flag <player> faction:<[faction_uuid]>
+        - define default_name "<player.name>'s Faction"
+
+        - if <server.flag[faction_names].exists>:
+            - if <[default_name]> in <server.flag[faction_names].values>:
+                - define default_name "<player.name>'s Faction (<server.flag[faction_names].count[<[default_name]>].add[1]>)"
+        - if <[default_name].length> > 15:
+            - define default_name <[default_name].substring[1,15]>
 
         - definemap default_faction_data:
             owner: <player>
             members: <list[<player>]>
-            name: <player.name>'s Faction
+            name: <[default_name]>
             settings:
                 permissions:
                     # This is just placeholder stuff ;0
@@ -71,11 +78,12 @@ faction:
             claims: <map[]>
 
         - flag server factions.<[faction_uuid]>:<[default_faction_data]>
+        - flag server faction_names:<map[<player.name>'s Faction=<[faction_uuid]>]>
         - run faction.claiming.claim def:<player.location.chunk.cuboid>|<[faction_uuid]>
         - flag server factions.<[faction_uuid]>.settings.teleport_coords:<player.location.chunk.cuboid.center.highest.add[0,1,0].with_pose[<player>]>
         - flag <player> is_in_wilderness:!
 
-        - narrate "<green>Faction created! Check it out by using '/faction'!" format:faction_action_format
+        - narrate "<green>Faction created! Check it out by using '<white>/faction<green>'!" format:faction_action_format
     # Deletes a faction.
     delete:
         - define faction <player.proc[get_faction]>
@@ -87,6 +95,7 @@ faction:
                 - flag <[i]> faction:!
 
         - flag server factions:<server.flag[factions].exclude[<[faction]>]>
+        - flag server faction_names:<server.flag[faction_names].exclude[<[faction].proc[get_name]>]>
         - narrate "<green>Successfully deleted faction!" format:faction_action_format
         - flag <player> is_in_wilderness
     # Lets the player leave their faction.
