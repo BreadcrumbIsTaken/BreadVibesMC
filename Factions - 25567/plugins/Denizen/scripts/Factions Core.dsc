@@ -79,8 +79,8 @@ faction:
             display_name: <white><[default_name]>
             tagline: Wow!
             tagline_display: <white>Wow!
-            rivalries: <list[]>
-            allies: <list[]>
+            # rivalries: <list[]>
+            # allies: <list[]>
             claim_chips: 1
             claims: <map[]>
 
