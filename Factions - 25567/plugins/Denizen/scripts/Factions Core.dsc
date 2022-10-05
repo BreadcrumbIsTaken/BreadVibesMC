@@ -11,6 +11,7 @@ faction:
                 - run open_faction_action_inventory
             - else:
                 - run open_faction_action_member_inventory
+    # Opens the invite inventory.
     invite:
         - inventory close
         - run invite_player_message def:<player.flag[inviting]>
