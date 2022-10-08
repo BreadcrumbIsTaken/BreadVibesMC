@@ -13,18 +13,22 @@ change_environment_click_events:
         on player clicks sunny_weather_item in change_environment_weather_inventory:
             - inventory close
             - flag server factions.<player.flag[faction]>.settings.environment.weather:sunny
+            - flag <player> editing_weather
             - run change_faction_weather def.faction:<player.flag[faction]>
         on player clicks thunder_weather_item in change_environment_weather_inventory:
             - inventory close
             - flag server factions.<player.flag[faction]>.settings.environment.weather:thunder
+            - flag <player> editing_weather
             - run change_faction_weather def.faction:<player.flag[faction]>
         on player clicks storm_weather_item in change_environment_weather_inventory:
             - inventory close
             - flag server factions.<player.flag[faction]>.settings.environment.weather:storm
+            - flag <player> editing_weather
             - run change_faction_weather def.faction:<player.flag[faction]>
         on player clicks auto_weather_item in change_environment_weather_inventory:
             - inventory close
             - flag server factions.<player.flag[faction]>.settings.environment.weather:auto
+            - flag <player> editing_weather
             - run change_faction_weather def.faction:<player.flag[faction]>
         # Change biome
         on player clicks plains_biome_item in change_environment_biome_inventory:
@@ -71,26 +75,32 @@ change_environment_click_events:
         on player clicks dawn_time_item in change_environment_time_inventory:
             - inventory close
             - flag server factions.<player.flag[faction]>.settings.environment.time:23000t
+            - flag <player> editing_time
             - run change_faction_time
         on player clicks sunrise_time_item in change_environment_time_inventory:
             - inventory close
             - flag server factions.<player.flag[faction]>.settings.environment.time:0t
+            - flag <player> editing_time
             - run change_faction_time
         on player clicks noon_time_item in change_environment_time_inventory:
             - inventory close
             - flag server factions.<player.flag[faction]>.settings.environment.time:6000t
+            - flag <player> editing_time
             - run change_faction_time
         on player clicks sunset_time_item in change_environment_time_inventory:
             - inventory close
             - flag server factions.<player.flag[faction]>.settings.environment.time:12000t
+            - flag <player> editing_time
             - run change_faction_time
         on player clicks dusk_time_item in change_environment_time_inventory:
             - inventory close
             - flag server factions.<player.flag[faction]>.settings.environment.time:13000t
+            - flag <player> editing_time
             - run change_faction_time
         on player clicks midnight_time_item in change_environment_time_inventory:
             - inventory close
             - flag server factions.<player.flag[faction]>.settings.environment.time:18000t
+            - flag <player> editing_time
             - run change_faction_time
         on player clicks custom_time_item in change_environment_time_inventory:
             - inventory close
@@ -98,4 +108,5 @@ change_environment_click_events:
         on player clicks auto_time_item in change_environment_time_inventory:
             - inventory close
             - flag server factions.<player.flag[faction]>.settings.environment.time:auto
+            - flag <player> editing_time
             - run change_faction_time

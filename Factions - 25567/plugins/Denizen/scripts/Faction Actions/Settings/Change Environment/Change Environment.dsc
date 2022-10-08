@@ -9,7 +9,9 @@ change_faction_weather:
                 - weather player reset
             - else:
                 - weather player <[choice]>
-        - narrate "Successfully changed weather to: <[choice].to_titlecase>!" format:faction_action_format
+        - if <player.has_flag[editing_weather]>:
+            - narrate "Successfully changed weather to: <[choice].to_titlecase>!" format:faction_action_format
+            - flag <player> editing_weather:!
 
 # Automatically update environment when a player enters or leaves the claim.
 change_faction_environment_events:
@@ -56,10 +58,14 @@ change_faction_time:
         - if <[choice]> != null:
             - if <[choice]> == auto:
                 - time player reset
-                - narrate "Successfully changed time to: Auto!" format:faction_action_format
+                - if <player.has_flag[editing_time]>:
+                    - flag <player> editing_time:!
+                    - narrate "Successfully changed time to: Auto!" format:faction_action_format
             - else:
                 - time player <[choice].as[duration]> freeze
-                - narrate "Successfully changed time to: <[choice]>!" format:faction_action_format
+                - if <player.has_flag[editing_time]>:
+                    - flag <player> editing_time:!
+                    - narrate "Successfully changed time to: <[choice]>!" format:faction_action_format
 
 # Sign textbox to let player choose custom time.
 set_custom_faction_time_textbox:
