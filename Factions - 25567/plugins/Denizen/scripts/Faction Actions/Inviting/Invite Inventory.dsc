@@ -19,4 +19,4 @@ invite_other_players_to_faction_inventory:
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
-        - [previous_page_item] [filler] [filler] [filler] [filler] [filler] [filler] [filler] [filler]
+        - [back_page_item] [filler] [filler] [filler] [filler] [filler] [filler] [filler] [filler]

@@ -13,7 +13,7 @@ faction_action_danger_zone_inventory:
         - [] [faction_action_danger_zone_transfer_ownership_item] [] [faction_action_danger_zone_leave_faction_item] [] [faction_action_danger_zone_remove_claim_from_faction_item] [] [faction_action_danger_zone_delete_faction_item] []
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
-        - [previous_page_item] [] [] [] [] [] [] [] []
+        - [back_page_item] [] [] [] [] [] [] [] []
 
 # The deletion confirmation inventory.
 faction_action_danger_zone_delete_confirmation_inventory:
@@ -30,7 +30,7 @@ faction_action_danger_zone_delete_confirmation_inventory:
         - [] [] [] [] [faction_action_danger_zone_faction_deletion_confirmation_item] [] [] [] []
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
-        - [previous_page_item] [] [] [] [] [] [] [] []
+        - [back_page_item] [] [] [] [] [] [] [] []
 
 # The leave confirmation inventory.
 faction_action_danger_zone_player_leave_confirm_inventory:
@@ -47,4 +47,4 @@ faction_action_danger_zone_player_leave_confirm_inventory:
         - [] [] [] [] [faction_action_danger_zone_leave_faction_confirmation_item] [] [] [] []
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
-        - [previous_page_item] [] [] [] [] [] [] [] []
+        - [back_page_item] [] [] [] [] [] [] [] []

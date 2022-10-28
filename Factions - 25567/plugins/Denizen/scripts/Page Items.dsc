@@ -1,5 +1,5 @@
 # A back page item that can be used for pagination in inventories.
-previous_page_item:
+back_page_item:
     type: item
     material: spectral_arrow
     display name: Back

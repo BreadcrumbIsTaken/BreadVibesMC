@@ -45,4 +45,4 @@ list_factions_command_list_inventory:
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
-        - [previous_page_item] [air] [air] [air] [air] [air] [air] [air] [next_page_item]
+        - [back_page_item] [air] [air] [air] [air] [air] [air] [air] [next_page_item]

@@ -10,7 +10,7 @@ faction_action_settings_item:
 faction_action_settings_faction_name_item:
     type: item
     material: player_head
-    display name: <yellow>Change faction name
+    display name: <yellow>Change Faction Name
     lore:
         - <white>Only 3-15 characters allowed.
     mechanisms:
@@ -20,18 +20,18 @@ faction_action_settings_faction_name_item:
 faction_action_settings_color_item:
     type: item
     material: white_wool
-    display name: <yellow>Change faction color
+    display name: <yellow>Change Faction Color
     lore:
         - <white>Change the color of your faction!
 
 # Item to change the faction's permissions.
-# TODO: Work on this.
 faction_action_settings_permissions_item:
     type: item
     material: player_head
-    display name: <yellow>Change faction permissions
+    display name: <yellow>Change Faction Permissions
     lore:
-        - work on later
+        - <white>Change permissions for Owners,
+        - <white>members, and outsiders.
     mechanisms:
         skull_skin: ddddbe2f-62ff-4076-86c6-e46d3aac6e21|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTFjMmY5MjhjNGFiZTMxZTM0MmM4MGM3MWZlZjcyM2U5OTA1NzE3ZjQ5OGRkNzQ2ZWJmOTQxNzk4ODlhNzVjMyJ9fX0=
 
@@ -39,7 +39,7 @@ faction_action_settings_permissions_item:
 faction_action_settings_tagline_item:
     type: item
     material: player_head
-    display name: <yellow>Change faction tagline
+    display name: <yellow>Change Faction Tagline
     lore:
         - <white>Shows up beneath faction name
         - <white>when a player enters your faction.
@@ -50,7 +50,7 @@ faction_action_settings_tagline_item:
 faction_action_settings_tagline_color_item:
     type: item
     material: player_head
-    display name: <yellow>Change tagline color
+    display name: <yellow>Change Tagline Color
     lore:
         - <white>Shows up beneath faction name
         - <white>when a player enters your faction.
@@ -60,7 +60,7 @@ faction_action_settings_tagline_color_item:
 faction_action_settings_teleport_coordinates_item:
     type: item
     material: player_head
-    display name: <yellow>Set teleport coordinates
+    display name: <yellow>Set Teleport Coordinates
     lore:
         - <white>The location a player will be teleported
         - <white>when teleporting to your faction.
@@ -71,7 +71,7 @@ faction_action_settings_teleport_coordinates_item:
 change_environment_item:
     type: item
     material: player_head
-    display name: <yellow>Change Faction environment!
+    display name: <yellow>Change Faction Environment
     lore:
         - <white>Click to open a list of environment settings.
         - <white>This will affect the chunks in your Faction only.

@@ -20,4 +20,4 @@ faction_action_danger_zone_transfer_ownership_player_list_inventory:
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
-        - [previous_page_item] [air] [air] [air] [air] [air] [air] [air] [air]
+        - [back_page_item] [air] [air] [air] [air] [air] [air] [air] [air]
