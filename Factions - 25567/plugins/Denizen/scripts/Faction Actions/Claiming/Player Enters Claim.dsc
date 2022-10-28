@@ -10,11 +10,7 @@ enter_claim:
             - define entering_from <context.from.chunk.cuboid>
             - define entering_from_faction <[entering_from].proc[get_faction_name_from_cuboid]||null>
 
-            - if <player.flag[is_in_wilderness]||false>:
-                - inject display_claim_enter_text
-            - else if <[entering_from_faction]> != <player.flag[faction]>:
-                - inject display_claim_enter_text
-            - else if <[faction]> != <player.flag[faction]>:
+            - if <player.flag[is_in_wilderness]||false> || <[entering_from_faction]> != <player.flag[faction]> || <[faction]> != <player.flag[faction]>:
                 - inject display_claim_enter_text
             - else:
                 - stop
@@ -36,4 +32,4 @@ display_claim_enter_text:
         - flag <player> is_in_wilderness:!
         - title title:<[faction].proc[get_display_name]> stay:2s targets:<player> subtitle:<[faction].proc[get_tagline_display]> fade_in:.5s fade_out:.5s stay:1s
         - repeat 2:
-            - playeffect at:<[claim].outline_2d[<player.location.y.add[<[value]>]>]> effect:redstone visibility:20 targets:<player> special_data:1.4|<[faction].proc[get_settings].get[color]>
+            - playeffect at:<[claim].outline_2d[<player.location.y.add[<[value]>]>]> effect:dust_color_transition visibility:20 targets:<player> special_data:1.4|<[faction].proc[get_settings].get[color]>|<[faction].proc[get_settings].get[tagline_color]>
