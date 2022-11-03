@@ -1,3 +1,4 @@
+# Explicit Folder Ignores
 BungeeCord - 35565/modules
 BungeeCord - 35565/BungeeCord.jar
 BungeeCord - 35565/locations.yml
@@ -6,7 +7,18 @@ BungeeCord - 35565/plugins
 BungeeCord - 35565/proxy.log.0
 BungeeCord - 35565/proxy.log.0.1
 BungeeCord - 35565/server-icon.png
+BungeeCord - 35565/config.yml
+SENSITIVE DATA/
 
+# Extension Ignores
+*.lck
+*.gz
+*.schematic
+*.schem
+*.jar
+*.bat
+
+# Folder Wildcard ignores
 **/cache
 **/crash-reports
 **/logs
@@ -14,9 +26,7 @@ BungeeCord - 35565/server-icon.png
 **/.console_history
 **/eula.txt
 **/help.yml
-**/paper-1.16.5-780.jar
 **/plugins/bStats
-**/plugins/Denizen-1.2.1-b1743-REL.jar
 **/plugins/Denizen/midi/Denizen.mid
 **/plugins/WorldEdit
 **/banned-ips.json
@@ -32,13 +42,6 @@ BungeeCord - 35565/server-icon.png
 **/plugins/Denizen/scripts/Global Scripts/Just our Utilites LMAO/
 **/plugins/LuckPerms/translations/*
 **/whitelist.json
-SENSITIVE DATA/
-
-*.lck
-*.gz
-*.schematic
-*.schem
-*.jar
 **/Denizen/config.yml
 **/Denizen/maps.yml
 **/Denizen/notables.yml
@@ -47,24 +50,14 @@ SENSITIVE DATA/
 **/Denizen/scoreboards.yml
 **/Denizen/scripts/Global Scripts/Third Party/
 **/Denizen/run_later.yml
-
 **/Depenizen/
 **/LuckPerms/
 **/Vault/
-
-*.bat
-Factions - 25567/plugins/latest.txt
-MainLobby - 25566/plugins/latest.txt
-Factions - 25567/server.properties
-
-Factions - 25567/plugins/Denizen/scripts/Third Party
-BungeeCord - 35565/config.yml
-Factions - 25567/paper.yml
-MainLobby - 25566/server.properties
-
+**/plugins/latest.txt
+**/paper.yml
+**/server.properties
 **/secrets.secret
-
 **/mcgen.txt
-Factions - 25567/paper.yml-README.txt
-MainLobby - 25566/paper.yml-README.txt
-MainLobby - 25566/config/legacy-backup/paper.yml.old
+**/paper.yml-README.txt
+**/config/legacy-backup/paper.yml.old
+**/libraries
