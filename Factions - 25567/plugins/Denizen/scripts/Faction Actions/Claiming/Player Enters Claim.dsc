@@ -15,7 +15,10 @@ enter_claim:
             - else:
                 - stop
         after player exits faction_*_claim_*:
-            - define faction_entering_from <proc[get_faction_name_from_cuboid].context[<context.from.chunk.cuboid>]>
+            - define faction_entering_from <proc[get_faction_name_from_cuboid].context[<context.from.chunk.cuboid>]||null>
+            # Player teleports into faction but is blocked by permissions
+            - if <[faction_entering_from]> == null:
+                - stop
             - define faction_entering_to <context.to.chunk.cuboid.proc[get_faction_name_from_cuboid].if_null[unclaimed_chunk]>
             - if <[faction_entering_to]> == unclaimed_chunk:
                 - title "title:<green>- Wilderness -" targets:<player> fade_in:.5s fade_out:.5s stay:1s

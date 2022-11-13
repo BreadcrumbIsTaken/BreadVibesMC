@@ -22,3 +22,5 @@ faction_action_settings_inventory_click_events:
             - run select_teleport_coords
         on player clicks change_environment_item in faction_action_settings_inventory:
             - inventory open d:change_environment_settings_inventory
+        on player clicks faction_action_settings_permissions_item in faction_action_settings_inventory:
+            - inventory open d:change_faction_permissions_inventory
