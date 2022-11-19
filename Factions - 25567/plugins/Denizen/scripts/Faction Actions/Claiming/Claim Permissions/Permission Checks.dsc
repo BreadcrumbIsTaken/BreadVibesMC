@@ -9,8 +9,7 @@ permission_checks:
         - else if <player> in <server.flag[factions.<[faction]>.members]>:
             - if <[permission]> in <server.flag[factions.<[faction]>.settings.permissions.members]>:
                 - stop
-        - else:
-            - if <[permission]> in <server.flag[factions.<[faction]>.settings.permissions.outsiders]>:
+        - else if <[permission]> in <server.flag[factions.<[faction]>.settings.permissions.outsiders]>:
                 - stop
 
         - determine passively cancelled
