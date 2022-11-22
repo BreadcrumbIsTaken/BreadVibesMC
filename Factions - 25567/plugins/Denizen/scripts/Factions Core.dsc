@@ -87,10 +87,11 @@ faction:
 
         - flag server factions.<[faction_uuid]>:<[default_faction_data]>
         - flag server faction_names:<map[<[default_name]>=<[faction_uuid]>]>
-        - run faction.claiming.claim def:<player.location.chunk.cuboid>|<[faction_uuid]>
         - flag server factions.<[faction_uuid]>.settings.teleport_coords:<player.location.chunk.cuboid.center.highest.add[0,1,0].with_pose[<player>]>
         - flag server factions.<[faction_uuid]>.settings.environment.biome.original:<player.location.biome>
         - flag <player> is_in_wilderness:!
+
+        - run faction.claiming.claim def:<player.location.chunk.cuboid>|<[faction_uuid]>
 
         - narrate "<green>Faction created! Check it out by using '<white>/faction<green>'!" format:faction_action_format
     # Deletes a faction.
