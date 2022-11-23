@@ -183,3 +183,9 @@ bulk_permission_assignments:
             - flag server factions.<player.flag[faction]>.settings.permissions.outsiders:<list[]>
             - narrate "Unassigned all permissions to <dark_aqua>Outsiders!" format:faction_action_format
             - inventory open d:change_faction_permissions_inventory
+        on player clicks permissions_reset_to_default_item in change_faction_permissions_inventory:
+            - flag server factions.<player.flag[faction]>.settings.permissions.owners:<script[default_owner_perms].data_key[perms]>
+            - flag server factions.<player.flag[faction]>.settings.permissions.members:<script[default_member_perms].data_key[perms]>
+            - flag server factions.<player.flag[faction]>.settings.permissions.outsiders:<list[]>
+            - narrate "Reset all permissions back to the defaults!" format:faction_action_format
+            - inventory open d:change_faction_permissions_inventory

@@ -39,7 +39,7 @@ change_faction_permissions_inventory:
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [] [] [] [] [] []
         - [] [] [] [assign_all_to_owners] [assign_all_to_members] [assign_all_to_outsiders] [] [] []
-        - [back_page_item] [] [] [unassign_all_to_owners] [unassign_all_to_members] [unassign_all_to_outsiders] [] [] []
+        - [back_page_item] [] [] [unassign_all_to_owners] [unassign_all_to_members] [unassign_all_to_outsiders] [] [] [permissions_reset_to_default_item]
 
 change_permission_options_inventory:
     type: inventory

@@ -52,7 +52,7 @@ assign_all_to_owners:
     display name: <yellow><underline>Assign All to <dark_aqua><underline>Owners
     debug: false
     lore:
-        - <aqua>Description<&co>
+        - <aqua>Description<white><&co>
         -     <white>Click to assign all the above
         -     <white>permissions to <dark_aqua>Owners
 
@@ -63,7 +63,7 @@ assign_all_to_members:
     display name: <yellow><underline>Assign All to <dark_aqua><underline>Members
     debug: false
     lore:
-        - <aqua>Description<&co>
+        - <aqua>Description<white><&co>
         -     <white>Click to assign all the above
         -     <white>permissions to <dark_aqua>Members
 
@@ -74,7 +74,7 @@ assign_all_to_outsiders:
     display name: <yellow><underline>Assign All to <dark_aqua><underline>Outsiders
     debug: false
     lore:
-        - <aqua>Description<&co>
+        - <aqua>Description<white><&co>
         -     <white>Click to assign all the above
         -     <white>permissions to <dark_aqua>Outsiders
 
@@ -85,7 +85,7 @@ unassign_all_to_owners:
     display name: <red><underline>Un<yellow><underline>assign All to <dark_aqua><underline>Owners
     debug: false
     lore:
-        - <aqua>Description<&co>
+        - <aqua>Description<white><&co>
         -     <white>Click to unassign all the above
         -     <white>permissions from <dark_aqua>Owners
 
@@ -96,7 +96,7 @@ unassign_all_to_members:
     display name: <red><underline>Un<yellow><underline>assign All to <dark_aqua><underline>Members
     debug: false
     lore:
-        - <aqua>Description<&co>
+        - <aqua>Description<white><&co>
         -     <white>Click to unassign all the above
         -     <white>permissions from <dark_aqua>Members
 
@@ -107,6 +107,16 @@ unassign_all_to_outsiders:
     display name: <red><underline>Un<yellow><underline>assign All to <dark_aqua><underline>Outsiders
     debug: false
     lore:
-        - <aqua>Description<&co>
+        - <aqua>Description<white><&co>
         -     <white>Click to unassign all the above
         -     <white>permissions from <dark_aqua>Outsiders
+
+permissions_reset_to_default_item:
+    type: item
+    debug: false
+    material: gray_wool
+    display name: <yellow>Reset to <white>Defaults
+    lore:
+        - <aqua>Description<white><&co>
+        -     <white>Click to reset all the above
+        -     <white>permissions to the defaults

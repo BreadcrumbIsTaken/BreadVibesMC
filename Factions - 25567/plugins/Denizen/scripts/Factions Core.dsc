@@ -63,8 +63,8 @@ faction:
             name: <[default_name]>
             settings:
                 permissions:
-                    owners: <list[]>
-                    members: <list[]>
+                    owners: <script[default_owner_perms].data_key[perms]>
+                    members: <script[default_member_perms].data_key[perms]>
                     outsiders: <list[]>
                     # Give specific players certain permissions.
                     # players: <list[]>
