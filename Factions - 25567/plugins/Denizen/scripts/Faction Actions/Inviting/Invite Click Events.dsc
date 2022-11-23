@@ -10,3 +10,5 @@ invite_players_click_events:
         on player clicks player_head in invite_other_players_to_faction_inventory:
             - flag <player> inviting:<context.item.flag[to_invite]>
             - run faction.invite
+        on player clicks back_page_item in invite_other_players_to_faction_inventory:
+            - run open_faction_action_inventory
