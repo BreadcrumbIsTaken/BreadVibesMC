@@ -42,6 +42,7 @@ anticheat:
     items:
       hide-durability: false
       hide-itemmeta: false
+      hide-itemmeta-with-visual-effects: false
 chunks:
   auto-save-interval: default
   delay-chunk-unloads-by: 10s

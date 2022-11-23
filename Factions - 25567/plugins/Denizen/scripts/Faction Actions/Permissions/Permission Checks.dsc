@@ -61,7 +61,7 @@ claim_permission_checks:
                 - narrate "Hey! You aren't allowed to till dirt in this faction!" format:faction_action_error_format
             # --- Every other block ---
             - else:
-                - define permission break_blocks
+                - define permission place_blocks
                 - inject permission_checks
 
                 - narrate "Hey! You aren't allowed to place blocks in this faction!" format:faction_action_error_format
