@@ -22,8 +22,8 @@ faction_action_settings_color_change_inventory:
     procedural items:
         - determine <item[filler].repeat_as_list[27]>
     slots:
-        - [red_dye[display_name=<dark_red>Red]] [orange_dye[display_name=<gold>Orange]] [yellow_dye[display_name=<yellow>Yellow]] [green_dye[display_name=<dark_green>Green]] [lime_dye[display_name=<green>Light Green]] [light_blue_dye[display_name=<aqua>Aqua]] [blue_dye[display_name=<blue>Blue]] [cyan_dye[display_name=<dark_blue>Dark Blue]] [magenta_dye[display_name=<light_purple>Light Purple]]
-        - [] [] [] [purple_dye[display_name=<dark_purple>Purple]] [light_gray_dye[display_name=<gray>Gray]] [white_dye[display_name=<white>White]] [] [] []
+        - [red_dye[display=<dark_red>Red]] [orange_dye[display=<gold>Orange]] [yellow_dye[display=<yellow>Yellow]] [green_dye[display=<dark_green>Green]] [lime_dye[display=<green>Light Green]] [light_blue_dye[display=<aqua>Aqua]] [blue_dye[display=<blue>Blue]] [cyan_dye[display=<dark_blue>Dark Blue]] [magenta_dye[display=<light_purple>Light Purple]]
+        - [] [] [] [purple_dye[display=<dark_purple>Purple]] [light_gray_dye[display=<gray>Gray]] [white_dye[display=<white>White]] [] [] []
 
 # The inventory where you can change the color of your faction's tagline.
 faction_action_settings_tagline_color_change_inventory:
@@ -35,5 +35,5 @@ faction_action_settings_tagline_color_change_inventory:
     procedural items:
         - determine <item[filler].repeat_as_list[27]>
     slots:
-        - [red_dye[display_name=<dark_red>Red]] [orange_dye[display_name=<gold>Orange]] [yellow_dye[display_name=<yellow>Yellow]] [green_dye[display_name=<dark_green>Green]] [lime_dye[display_name=<green>Light Green]] [light_blue_dye[display_name=<aqua>Aqua]] [blue_dye[display_name=<blue>Blue]] [cyan_dye[display_name=<dark_blue>Dark Blue]] [magenta_dye[display_name=<light_purple>Light Purple]]
-        - [] [] [] [purple_dye[display_name=<dark_purple>Purple]] [light_gray_dye[display_name=<gray>Gray]] [white_dye[display_name=<white>White]] [] [] []
+        - [red_dye[display=<dark_red>Red]] [orange_dye[display=<gold>Orange]] [yellow_dye[display=<yellow>Yellow]] [green_dye[display=<dark_green>Green]] [lime_dye[display=<green>Light Green]] [light_blue_dye[display=<aqua>Aqua]] [blue_dye[display=<blue>Blue]] [cyan_dye[display=<dark_blue>Dark Blue]] [magenta_dye[display=<light_purple>Light Purple]]
+        - [] [] [] [purple_dye[display=<dark_purple>Purple]] [light_gray_dye[display=<gray>Gray]] [white_dye[display=<white>White]] [] [] []

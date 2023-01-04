@@ -29,7 +29,7 @@ change_faction_permissions_inventory:
             - if <[outsider_perms]> contains <[name]>:
                 - define "lore:->:    <white>- <dark_aqua>Outsiders"
 
-            - define item <item[name_tag[display_name=<yellow><underline><[perm].get[display]><reset>;lore=<[lore]>]].with_flag[permission:<[name]>]>
+            - define item <item[name_tag[display=<yellow><underline><[perm].get[display]><reset>;lore=<[lore]>]].with_flag[permission:<[name]>]>
             - define list:->:<[item]>
         - define list:|:<item[filler].repeat_as_list[54]>
         - determine <[list]>
