@@ -1,4 +1,7 @@
 # Main faction script. Holds all the important faction details and code to be run.
+
+# TODO: Might be able to rewrite faction claim things using <locationtag.areas[]>
+
 faction:
     type: task
     debug: false

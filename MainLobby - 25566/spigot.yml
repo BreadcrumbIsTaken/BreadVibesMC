@@ -63,6 +63,9 @@ advancements:
   - minecraft:story/disabled
 world-settings:
   default:
+    seed-ancientcity: 20083232
+    seed-buriedtreasure: 10387320
+    seed-mineshaft: default
     seed-nether: 30084232
     hopper-can-load-chunks: false
     below-zero-generation-in-existing-chunks: true
